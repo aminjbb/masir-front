@@ -1,46 +1,70 @@
-<template lang="">
+<template>
     <div class="mt-10 mb-10">
         <v-row justify="center" class="mt-5">
-            <v-col cols="6">
+            <v-col md="6" cols="12">
                 <v-img
                 :src="require('~/assets/img/HomeService.png')"
                 >
                 <div class="about-box-img-down ">
-                    <div class="text-rigth pt-8 pr-15">
+                    <div class="text-rigth pt-8 pr-15  d-none d-md-flex">
                         <span class="white--text t40600">
-                            نیروی متخصص 
+                            نیروی متخصص
                         </span>
                     </div>
-                    <div class="text-center pt-5">
+                  <div class="text-rigth d-block d-sm-none pr-5 pt-5">
+                        <span class="white--text t20600">
+                            نیروی متخصص
+                        </span>
+                    </div>
+                    <div class="text-center pt-5  d-none d-md-flex">
                         <span class="white--text t30600">
                             ایجاد پروژه برای نیروی متخصص
                         </span>
                     </div>
+                  <div class="text-center d-block d-sm-none  pt-2">
+                        <span class="white--text t18600">
+                            ایجاد پروژه برای نیروی متخصص
+                        </span>
+                    </div>
                 </div>
-                <div class="about-link-box-img-up"></div>
+                <div class="about-link-box-img-up">
+                    <img src="~/assets/img/arrow-up-right.svg" alt="">
+                </div>
                 </v-img>
             </v-col>
-            <v-col cols="6">
+            <v-col md="6" cols="12">
                 <v-img
                 :src="require('~/assets/img/homeShop.png')"
                 >
                 <div class="about-box-img-up ">
-                    <div class="text-center pt-8">
+                  <div class="text-rigth pt-8 pr-15  d-none d-md-flex">
                         <span class="white--text t40600">
-                            فروشگاه تخصصی مسیر
+                            نیروی متخصص
                         </span>
-                    </div>
-                    <div class="text-center pt-5">
+                  </div>
+                  <div class="text-rigth d-block d-sm-none pr-5 pt-5">
                         <span class="white--text t20600">
-                            بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته 
+                            نیروی متخصص
                         </span>
-                    </div>
+                  </div>
+                  <div class="text-center pt-5  d-none d-md-flex">
+                        <span class="white--text t30600">
+                            ایجاد پروژه برای نیروی متخصص
+                        </span>
+                  </div>
+                  <div class="text-center d-block d-sm-none  pt-2">
+                        <span class="white--text t18600">
+                            ایجاد پروژه برای نیروی متخصص
+                        </span>
+                  </div>
                 </div>
 
-                <div class="about-link-box-img-down"></div>
+                <div class="about-link-box-img-down">
+                    <img src="~/assets/img/arrow-up-right.svg" alt="">
+                </div>
             </v-img>
             </v-col>
-          
+
         </v-row>
     </div>
 </template>
@@ -50,5 +74,5 @@ export default {
 }
 </script>
 <style lang="">
-    
+
 </style>

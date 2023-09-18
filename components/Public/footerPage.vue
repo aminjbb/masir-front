@@ -1,0 +1,247 @@
+<template>
+  <div class="masir-footer pb-15">
+      <v-row justify="center" align="center">
+          <div class="footer-contactus-box">
+            <div class="d-flex justify-center" >
+              <div class="contact-us-title-box text-center pt-5">
+                <span class="t30600 white--text">
+                      تماس با ما
+                </span>
+              </div>
+
+
+            </div>
+            <v-row justify="center" class="px-10" id="contactUsForm">
+              <v-col md="6" cols="12">
+                <v-text-field
+                  outlined
+                  color="white"
+                  label="نام و نام خانوادگی"
+                ></v-text-field>
+              </v-col>
+              <v-col md="6" cols="12">
+                <v-text-field
+                  outlined
+                  color="white"
+                  label="ایمیل"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12">
+                <v-textarea
+                  outlined
+                  color="white"
+                  label="متن پیام خود را بنویسید."
+                  rows="12"
+                ></v-textarea>
+              </v-col>
+
+            </v-row>
+
+            <v-row justify="end" class="pa-10 pl-13">
+              <v-btn color="primaryYellow" width="183" height="74" class="br-15">
+                <span class="t24600">
+                    ارسال
+                </span>
+              </v-btn>
+            </v-row>
+
+          </div>
+           <v-row justify="center" align="center" class="pt-15 px-15 d-none d-md-flex">
+                  <v-col cols="6">
+                   <v-row>
+                     <v-col cols="4">
+                       <div class="mt-15">
+                         <v-list class="background_unset">
+
+                           <v-list-item
+                           >
+
+                             <v-list-item-content>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text"> درباره ما</span></v-list-item-title>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">تماس با ما</span></v-list-item-title>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">چرا مسیر</span></v-list-item-title>
+                             </v-list-item-content>
+                           </v-list-item>
+                         </v-list>
+                       </div>
+                     </v-col>
+                     <v-col cols="4">
+                       <div class="mt-15">
+                         <v-list class="background_unset">
+
+                           <v-list-item
+                           >
+
+                             <v-list-item-content>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text"> مرکز پشتیبانی آنلاین</span></v-list-item-title>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای خرید</span></v-list-item-title>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای استرداد</span></v-list-item-title>
+                             </v-list-item-content>
+                           </v-list-item>
+                         </v-list>
+                       </div>
+                     </v-col>
+                     <v-col cols="4">
+                       <div class="mt-15">
+                         <v-list class="background_unset">
+
+                           <v-list-item
+                           >
+
+                             <v-list-item-content>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">قوانین و مقررات</span></v-list-item-title>
+                               <v-list-item-title class="mt-5"> <span class="t16400 white--text">پرسش و پاسخ</span></v-list-item-title>
+                             </v-list-item-content>
+                           </v-list-item>
+                         </v-list>
+                       </div>
+                     </v-col>
+                   </v-row>
+                    <v-divider color="white" class="mt-8"></v-divider>
+                    <v-row justify="center">
+                      <v-col cols="6" class="mt-5">
+                        <span class="t24600 white--text">
+                            شبکه های اجتماعی
+                        </span>
+                      </v-col>
+                      <v-col cols="6" class="mt-8">
+                        <v-row justify="end">
+                          <img src="~/assets/img/InstagramLogo.svg" alt="" class="mx-5">
+                          <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+                          <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+                        </v-row>
+                      </v-col>
+                      <v-col cols="12" class="mt-5">
+                        <span class="t14400 white--text">
+                          کلیه حقوق این سرویس (وب‌سایت و اپلیکیشن‌های موبایل) محفوظ و متعلق به شرکت مسیر می‌باشد.
+                        </span>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                  <v-col cols="6">
+                    <div>
+
+                    </div>
+                    <v-row justify="center">
+                      <v-col cols="6">
+                        <span class="t24600 white--text">
+                          شماره تماس:
+                        </span>
+                      </v-col>
+                      <v-col cols="6" >
+                        <span class="t24600 white--text">
+                          ۰۲۱-۶۶۵۶۱۲۰۴
+                        </span>
+                        
+                      </v-col>
+                      <v-col cols="12">
+                        <v-divider color="white" class="mt-8"></v-divider>
+                      </v-col>
+                      <v-col cols="12" class="mt-5">
+                        <span class="t14400 white--text">
+                          دفتر پشتیبانی: اکباتان، نبش اتوبان لشگری، کوی بیمه، خیابان بیمه چهارم، بن‌بست گل‌ها، پلاک 1
+                        </span>
+                      </v-col>
+                    </v-row>
+                    
+                  </v-col>
+            </v-row>
+
+            <v-row justify="center" align="center" class="d-block d-sm-none px-10 mt-5">
+              <v-col cols="12">
+                <div>
+
+                </div>
+                <v-row justify="center">
+                  <v-col cols="6">
+                    <span class="t24600 white--text">
+                      شماره تماس:
+                    </span>
+                  </v-col>
+                  <v-col cols="6" >
+                    <span class="t24600 white--text">
+                      ۰۲۱-۶۶۵۶۱۲۰۴
+                    </span>
+                    
+                  </v-col>
+                  <v-col cols="12">
+                    <v-divider color="white" class="mt-8"></v-divider>
+                  </v-col>
+                  <v-col cols="12" class="mt-5 text-justify">
+                    <span class="t16400 white--text">
+                      دفتر پشتیبانی: اکباتان، نبش اتوبان لشگری، کوی بیمه، خیابان بیمه چهارم، بن‌بست گل‌ها، پلاک 1
+                    </span>
+                  </v-col>
+                </v-row>
+                
+              </v-col>
+
+              <v-col cols="12">
+                <v-row>
+                  <v-col cols="6">
+                    <div class="mt-15">
+                      <v-list class="background_unset">
+
+                        <v-list-item
+                        >
+
+                          <v-list-item-content>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text"> درباره ما</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">تماس با ما</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">چرا مسیر</span></v-list-item-title>
+                          </v-list-item-content>
+                        </v-list-item>
+                      </v-list>
+                    </div>
+                  </v-col>
+                  <v-col cols="6">
+                    <div class="mt-15">
+                      <v-list class="background_unset">
+
+                        <v-list-item
+                        >
+
+                          <v-list-item-content>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text"> مرکز پشتیبانی آنلاین</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای خرید</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای استرداد</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">قوانین و مقررات</span></v-list-item-title>
+                            <v-list-item-title class="mt-5"> <span class="t16400 white--text">پرسش و پاسخ</span></v-list-item-title>
+                          </v-list-item-content>
+                        </v-list-item>
+                      </v-list>
+                    </div>
+                  </v-col>
+
+                </v-row>
+                 <v-row justify="center">
+                   <v-col cols="12" class="mt-5">
+                    <div class="text-center">
+                      <span class="t24600 white--text">
+                        شبکه های اجتماعی
+                    </span>
+                    </div>
+                   </v-col>
+                   <v-col cols="12" class="mt-8">
+                     <v-row justify="center">
+                       <img src="~/assets/img/InstagramLogo.svg" alt="" class="mx-5">
+                       <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+                       <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+                     </v-row>
+                   </v-col>
+                   <v-col cols="12" class="mt-5">
+                     <span class="t14400 white--text">
+                       کلیه حقوق این سرویس (وب‌سایت و اپلیکیشن‌های موبایل) محفوظ و متعلق به شرکت مسیر می‌باشد.
+                     </span>
+                   </v-col>
+                 </v-row>
+               </v-col>
+
+            </v-row>
+      </v-row>
+  </div>
+</template>
+<script>
+import footer from '~/components/Public/footerPage.vue'
+export default {}
+</script>

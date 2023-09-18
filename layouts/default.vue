@@ -1,112 +1,132 @@
 <template>
   <v-app dark>
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+    <v-navigation-drawer class="d-block d-sm-none position__relative" v-model="drawer" :clipped="clipped"  right app
+    style="height:100% ; z-index: 99;">
+    <div class="pa-2">
+      <v-col>
+        <v-row class="ma-0" justify="end" align="center">
+          <v-col cols="4">
+            <span class="t14600 Black--text">
+              منو
+            </span>
+          </v-col>
+        
+
+          <v-col cols="3">
+            <img src="~/assets/img/ShoppingCart.svg" alt="">
+          </v-col>
+          <v-col cols="3">
+            <img src="~/assets/img/UserCircle.svg" alt="">
+          </v-col>
+        </v-row>
+      </v-col>
+    </div>
+
+    <v-divider></v-divider>
+    <v-list class="px-8 mt-5">
+
+      <v-list-item class="my-2" v-for="(item, i) in items" :key="i" :to="item.to" router exact
+        style="height: 26px; border-radius: 13px;" v-model="page">
+        <v-list-item-action>
+          <v-img width="16" :src="item.icon"></v-img>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title> <span class="t12400">{{ item.title }}</span></v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+
+    <div class="mobile-menu-back">
+      <img src="~/assets/img/ArrowCircleRight.svg" alt="" @click="drawer =false">
+    </div>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
+
+    <v-navigation-drawer class="d-block d-sm-none" v-model="drawerSearch" :clipped="clipped"  left app
+    style="height:100% ; z-index: 99;">
+      <div class="pa-2 searchBox">
+        <v-col cols="11">
+          <v-text-field
+          placeholder="جست‌و‌جو کنید"
+          clearable
+          filled
+          rounded
+          dense
+        ></v-text-field>
+      </v-col>
+      </div>
+    </v-navigation-drawer>
+    <v-app-bar class="d-block d-sm-none pr-10 pl-5" :clipped-left="clipped" app color="white" height="75" >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-    </v-app-bar> -->
+      <img src="~/assets/img/search.svg" alt="" @click.stop="drawerSearch = !drawerSearch"  >
+    </v-app-bar>
+      <HeaderPage/>
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
-    <!-- <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-    <!-- <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer> -->
+   <footerPage/>
+
   </v-app>
 </template>
 
 <script>
+import footerPage from '~/components/Public/footerPage.vue'
+import HeaderPage from '~/components/Public/HeaderPage.vue'
 export default {
   name: 'DefaultLayout',
+  components:{
+    footerPage,
+    HeaderPage
+  },
   data () {
     return {
       clipped: false,
       drawer: false,
+      drawerSearch: false,
       fixed: false,
       items: [
+        // {
+        //   icon: require('~/assets/img/shopMenu.svg'),
+        //   title: 'فروشگاه',
+        //   to: '/products'
+        // },
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: require('~/assets/img/House.svg'),
+          title: 'خانه',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
+          icon: require('~/assets/img/TrafficCone.svg'),
+          title: 'سرویس‌ها',
+          to: '/lavean-mag'
+        },
+        {
+          icon: require('~/assets/img/Storefront.svg'),
+          // icon: require('~/assets/img/laveanMenu.svg'),
+          title: 'فروشگاه',
+          to: '/about-us'
+        },
+        {
+          icon: require('~/assets/img/UsersFour.svg'),
+          // icon: require('~/assets/img/contactusMenu.svg'),
+          title: 'درباره ما',
+          to: '/contact-us'
+        },
+        {
+          icon: require('~/assets/img/Chats.svg'),
+          // icon: require('~/assets/img/contactusMenu.svg'),
+          title: 'تماس با ما',
+          to: '/contact-us'
+        },
+        {
+          icon: require('~/assets/img/Books.svg'),
+          // icon: require('~/assets/img/contactusMenu.svg'),
+          title: 'مقالات',
+          to: '/contact-us'
+        },
+
       ],
       miniVariant: false,
       right: true,

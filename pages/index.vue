@@ -2,19 +2,30 @@
   <v-row justify="center" align="center">
     <v-col cols="12" >
       <HomeBanner/>
-      
     </v-col>
     <v-col cols="11" >
       <AboutMasir/>
-      
+
     </v-col>
     <v-col cols="10" >
       <WhyMasir/>
-      
+
+    </v-col>
+    <v-col cols="10" >
+      <div class="text-center my-15">
+          <v-avatar color="primaryYellow" size="25" class=" my-15"></v-avatar>
+      </div>
+
     </v-col>
     <v-col cols="10" >
       <MasirServiceAndShopSection/>
-      
+
+    </v-col>
+    <v-col cols="10" >
+      <div class="text-center my-15">
+        <v-avatar color="primaryYellow" size="25" class=" my-15"></v-avatar>
+      </div>
+
     </v-col>
     <v-col cols="11" >
       <div class="text-center my-15">
