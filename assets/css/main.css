@@ -1657,10 +1657,10 @@ header {
   }
     .about-link-box-img-up {
     position:absolute;
-    right: 0;
-    top: 0;
-    width: 80px !important;
-    height: 76px !important;
+      right: 17px !important;
+      top: 16px !important;
+    width: 81px !important;
+    height: 77px !important;
     border-radius: 25px !important;
     background: var(--primary-and-secondary-secondari, #0C385F);
     display: flex;
@@ -1671,8 +1671,8 @@ header {
 
   .about-link-box-img-down {
     position:absolute;
-    left: 0;
-    bottom: 0;
+    left: 17px !important;
+    bottom: 10px !important;
     width: 80px !important;
     height: 76px !important;
     border-radius: 25px !important;
