@@ -28,10 +28,10 @@
         <img src="~/assets/img/ShopSection.png" alt="">
       </v-col>
       <v-col cols="6">
-        <div class="mt-15 pt-15">
+        <div class="mt-5 pt-15 mr-15">
           <div class="mt-15 ">
                      <span class="t30600">
-                         درباره <span class="primaryYellow--text">فروشگاه</span>های مسیر
+                         درباره <span class="primaryYellow--text">فروشگاه </span>های مسیر
                      </span>
           </div>
           <div class="pl-15 mt-10">

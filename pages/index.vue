@@ -3,7 +3,7 @@
     <v-col cols="12" >
       <HomeBanner/>
     </v-col>
-    <v-col cols="11" >
+    <v-col cols="12" >
       <AboutMasir/>
 
     </v-col>
