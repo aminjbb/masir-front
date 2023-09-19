@@ -1,37 +1,37 @@
 <template>
-    <header class="d-none d-md-flex">
-
-
-        <div class="main-container pt-5">
-           <v-row>
+    <header class="d-none d-md-flex px-10">
+        <div class="main-container-header pt-5 px-15">
+           <v-row justify="center">
             <v-col cols="5">
-                <v-btn-toggle class="mb-1" group>
-                    <v-btn  active-class="headr-active" to="/" text class="d-flex align-center pb-0 mb-0" large exact>
-                        <span class="t14400 Black--text"> خانه</span>
-                    </v-btn>
+                <v-row class="mt-5">
+                  <div  class="d-flex align-center pb-3 mb-0 headr-active px-3 mx-3">
+                    <span class="t18400 Black--text"> خانه</span>
+                  </div>
 
-                    <v-btn to="/lavean-mag" active-class="headr-active" text class="d-flex align-centerpb-0 mb-0" exact
-                        large>
-                        <span class="t14400 Black--text"> سرویس‌ها</span>
-                    </v-btn>
-                    <v-btn to="/lavean-mag" active-class="headr-active" text class="d-flex align-centerpb-0 mb-0" exact
-                        large>
-                        <span class="t14400 Black--text"> فروشگاه</span>
-                    </v-btn>
+                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
 
-                    <v-btn active-class="headr-active" text class="d-flex align-center pb-0 mb-0" to="/about-us" large>
-                        <span class="t14400 Black--text"> درباره ما </span>
-                    </v-btn>
-                    <v-btn active-class="headr-active" text class="d-flex align-center pb-0 mb-0" to="/contact-us" large>
-                        <span class="t14400 Black--text"> تماس با ما </span>
-                    </v-btn>
-                    <v-btn active-class="headr-active" text class="d-flex align-center pb-0 mb-0" to="/contact-us" large>
-                        <span class="t14400 Black--text"> مقالات</span>
-                    </v-btn>
+                    <span class="t18400 Black--text"> سرویس‌ها</span>
+                  </div>
+                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
 
-                </v-btn-toggle>
+                    <span class="t18400 Black--text"> فروشگاه</span>
+                  </div>
+
+                  <div  class="d-flex align-center pb-3 mb-0px-3 mx-3">
+                    <span class="t18400 Black--text"> درباره ما </span>
+                  </div>
+                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
+                    <span class="t18400 Black--text"> تماس با ما </span>
+                  </div>
+                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
+                    <span class="t18400 Black--text"> مقالات</span>
+                  </div>
+                </v-row>
             </v-col>
-            <v-col cols="3">
+            <v-col cols="3" class="pt-12">
+              <v-row justify="start" class="pt-3 pr-6">
+                <img src="~/assets/img/headerLogo.png" alt="logo">
+              </v-row>
 
             </v-col>
             <v-col cols="4" class="headerPage">
@@ -40,7 +40,7 @@
                     <v-text-field
                     outlined
                     color="black"
-                    label="جست‌و‌جو کنید"
+                    placeholder="جست‌و‌جو کنید"
                     append-icon="mdi-magnify"
                   ></v-text-field>
                 </v-col>
@@ -53,7 +53,7 @@
                 </v-row>
             </v-col>
            </v-row>
-            
+
         </div>
 
     </header>
