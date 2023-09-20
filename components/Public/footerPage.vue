@@ -150,7 +150,7 @@
               <v-row justify="center" align="center" class="d-block d-sm-none px-10 mt-5">
                 <v-col cols="12">
                   <div>
-                    <img src="~/assets/img/footerLogo.png" alt="">
+<!--                    <img src="~/assets/img/footerLogo.png" alt="">-->
                   </div>
                   <v-row justify="center">
                     <v-col cols="6">
