@@ -1,10 +1,10 @@
 <template>
   <div class="masir-footer-withOut-contact">
     <v-row justify="center" align="center">
-      <v-col cols="8">
+      <v-col md="8" cols="12">
         <v-row justify="space-between" align="center" class="pt-15 px-15 d-none d-md-flex">
           <v-col cols="6">
-            <v-row>
+            <v-row class="">
               <v-col cols="4">
                 <div class="mt-15">
                   <v-list class="background_unset">
@@ -62,9 +62,9 @@
               </v-col>
               <v-col cols="6" class="mt-8">
                 <v-row justify="end">
-                  <img src="~/assets/img/InstagramLogo.svg" alt="" class="mx-5">
-                  <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
-                  <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+                  <img src="~/assets/img/WhatsappLogo.svg" alt=""  class="mx-2">
+                  <img src="~/assets/img/YoutubeLogo.svg" alt=""  class="mx-2">
+                  <img src="~/assets/img/InstagramLogo.svg" alt="" class="mx-2">
                 </v-row>
               </v-col>
               <v-col cols="12" class="mt-5">
@@ -72,10 +72,17 @@
                           کلیه حقوق این سرویس (وب‌سایت و اپلیکیشن‌های موبایل) محفوظ و متعلق به شرکت مسیر می‌باشد.
                         </span>
               </v-col>
+              <v-col cols="12" class="mt-5">
+                <div>
+                       <span class="t14400 white--text">
+                        powered by hMS Innovation
+                     </span>
+                </div>
+              </v-col>
             </v-row>
           </v-col>
           <v-col cols="5" class="pr-15">
-            <div class="mb-4 mt-15">
+            <div class="mb-4 mt-5">
               <img src="~/assets/img/footerLogo.png" alt="">
             </div>
             <v-row justify="center">
@@ -104,8 +111,8 @@
         </v-row>
         <v-row justify="center" align="center" class="d-block d-sm-none px-10 mt-5">
           <v-col cols="12">
-            <div>
-              <!--                    <img src="~/assets/img/footerLogo.png" alt="">-->
+            <div class="my-10">
+                                  <img width="274" src="~/assets/img/footerLogo.png" alt="">
             </div>
             <v-row justify="center">
               <v-col cols="6">
@@ -179,15 +186,25 @@
               </v-col>
               <v-col cols="12" class="mt-8">
                 <v-row justify="center">
+                  <img src="~/assets/img/WhatsappLogo.svg" alt=""  class="mx-5">
+                  <img src="~/assets/img/YoutubeLogo.svg" alt=""  class="mx-5">
                   <img src="~/assets/img/InstagramLogo.svg" alt="" class="mx-5">
-                  <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
-                  <img src="~/assets/img/InstagramLogo.svg" alt=""  class="mx-5">
+
                 </v-row>
               </v-col>
               <v-col cols="12" class="mt-5">
-                     <span class="t14400 white--text">
+                    <div class="text-justify">
+                       <span class="t14400 white--text">
                        کلیه حقوق این سرویس (وب‌سایت و اپلیکیشن‌های موبایل) محفوظ و متعلق به شرکت مسیر می‌باشد.
                      </span>
+                    </div>
+              </v-col>
+              <v-col cols="12" class="mt-5">
+                    <div class="text-center">
+                       <span class="t14400 white--text">
+                        powered by hMS Innovation
+                     </span>
+                    </div>
               </v-col>
             </v-row>
           </v-col>
