@@ -1,129 +1,22 @@
 <template>
  <div class="my-15">
-   <v-row justify="center" class="mt-15">
-     <div class="service__top-diver-box mx-3 px-10">
-       <div class="d-flex justify-center">
-         <img class="avatar-img" src="~/assets/img/untitled-design-98-2.png" alt="">
-       </div>
-       <div class="text-right mt-5">
-         <span class="t24600 primary--text">
-           عباس قادری
-         </span>
-       </div>
-       <div>
-         <v-row justify="space-between" class="mt-5">
-           <div class="driver-detail-box">
-             <v-row justify="space-between" class="px-10 my-4">
-               <span class="18400 primary--text">
-                 وسیله:
-               </span>
-               <span class="18400 primary--text">
-               لودر
-               </span>
-             </v-row>
-             <v-row justify="space-between" class="px-10  my-4">
-               <span class="18400 primary--text">
-                 پروژه‌های انجام شده:
-               </span>
-               <span class="18400 primary--text">
-               ۱۷
-               </span>
-             </v-row>
-             <v-row justify="space-between" class="px-10  my-4" >
-               <span class="18400 primary--text">
-                 وضعیت فعلی:
-               </span>
-               <span class="18400 primary--text">
-               آزاد
-               </span>
-             </v-row>
-           </div>
-
-           <div>
-             <div class="mt-15">
-                <v-row  align="center" class="pr-15">
-                  <span class="t14400 success--text mx-3">
-                  verified
-                </span>
-                  <span >
-                  <img width="28" height="28" src="~/assets/img/verified.png" alt="">
-                </span>
-                </v-row>
-              </div>
-             <div class="mt-3">
-               <span class="t14400 secondary--text mx-3">
-                  دارای تایید پلتفرم مسیر
-                </span>
-
-              </div>
-           </div>
-         </v-row>
-       </div>
-     </div>
-     <div class="service__top-diver-box mx-3 px-10">
-       <div class="d-flex justify-center">
-         <img class="avatar-img" src="~/assets/img/untitled-design-98-2.png" alt="">
-       </div>
-       <div class="text-right mt-5">
-         <span class="t24600 primary--text">
-           عباس قادری
-         </span>
-       </div>
-       <div>
-         <v-row justify="space-between" class="mt-5">
-           <div class="driver-detail-box">
-             <v-row justify="space-between" class="px-10 my-4">
-               <span class="18400 primary--text">
-                 وسیله:
-               </span>
-               <span class="18400 primary--text">
-               لودر
-               </span>
-             </v-row>
-             <v-row justify="space-between" class="px-10  my-4">
-               <span class="18400 primary--text">
-                 پروژه‌های انجام شده:
-               </span>
-               <span class="18400 primary--text">
-               ۱۷
-               </span>
-             </v-row>
-             <v-row justify="space-between" class="px-10  my-4" >
-               <span class="18400 primary--text">
-                 وضعیت فعلی:
-               </span>
-               <span class="18400 primary--text">
-               آزاد
-               </span>
-             </v-row>
-           </div>
-
-           <div>
-             <div class="mt-15">
-               <v-row  align="center" class="pr-15">
-                  <span class="t14400 success--text mx-3">
-                  verified
-                </span>
-                 <span >
-                  <img width="28" height="28" src="~/assets/img/verified.png" alt="">
-                </span>
-               </v-row>
-             </div>
-             <div class="mt-3">
-               <span class="t14400 secondary--text mx-3">
-                  دارای تایید پلتفرم مسیر
-                </span>
-
-             </div>
-           </div>
-         </v-row>
-       </div>
-     </div>
+   <v-row justify="center" class="mt-15 d-none d-md-flex" >
+     <DriverCard/>
+     <DriverCard/>
+   </v-row>
+   <v-row justify="center" class="mt-15 d-flex d-md-none" >
+     <DriverCardMobile/>
+     <DriverCardMobile/>
    </v-row>
  </div>
 </template>
 <script>
+import DriverCard from '~/components/Service/DriverCard.vue'
+import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
 export default {
-
+components:{
+  DriverCard,
+  DriverCardMobile
+}
 }
 </script>

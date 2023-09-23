@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div v-if="windowSize >= 955">
    <h2 class="mr-5">پرسش‌های شما</h2>
 
    <button class="accordion">
@@ -34,6 +34,11 @@
 
 <script>
   export default {
+    data(){
+      return{
+        windowSize :1000
+      }
+    },
     mounted() {
       var acc = document.getElementsByClassName("accordion");
       var i;
@@ -48,6 +53,23 @@
             panel.style.display = "block";
           }
         });
+      }
+    },
+
+    beforeMount() {
+      this.getWindowSize()
+    },
+    methods:{
+      getWindowSize(){
+        setTimeout(()=>{
+
+          try {
+            this.windowSize = screen.width
+          }
+          catch (e) {
+            return e
+          }
+        },1000)
       }
     }
   }
