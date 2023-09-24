@@ -1615,6 +1615,11 @@ header {
 }
 
 @media only screen and (max-width: 380px) {
+  .main-container {
+    width: 100% !important;
+    margin: auto;
+    position: relative;
+  }
   .why-masir-svg-position{
     position: absolute;
     right: 15% !important;
@@ -1640,9 +1645,9 @@ header {
     position:absolute;
     right: 30px !important;
     bottom: 61px;
-    width: 263px !important;
-    height: 103px !important;
-    border-radius: 40px;
+    width: 85% !important;
+    height: 130px !important;
+    border-radius: 25px;
     background: rgba(0, 0, 0, 0.50);
     backdrop-filter: blur(4px);
   }
@@ -1650,9 +1655,9 @@ header {
     position: absolute;
     right: 30px !important;
     top: 61px;
-    width: 263px !important;
-    height: 103px !important;
-    border-radius: 40px;
+    width: 85% !important;
+    height: 130px !important;
+    border-radius: 25px;
     background: rgba(0, 0, 0, 0.50);
   }
     .about-link-box-img-up {
@@ -1728,7 +1733,7 @@ header {
 
 .about-box-img-up {
   position:absolute;
-  right: 20px;
+  right: 40px;
   top: 61px;
   width: 525px;
   height: 208px;
@@ -1738,7 +1743,7 @@ header {
 }
 .about-box-img-down {
   position:absolute;
-  right: 20px;
+  right: 30px;
   bottom: 61px;
   width: 525px;
   height: 208px;
@@ -1749,8 +1754,8 @@ header {
 
 .about-link-box-img-up {
   position:absolute;
-  right: 0;
-  top: 0;
+  right: 16px;
+  top: 9px;
   width: 161px ;
   height: 152px ;
   border-radius: 50px;
@@ -2035,4 +2040,7 @@ header {
   position: absolute;
   right: 10px;
   bottom: 60px;
+}
+.v-main {
+  padding: 0!important;
 }

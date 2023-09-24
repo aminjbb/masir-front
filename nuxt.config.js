@@ -39,8 +39,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    ['@alireza-ab/vue-persian-datepicker/nuxt', { PersianDate: true }]
   ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
   ],

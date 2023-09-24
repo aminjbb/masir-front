@@ -10,7 +10,7 @@
               منو
             </span>
           </v-col>
-        
+
 
           <v-col cols="3">
             <img src="~/assets/img/ShoppingCart.svg" alt="">
@@ -62,9 +62,10 @@
     </v-app-bar>
       <HeaderPage/>
     <v-main>
-      <v-container>
+      <div class="main-container">
         <Nuxt />
-      </v-container>
+      </div>
+
     </v-main>
    <footerPage/>
 

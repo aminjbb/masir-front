@@ -21,7 +21,7 @@
                             ایجاد پروژه برای نیروی متخصص
                         </span>
                     </div>
-                  <div class="text-center d-block d-sm-none  pt-2">
+                  <div class="text-right d-block d-sm-none px-5 mt-3 pt-2">
                         <span class="white--text t18600">
                             ایجاد پروژه برای نیروی متخصص
                         </span>
@@ -53,8 +53,8 @@
                            بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
                         </span>
                   </div>
-                  <div class="text-center d-block d-sm-none  pt-2">
-                        <span class="white--text t18600">
+                  <div class="text-right d-block d-sm-none px-5 pt-2">
+                        <span class="white--text t14600">
                             ایجاد پروژه برای نیروی متخصصبیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
                         </span>
                   </div>
