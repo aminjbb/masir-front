@@ -1,8 +1,8 @@
 <template>
-    <header class="d-none d-md-flex px-10">
-        <div class="main-container-header pt-5 px-15">
+    <header class="d-none d-md-flex">
+        <div class="main-container-header pt-5 ">
            <v-row justify="center">
-            <v-col cols="6">
+            <v-col cols="5">
                 <v-row class="mt-5">
                   <div @click="$router.push('/')" :class="$route.name === 'index' ? 'headr-active' : ''"  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                     <span class="t18400 Black--text"> خانه</span>

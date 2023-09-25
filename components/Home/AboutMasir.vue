@@ -54,7 +54,7 @@
                         </span>
                   </div>
                   <div class="text-right d-block d-sm-none px-5 pt-2">
-                        <span class="white--text t14600">
+                        <span class="white--text t13400">
                             ایجاد پروژه برای نیروی متخصصبیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
                         </span>
                   </div>

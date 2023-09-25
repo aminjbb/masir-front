@@ -11,22 +11,22 @@
 
 
             </div>
-            <v-row justify="center" class="px-10" id="contactUsForm">
-              <v-col md="6" cols="12">
+            <v-row justify="center" class="px-13 mt-10" id="contactUsForm">
+              <v-col class="pa-2" md="6" cols="12">
                 <v-text-field
                   outlined
                   color="white"
                   label="نام و نام خانوادگی"
                 ></v-text-field>
               </v-col>
-              <v-col md="6" cols="12">
+              <v-col class="pa-2" md="6" cols="12">
                 <v-text-field
                   outlined
                   color="white"
                   label="ایمیل"
                 ></v-text-field>
               </v-col>
-              <v-col cols="12">
+              <v-col class="pa-2 pt-0" cols="12">
                 <v-textarea
                   outlined
                   color="white"

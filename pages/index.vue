@@ -1,9 +1,9 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" >
+    <v-col cols="12" class="mb-15">
       <HomeBanner/>
     </v-col>
-    <v-col cols="12" >
+    <v-col cols="12" class="mt-10">
       <AboutMasir/>
 
     </v-col>
@@ -12,8 +12,8 @@
 
     </v-col>
     <v-col cols="10" >
-      <div class="text-center my-15">
-          <v-avatar color="primaryYellow" size="20" class=" my-15"></v-avatar>
+      <div class="text-center my-8">
+          <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
       </div>
 
     </v-col>
@@ -21,9 +21,9 @@
       <MasirServiceAndShopSection/>
 
     </v-col>
-    <v-col cols="10" >
+    <v-col cols="10" class="my-10">
       <div class="text-center my-15">
-        <v-avatar color="primaryYellow" size="20" class=" my-15"></v-avatar>
+        <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
       </div>
 
     </v-col>

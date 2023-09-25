@@ -1631,7 +1631,7 @@ header {
 
   }  .request-masir-svg-position{
     position: absolute;
-    right: 15% !important;
+    right: 19% !important;
 
   }
   .why-masir-svg-position img{
@@ -1681,8 +1681,8 @@ header {
 
   .about-link-box-img-down {
     position:absolute;
-    left: 17px !important;
-    bottom: 10px !important;
+    left: 6px !important;
+    bottom: 11px !important;
     width: 80px !important;
     height: 76px !important;
     border-radius: 25px !important;
@@ -1868,8 +1868,8 @@ header {
 
 .mobile-menu-back{
   position: absolute;
-  bottom: 30px;
-  left: 10px;
+  bottom: 44px;
+  left: 25px;
 }
 
 .banner-btn{
