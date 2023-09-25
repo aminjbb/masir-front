@@ -1,7 +1,7 @@
 <template>
     <div class="mt-10 mb-10">
         <v-row justify="center" class="mt-5">
-            <v-col md="6" cols="12">
+            <v-col md="6" cols="11">
                 <v-img
                 :src="require('~/assets/img/HomeService.png')"
                 >
@@ -33,7 +33,7 @@
                 </div>
                 </v-img>
             </v-col>
-            <v-col md="6" cols="12">
+            <v-col md="6" cols="11">
                 <v-img
                 :src="require('~/assets/img/homeShop.png')"
                 >

@@ -1615,6 +1615,11 @@ header {
 }
 
 @media only screen and (max-width: 380px) {
+  .masir-footer .footer-contactus-box{
+    width: 90% !important;
+
+
+  }
   .main-container {
     width: 100% !important;
     margin: auto;
@@ -1863,7 +1868,7 @@ header {
 
 .mobile-menu-back{
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 10px;
 }
 
@@ -2043,4 +2048,8 @@ header {
 }
 .v-main {
   padding: 0!important;
+}
+
+.v-dialog--fullscreen{
+  background: #FFFFFF;
 }

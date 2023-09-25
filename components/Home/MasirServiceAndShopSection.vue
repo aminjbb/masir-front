@@ -63,15 +63,15 @@
                     </span>
           </div>
           <div class=" mt-10">
-            <p class="text-justify t18400">
+            <p class="text-justify t18400 lh-40">
               لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از
             </p>
           </div>
-          <div class="pl-15">
+          <v-row justify="center" >
             <v-btn color="primary" width="240" height="90" outlined class="mt-15 br-20">
               <span class="primary--text t30600">سرویس‌ها</span>
             </v-btn>
-          </div>
+          </v-row>
         </div>
       </v-col>
 
@@ -82,19 +82,19 @@
         <div class=" ">
           <div class="mt-15 ">
                      <span class="t30600">
-                         درباره <span class="primaryYellow--text">فروشگاه</span>های مسیر
+                         درباره <span class="primaryYellow--text">فروشگاه</span>  های مسیر
                      </span>
           </div>
           <div class=" mt-10">
-            <p class="text-justify t18400">
+            <p class="text-justify t18400 lh-40">
               لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از
             </p>
           </div>
-          <div class="pl-15">
+          <v-row justify="center">
             <v-btn color="primary" width="240" height="90" outlined class="mt-15 br-20">
               <span class="primary--text t30600">بازدید از فروشگاه</span>
             </v-btn>
-          </div>
+          </v-row>
         </div>
       </v-col>
 

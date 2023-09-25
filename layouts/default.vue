@@ -31,7 +31,7 @@
           <v-img width="16" :src="item.icon"></v-img>
         </v-list-item-action>
         <v-list-item-content>
-          <v-list-item-title> <span class="t12400">{{ item.title }}</span></v-list-item-title>
+          <v-list-item-title> <span class="t18400">{{ item.title }}</span></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -41,25 +41,18 @@
     </div>
     </v-navigation-drawer>
 
-    <v-navigation-drawer class="d-block d-sm-none" v-model="drawerSearch" :clipped="clipped"  left app
-    style="height:100% ; z-index: 99;">
-      <div class="pa-2 searchBox">
-        <v-col cols="11">
-          <v-text-field
-          placeholder="جست‌و‌جو کنید"
-          clearable
-          filled
-          rounded
-          dense
-        ></v-text-field>
-      </v-col>
-      </div>
-    </v-navigation-drawer>
+
     <v-app-bar class="d-block d-sm-none pr-10 pl-5" :clipped-left="clipped" app color="white" height="75" >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-btn
+        dark
+        @click.stop="drawer = !drawer"
+        icon
+      >
+        <img src="~/assets/img/menu.svg" alt=""  >
+      </v-btn>
       <v-spacer />
-      <img src="~/assets/img/search.svg" alt="" @click.stop="drawerSearch = !drawerSearch"  >
-    </v-app-bar>
+        <ModalSearch/>
+      </v-app-bar>
       <HeaderPage/>
     <v-main>
       <div class="main-container">
@@ -75,11 +68,12 @@
 <script>
 import footerPage from '~/components/Public/footerPage.vue'
 import HeaderPage from '~/components/Public/HeaderPage.vue'
+import ModalSearch from '~/components/Public/ModalSearch.vue'
 export default {
   name: 'DefaultLayout',
   components:{
     footerPage,
-    HeaderPage
+    HeaderPage,ModalSearch
   },
   data () {
     return {
@@ -101,7 +95,7 @@ export default {
         {
           icon: require('~/assets/img/TrafficCone.svg'),
           title: 'سرویس‌ها',
-          to: '/lavean-mag'
+          to: '/service'
         },
         {
           icon: require('~/assets/img/Storefront.svg'),

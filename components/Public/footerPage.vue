@@ -49,12 +49,13 @@
             <v-col md="8" cols="12">
               <v-row justify="space-between" align="center" class="pt-15 px-15 d-none d-md-flex">
                 <v-col cols="6">
-                  <v-row class="">
-                    <v-col cols="4">
+                  <v-row class="pt-12">
+                    <v-col cols="3">
                       <div class="mt-15">
                         <v-list class="background_unset">
 
                           <v-list-item
+                            class="px-0"
                           >
 
                             <v-list-item-content>
@@ -71,6 +72,7 @@
                         <v-list class="background_unset">
 
                           <v-list-item
+                            class="px-0"
                           >
 
                             <v-list-item-content>
@@ -82,11 +84,12 @@
                         </v-list>
                       </div>
                     </v-col>
-                    <v-col cols="4">
-                      <div class="mt-15">
+                    <v-col cols="5">
+                      <div class="mt-15 pr-10">
                         <v-list class="background_unset">
 
                           <v-list-item
+                            class="px-0"
                           >
 
                             <v-list-item-content>
