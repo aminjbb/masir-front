@@ -1727,7 +1727,15 @@ header {
     font-size: 24px;
     font-weight: 600;
   }
+  .vueperslides__inner {
+    height: 520px !important;
+  }
 
+  .vueperslides__parallax-wrapper {
+
+    height: 451px !important;
+
+  }
 
 }
 
@@ -2052,4 +2060,26 @@ header {
 
 .v-dialog--fullscreen{
   background: #FFFFFF;
+}
+.vueperslides__bullet .default{
+  background: #FFC51E !important;
+  /*border: unset !important;*/
+}
+
+
+.vueperslides__bullet--active .default{
+  width: 71px !important;
+  height: 19px !important;
+  background: #0C385F !important;
+  border: unset !important;
+}
+
+.vueperslides__inner {
+    height: 720px ;
+}
+
+.vueperslides__parallax-wrapper {
+
+  height: 633px ;
+
 }
