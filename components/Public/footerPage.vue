@@ -1,7 +1,7 @@
 <template>
   <div class="masir-footer pb-15">
       <v-row justify="center" align="center">
-          <div class="footer-contactus-box">
+          <div class="footer-contactus-box position__relative">
             <div class="d-flex justify-center" >
               <div class="contact-us-title-box text-center pt-5">
                 <span class="t30600 white--text">
@@ -11,7 +11,7 @@
 
 
             </div>
-            <v-row justify="center" class="px-13 mt-10" id="contactUsForm">
+            <v-row justify="center" class="px-13 mt-10 " id="contactUsForm">
               <v-col class="pa-2" md="6" cols="12">
                 <v-text-field
                   outlined
@@ -26,7 +26,7 @@
                   label="ایمیل"
                 ></v-text-field>
               </v-col>
-              <v-col class="pa-2 pt-0" cols="12">
+              <v-col class="pa-2 pt-0 mb-sm-10" cols="12">
                 <v-textarea
                   outlined
                   color="white"
@@ -37,7 +37,14 @@
 
             </v-row>
 
-            <v-row justify="end" class="pb-10 pt-5 pl-13">
+            <v-row justify="end" class="pb-10 pt-5 pl-13 d-none d-md-flex">
+              <v-btn color="primaryYellow" width="183" height="74" class="br-15">
+                <span class="t24600">
+                    ارسال
+                </span>
+              </v-btn>
+            </v-row>
+            <v-row justify="center" class="pb-10 pt-5 d-flex d-sm-none position__absolute" style="right: 109px;bottom: -81px;">
               <v-btn color="primaryYellow" width="183" height="74" class="br-15">
                 <span class="t24600">
                     ارسال
@@ -157,12 +164,12 @@
 
                 </v-col>
               </v-row>
-              <v-row justify="center" align="center" class="d-block d-sm-none px-10 mt-5">
+              <v-row justify="center" align="center" class="d-block d-sm-none mt-15">
                 <v-col cols="12">
-                  <div class="my-10">
+                  <div class="my-10  px-10 ">
                     <img width="274" src="~/assets/img/footerLogo.png" alt="">
                   </div>
-                  <v-row justify="center">
+                  <v-row justify="center" class=" px-10 ">
                     <v-col cols="6">
                     <span class="t24600 white--text">
                       شماره تماس:
@@ -187,12 +194,13 @@
                 </v-col>
 
                 <v-col cols="12">
-                  <v-row>
+                  <v-row class=" px-10">
                     <v-col cols="6">
                       <div class="mt-15">
                         <v-list class="background_unset">
 
                           <v-list-item
+                            class="px-0"
                           >
 
                             <v-list-item-content>
@@ -209,6 +217,7 @@
                         <v-list class="background_unset">
 
                           <v-list-item
+                            class="px-0"
                           >
 
                             <v-list-item-content>
@@ -224,7 +233,7 @@
                     </v-col>
 
                   </v-row>
-                  <v-row justify="center">
+                  <v-row justify="center" class="px-10">
                     <v-col cols="12" class="mt-5">
                       <div class="text-center">
                       <span class="t24600 white--text">
@@ -250,7 +259,7 @@
                     <v-col cols="12" class="mt-5">
                       <div class="text-center">
                        <span class="t14400 white--text">
-                        powered by hMS Innovation
+                        powered by HMS Innovation
                      </span>
                       </div>
                     </v-col>
