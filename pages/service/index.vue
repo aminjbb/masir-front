@@ -3,7 +3,7 @@
     <v-col cols="12" >
       <Servicebanner/>
     </v-col>
-    <v-col cols="12" >
+    <v-col cols="12" class="my-10">
       <Services/>
     </v-col>
     <v-col cols="10" >

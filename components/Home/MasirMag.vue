@@ -1,6 +1,6 @@
 <template>
     <div class="mt-15 mb-15">
-       <v-card height="468" width="360" class="br-50 mx-3 d-none d-md-flex">
+        <v-card height="468" width="360" class="br-50 mx-3 d-none d-md-block">
         <img width="360" src="~/assets/img/MagImage.png" alt="" class="br-unset">
         <div class="text-center mt-8">
             <span class="t22600">
@@ -20,7 +20,7 @@
            </v-btn>
         </div>
        </v-card>
-      <v-card height="468" width="313" class="br-50 mx-3 d-block d-sm-none">
+        <v-card height="468" width="313" class="br-50 mx-3 d-block d-sm-none">
         <img width="313" src="~/assets/img/MagImage.png" alt="" class="br-unset">
         <div class="text-center mt-8">
             <span class="t20600">

@@ -1,14 +1,10 @@
 <template >
-<!--    <div>-->
-<!--
-  </div>-->
-
   <div >
     <vueper-slides class="no-shadow pa-0"  height="900" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
                    :arrows="false">
       <vueper-slide  >
         <template #content>
-          <v-row justify="center" class="mt-5">-->
+          <v-row justify="center" class="mt-5">
 
                         <div class="text-center position__relative">
                             <img width="874" height="479" src="~/assets/img/HomeBanner.png" alt="" class="d-none d-md-block">
@@ -39,7 +35,7 @@
       </vueper-slide>
       <vueper-slide  >
         <template #content>
-          <v-row justify="center" class="mt-5">-->
+          <v-row justify="center" class="mt-5">
 
                         <div class="text-center position__relative">
                             <img width="874" height="479" src="~/assets/img/HomeBanner.png" alt="" class="d-none d-md-block">

@@ -130,15 +130,15 @@
                     <v-col cols="12" class="mt-5">
                       <div>
                        <span class="t14400 white--text">
-                        powered by hMS Innovation
+                        powered by HMS Innovation
                      </span>
                       </div>
                     </v-col>
                   </v-row>
                 </v-col>
                 <v-col cols="5" class="pr-15">
-                  <div class="mb-4 mt-5">
-                    <img src="~/assets/img/footerLogo.png" alt="">
+                  <div class="mb-4 mt-8">
+                    <img style="    width: 304px;" src="~/assets/img/footerLogo.png" alt="">
                   </div>
                   <v-row justify="center">
                     <v-col cols="6">
@@ -258,9 +258,9 @@
                     </v-col>
                     <v-col cols="12" class="mt-5">
                       <div class="text-center">
-                       <span class="t14400 white--text">
-                        powered by HMS Innovation
-                     </span>
+                         <span class="t14400 white--text">
+                          powered by HMS Innovation
+                       </span>
                       </div>
                     </v-col>
                   </v-row>
