@@ -4,7 +4,7 @@
      <DriverCard/>
      <DriverCard/>
    </v-row>
-   <v-row justify="center" class="mt-15 mb-15 d-flex d-md-none" >
+   <v-row justify="center" class="mt-15 mb-5 d-flex d-md-none" >
      <DriverCardMobile/>
      <DriverCardMobile/>
    </v-row>
@@ -15,7 +15,7 @@
         </span>
      </v-btn>
    </v-row>
-   <v-row justify="center" class="mt-15 d-flex d-md-none" >
+   <v-row justify="center" class=" d-flex d-md-none" >
      <v-btn color="primary" width="164" height="66" class="br-15">
         <span class="t20600 white--text">
           بیشتر

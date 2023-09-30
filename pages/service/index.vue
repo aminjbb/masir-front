@@ -8,7 +8,7 @@
     </v-col>
     <v-col cols="10" >
       <div class="text-center my-15">
-        <v-avatar color="primaryYellow" size="20" class=" my-15"></v-avatar>
+        <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
       </div>
     </v-col>
     <v-col cols="10" >
@@ -22,6 +22,12 @@
     <v-col cols="10" >
       <RequestMasir/>
 
+    </v-col>
+
+    <v-col cols="10" >
+      <div class="text-center my-15">
+        <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
+      </div>
     </v-col>
     <v-col cols="10" >
       <Accordion/>

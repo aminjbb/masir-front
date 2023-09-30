@@ -264,6 +264,10 @@ p {
   font-size: 16px !important;
   font-weight: 400 !important;
 }
+.t16300 {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+}
 
 .t14800 {
   font-size: 14px !important;
@@ -350,6 +354,9 @@ p {
 
 .lh-40{
   line-height: 40px !important;
+}
+.lh-28{
+  line-height: 28px !important;
 }
 
 .font-weight-300 {

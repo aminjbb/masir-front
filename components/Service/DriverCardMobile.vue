@@ -4,7 +4,7 @@
     <div class="d-flex justify-center">
       <img class="avatar-img" src="~/assets/img/untitled-design-98-2.png" alt="">
     </div>
-    <div class="text-right mt-5">
+    <div class="text-right pr-5 mt-5">
          <span class="t24600 primary--text">
            عباس قادری
          </span>

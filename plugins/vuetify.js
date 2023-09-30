@@ -16,6 +16,8 @@ export default (ctx) => {
           primaryYellow: "#FFC51E",
           success: "#1BA94C",
           secondary: "#9BA5B7",
+          secondary2: "#9E9E9E",
+          cultured: "#F5F5F5",
 
         },
         dark: {},

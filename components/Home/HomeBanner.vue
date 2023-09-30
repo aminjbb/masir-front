@@ -1,5 +1,5 @@
 <template >
-  <div >
+  <div  class="mt-15">
     <vueper-slides class="no-shadow pa-0"  height="900" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
                    :arrows="false">
       <vueper-slide  >

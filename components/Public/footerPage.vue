@@ -26,7 +26,7 @@
                   label="ایمیل"
                 ></v-text-field>
               </v-col>
-              <v-col class="pa-2 pt-0 mb-sm-10" cols="12">
+              <v-col class="pa-2 pt-0 mb-md-0 mb-sm-10" cols="12">
                 <v-textarea
                   outlined
                   color="white"
@@ -37,14 +37,14 @@
 
             </v-row>
 
-            <v-row justify="end" class="pb-10 pt-5 pl-13 d-none d-md-flex">
+            <v-row justify="end" class="pb-15 pl-13 d-none d-md-flex">
               <v-btn color="primaryYellow" width="183" height="74" class="br-15">
                 <span class="t24600">
                     ارسال
                 </span>
               </v-btn>
             </v-row>
-            <v-row justify="center" class="pb-10 pt-5 d-flex d-sm-none position__absolute" style="right: 109px;bottom: -81px;">
+            <v-row justify="center" class="pb-10 pt-5 d-flex d-sm-none position__absolute" style="right: 109px;bottom: -64px;">
               <v-btn color="primaryYellow" width="183" height="74" class="br-15">
                 <span class="t24600">
                     ارسال
@@ -54,7 +54,7 @@
 
           </div>
             <v-col md="8" cols="12">
-              <v-row justify="space-between" align="center" class="pt-15 px-15 d-none d-md-flex">
+              <v-row justify="space-between" align="center" class="px-15 d-none d-md-flex">
                 <v-col cols="6">
                   <v-row class="pt-12">
                     <v-col cols="3">
