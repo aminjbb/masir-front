@@ -23,9 +23,9 @@
       </div>
 
       <v-divider></v-divider>
-      <v-list class="px-8 mt-5">
+      <v-list class="px-8 mt-5" id="mobileHeader">
 
-        <v-list-item class="my-2" v-for="(item, i) in items" :key="i" :to="item.to" router exact
+        <v-list-item  class="my-2" v-for="(item, i) in items" :key="i" :to="item.to" router exact
                      style="height: 26px; border-radius: 13px;" v-model="page">
           <v-list-item-action>
             <v-img width="16" :src="item.icon"></v-img>
@@ -50,6 +50,8 @@
       >
         <img src="~/assets/img/menu.svg" alt=""  >
       </v-btn>
+      <v-spacer />
+      <img src="~/assets/img/mobileHeaderLogo.png" alt="">
       <v-spacer />
       <ModalSearch/>
     </v-app-bar>

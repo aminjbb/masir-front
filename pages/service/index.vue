@@ -29,7 +29,7 @@
         <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
       </div>
     </v-col>
-    <v-col cols="10" >
+    <v-col md="10" cols="12" >
       <Accordion/>
 
     </v-col>
