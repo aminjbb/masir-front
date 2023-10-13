@@ -166,7 +166,7 @@
     <v-row justify="center">
       <div class="create-service-card mt-13">
         <v-row justify="center" align="center">
-          <v-col md="6" cols="12">
+          <v-col md="6" cols="12" class="px-12">
             <div class="text-right pr-4">
               <span class="t18400 primary--text">انتخاب نوع وسیله</span>
             </div>
@@ -191,16 +191,20 @@
             </div>
           </v-col>
           <v-col md="6" cols="12">
-           <v-row align="center" class="pr-5">
-             <span class="primary--text t18400">
+           <v-row align="center" class="pr-5 ">
+           <v-col md="8" cols="6" class="py-0">
+               <span class="primary--text t18400">
 آیا وسیله شما دارای معاینه فنی سلامت می‌باشد؟
              </span>
+           </v-col>
 
+           <v-col md="1" cols="6" class="py-0">
              <v-switch
                inset
                class="mr-10"
                color="primary"
              ></v-switch>
+           </v-col>
            </v-row>
           </v-col>
 
@@ -208,14 +212,14 @@
 
             <div class="">
               <v-row justify="center" class="pl-2 pt-2  d-none d-md-flex" >
-                <v-card outlined width="104" height="104" class="br-15 mx-4 d-flex align-center justify-center">
+                <v-card outlined width="141" height="141" class="br-15 mx-2 d-flex align-center justify-center">
                   <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                 </v-card>
-                <div class="mx-4">
-                  <img  width="104" height="104" src="~/assets/img/addService.png" alt="">
+                <div class="mx-2">
+                  <img  width="141" height="141" src="~/assets/img/addService.png" alt="">
                 </div>
-                <div class="mx-4">
-                  <img  width="104" height="104" src="~/assets/img/addService.png" alt="">
+                <div class="mx-2">
+                  <img  width="141" height="141" src="~/assets/img/addService.png" alt="">
                 </div>
               </v-row>
               <v-row justify="center" class="pl-2 pt-2  d-flex d-md-none" >
@@ -240,19 +244,21 @@
               <v-row justify="center" class="pl-2 pt-2">
 
                <v-col cols="6" md="5">
-                 <v-card outlined width="104" height="104" class="br-15 mx-4 d-flex align-center justify-center">
+                 <v-card outlined width="141" height="141" class="br-15 mx-4 d-flex align-center justify-center">
                    <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                  </v-card>
                  <div class="text-right pr-4 mt-5">
-                   <span class="t18400 primary--text">تصاویر گواهینامه</span>
+                   <span class="t18400 primary--text d-none d-md-block">تصاویر گواهینامه</span>
+                   <span class="t16400 primary--text d-block d-md-none">تصاویر گواهینامه</span>
                  </div>
                </v-col>
                 <v-col cols="6" md="5">
-                 <v-card outlined width="104" height="104" class="br-15 mx-4 d-flex align-center justify-center">
+                 <v-card outlined width="141" height="141" class="br-15 mx-4 d-flex align-center justify-center">
                    <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                  </v-card>
-                  <div class="text-right pr-4 mt-5">
-                    <span class="t18400 primary--text">تصاویر برگه معاینه فنی</span>
+                  <div class="text-right  mt-5">
+                    <span class="t18400 primary--text d-none d-md-block">تصاویر برگه معاینه فنی</span>
+                    <span class="t16400 primary--text d-block d-md-none">تصاویر برگه معاینه فنی</span>
                   </div>
                </v-col>
               </v-row>
@@ -261,43 +267,41 @@
           </v-col>
 
         </v-row>
-        <div class="px-15 d-none d-md-block">
-          <v-row justify="space-between" class="px-15 py-10">
-            <v-btn outlined color="primary" width="301" height="87" class="br-20">
+
+      </div>
+      <v-row justify="space-between" class="px-15 py-10 d-none d-md-flex">
+        <v-btn outlined color="primary" width="301" height="87" class="br-20">
               <span class="ml-5">
                 <v-icon>mdi-plus-circle-outline</v-icon>
               </span>
-              <span class="t18400 primary--text">
+          <span class="t18400 primary--text">
                  افزودن وسیله اضافه
               </span>
 
-            </v-btn>
-            <v-btn color="primaryYellow" width="251" height="101" class="br-20">
+        </v-btn>
+        <v-btn color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
                  ثبت پروژه
               </span>
-            </v-btn>
-          </v-row>
-        </div>
-        <div class="px-15 d-block d-md-none">
-          <v-row justify="center" class="px-15 py-10">
-            <v-btn outlined color="primary" width="301" height="87" class="br-20">
+        </v-btn>
+      </v-row>
+      <v-row justify="center" class="px-15 py-10 d-flex d-md-none">
+        <v-btn outlined color="primary" width="301" height="87" class="br-20">
               <span class="ml-5">
                 <v-icon>mdi-plus-circle-outline</v-icon>
               </span>
-              <span class="t18400 primary--text">
+          <span class="t18400 primary--text">
                   افزودن وسیله اضافه
               </span>
 
-            </v-btn>
-            <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
+        </v-btn>
+        <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
               <span class="t30600 primary--text">
                  ثبت پروژه
               </span>
-            </v-btn>
-          </v-row>
-        </div>
-      </div>
+        </v-btn>
+      </v-row>
+
     </v-row>
   </div>
 </template>

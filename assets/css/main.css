@@ -1668,6 +1668,14 @@ header {
     width: 100%;
     border:unset !important; ;
     padding: 10px !important;
+
+  }
+  .bg-cultured{
+    background: #F5F5F5;
+    padding-top: 30px !important;
+    border-radius: 15px !important;
+    width: 100% !important;
+
   }
   .masir-footer .footer-contactus-box {
     width: 70%;
@@ -1678,7 +1686,7 @@ header {
   }
 
   .masir-footer .footer-contactus-box{
-    width: 90% !important;
+    width: 86% !important;
 
 
   }
@@ -1711,8 +1719,8 @@ header {
 
   .about-box-img-down {
     position:absolute;
-    right: 30px !important;
-    bottom: 61px;
+    right: 25px !important;
+    bottom: 31px !important;
     width: 85% !important;
     height: 130px !important;
     border-radius: 25px!important;
@@ -1721,8 +1729,8 @@ header {
   }
   .about-box-img-up {
     position: absolute;
-    right: 30px !important;
-    top: 61px;
+    right: 27px !important;
+    top: 22px !important;
     width: 85% !important;
     height: 130px !important;
     border-radius: 25px !important;
@@ -2190,7 +2198,7 @@ header {
 .add-service-type-box {
   border-radius: 50px;
   border: 1px solid  #E0E0E0;
-  width: 80%;
+  width: 95%;
 
   padding: 40px 16px;
 }

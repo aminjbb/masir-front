@@ -36,17 +36,17 @@
                </span>
         </v-row>
       </div>
-      <v-row justify="end" class="mt-5">
+      <v-row justify="end">
 
-        <v-row class="rating-box-mobile pr-2">
-          <div class="mx-2"><img src="~/assets/img/heart.png" alt=""></div>
-          <div class="mx-2"><img src="~/assets/img/heartY.png" alt=""></div>
-          <div class="mx-2"><img src="~/assets/img/heartY.png" alt=""></div>
-          <div class="mx-2"><img src="~/assets/img/heartY.png" alt=""></div>
-          <div class="mx-2"><img src="~/assets/img/heartY.png" alt=""></div>
+        <v-row class="rating-box-mobile pr-5">
+          <div class="mx-1"><img src="~/assets/img/heart.png" alt=""></div>
+          <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
+          <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
+          <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
+          <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
 
         </v-row>
-        <div>
+        <div class="ml-2">
           <div class="mt-15">
             <v-row  align="center" class="pr-15">
                   <span class="t14400 success--text mx-3">

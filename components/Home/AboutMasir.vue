@@ -11,7 +11,7 @@
                             نیروی متخصص
                         </span>
                     </div>
-                  <div class="text-rigth d-block d-sm-none pr-5 pt-5">
+                  <div class="text-rigth d-block d-sm-none pr-5 mt-8">
                         <span class="white--text t20600">
                             نیروی متخصص
                         </span>
@@ -21,7 +21,7 @@
                             ایجاد پروژه برای نیروی متخصص
                         </span>
                     </div>
-                  <div class="text-right d-block d-sm-none px-5 mt-3 pt-2">
+                  <div class="text-right d-block d-sm-none px-5 mt-3 ">
                         <span class="white--text t18600">
                             ایجاد پروژه برای نیروی متخصص
                         </span>

@@ -137,7 +137,7 @@
       </div>
     </div>
     <v-row justify="center">
-      <div class="create-service-card mt-13 ">
+      <div class="create-service-card bg-cultured mt-13 ">
         <v-row justify="center" align="center" >
           <v-col  md="6" cols="12">
             <div class="text-right pr-4">
@@ -228,43 +228,40 @@
             </v-row>
           </div>
         </v-row>
-        <div class="px-15 d-none d-md-block">
-          <v-row justify="space-between" class="px-15 py-10">
-            <v-btn outlined color="primary" width="301" height="87" class="br-20">
-              <span class="ml-5">
-                <v-icon>mdi-plus-circle-outline</v-icon>
-              </span>
-              <span class="t18400 primary--text">
-                  افزودن سرویس اضافه
-              </span>
-
-            </v-btn>
-            <v-btn color="primaryYellow" width="251" height="101" class="br-20">
-              <span class="t30600 primary--text">
-                 ثبت پروژه
-              </span>
-            </v-btn>
-          </v-row>
-        </div>
-        <div class="px-15 d-block d-md-none">
-          <v-row justify="center" class="px-15 py-10">
-            <v-btn outlined color="primary" width="301" height="87" class="br-20">
-              <span class="ml-5">
-                <v-icon>mdi-plus-circle-outline</v-icon>
-              </span>
-              <span class="t18400 primary--text">
-                  افزودن سرویس اضافه
-              </span>
-
-            </v-btn>
-            <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
-              <span class="t30600 primary--text">
-                 ثبت پروژه
-              </span>
-            </v-btn>
-          </v-row>
-        </div>
       </div>
+      <v-row justify="space-between" class="px-15 py-10 d-none d-md-flex">
+        <v-btn outlined color="primary" width="301" height="87" class="br-20">
+              <span class="ml-5">
+                <v-icon>mdi-plus-circle-outline</v-icon>
+              </span>
+          <span class="t18400 primary--text">
+                   افزودن سرویس اضافه
+              </span>
+
+        </v-btn>
+        <v-btn color="primaryYellow" width="251" height="101" class="br-20">
+              <span class="t30600 primary--text">
+                 ثبت پروژه
+              </span>
+        </v-btn>
+      </v-row>
+      <v-row justify="center" class="px-15 py-10 d-flex d-md-none">
+        <v-btn outlined color="primary" width="301" height="87" class="br-20">
+              <span class="ml-5">
+                <v-icon>mdi-plus-circle-outline</v-icon>
+              </span>
+          <span class="t18400 primary--text">
+                  افزودن وسیله اضافه
+              </span>
+
+        </v-btn>
+        <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
+              <span class="t30600 primary--text">
+                 ثبت پروژه
+              </span>
+        </v-btn>
+      </v-row>
+
     </v-row>
   </div>
 </template>

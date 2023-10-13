@@ -42,7 +42,7 @@
     </v-navigation-drawer>
 
 
-    <v-app-bar class="d-block d-sm-none pr-10 pl-5" :clipped-left="clipped" app color="white" height="75" >
+    <v-app-bar class="d-block d-sm-none pr-5 pl-5" :clipped-left="clipped" app color="white" height="75" >
       <v-btn
         dark
         @click.stop="drawer = !drawer"
@@ -52,7 +52,7 @@
       </v-btn>
 
       <v-spacer />
-      <img src="~/assets/img/mobileHeaderLogo.png" alt="">
+      <img class="mt-2 mr-2" src="~/assets/img/mobileHeaderLogo.png" alt="">
       <v-spacer />
         <ModalSearch/>
       </v-app-bar>
