@@ -117,7 +117,7 @@
             <div class="my-10  px-10 ">
               <img width="274" src="~/assets/img/footerLogo.png" alt="">
             </div>
-            <v-row justify="center" class=" px-10 ">
+            <v-row justify="center" class=" px-5 ">
               <v-col cols="6">
                     <span class="t24600 white--text">
                       شماره تماس:
@@ -142,7 +142,7 @@
           </v-col>
 
           <v-col cols="12">
-            <v-row class=" px-10">
+            <v-row class=" px-9">
               <v-col cols="6">
                 <div class="mt-15">
                   <v-list class="background_unset">
@@ -155,6 +155,7 @@
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text"> درباره ما</span></v-list-item-title>
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text">تماس با ما</span></v-list-item-title>
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text">چرا مسیر</span></v-list-item-title>
+                        <v-list-item-title class="mt-5"> <span class="t16400 white--text">پرسش و پاسخ</span></v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -173,7 +174,7 @@
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای خرید</span></v-list-item-title>
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text">راهنمای استرداد</span></v-list-item-title>
                         <v-list-item-title class="mt-5"> <span class="t16400 white--text">قوانین و مقررات</span></v-list-item-title>
-                        <v-list-item-title class="mt-5"> <span class="t16400 white--text">پرسش و پاسخ</span></v-list-item-title>
+
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -197,8 +198,8 @@
 
                 </v-row>
               </v-col>
-              <v-col cols="12" class="mt-5">
-                <div class="text-justify">
+              <v-col cols="12" class="mt-5 px-0">
+                <div class="text-center">
                        <span class="t14400 white--text">
                        کلیه حقوق این سرویس (وب‌سایت و اپلیکیشن‌های موبایل) محفوظ و متعلق به شرکت مسیر می‌باشد.
                      </span>

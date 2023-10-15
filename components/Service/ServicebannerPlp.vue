@@ -173,7 +173,6 @@
       </vueper-slide>
 
     </vueper-slides>
-
   </div>
 </template>
 <script>

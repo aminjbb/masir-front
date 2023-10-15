@@ -4,8 +4,8 @@
              <span class="t40600 primary--text  d-none d-md-block">
                     درخواست سرویس از مسیر به چه صورت است؟
              </span>
-              <span class="t24600 primary--text  d-block d-sm-none px-8">
-                  درخواست سرویس از مسیر به چه صورت است؟
+              <span class="t24600 primary--text  d-block d-sm-none ">
+                  درخواست <span class="primaryYellow--text">سرویس</span> از مسیر به چه صورت است؟
              </span>
       <div class="request-masir-svg-position">
         <img src="~/assets/img/WhyMasirSvg.svg" alt="">

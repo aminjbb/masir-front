@@ -58,7 +58,7 @@
       <v-col cols="12">
         <div class=" ">
           <div class="mt-15 ">
-                    <span class="t30600">
+                    <span class="t24600">
                         درباره <span class="primaryYellow--text">سرویس‌</span>های مسیر
                     </span>
           </div>
@@ -81,7 +81,7 @@
       <v-col cols="12">
         <div class=" ">
           <div class="mt-15 ">
-                     <span class="t30600">
+                     <span class="t24600">
                          درباره <span class="primaryYellow--text">فروشگاه</span>  های مسیر
                      </span>
           </div>

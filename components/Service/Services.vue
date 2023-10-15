@@ -1,7 +1,7 @@
 <template>
   <div class="my-15">
     <v-row justify="center" class="mt-15 d-none d-md-flex">
-      <v-col  @click="$router.push('/service/add')"  cols="5" class="d-flex justify-center">
+      <v-col  @click="$router.push('/service/add')"  cols="6" class="d-flex justify-center">
        <v-row justify="start">
          <div class="service__service-box position__relative">
           <span class="t40600 primary--text ">
@@ -14,7 +14,7 @@
        </v-row>
 
       </v-col>
-      <v-col @click="$router.push('/register-contractors')" cols="5" class="d-flex justify-center">
+      <v-col @click="$router.push('/register-contractors')" cols="6" class="d-flex justify-center">
        <v-row justify="end">
          <div class="service__service-box position__relative">
           <span class="t40600 primary--text">

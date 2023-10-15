@@ -44,7 +44,7 @@
                 </span>
               </v-btn>
             </v-row>
-            <v-row justify="center" class="pb-10 pt-5 d-flex d-sm-none position__absolute" style="right: 109px;bottom: -64px;">
+            <v-row justify="center" class="pb-10 pt-5 d-flex d-sm-none position__absolute" style="left:0; right :0; bottom: -64px;">
               <v-btn color="primaryYellow" width="183" height="74" class="br-15">
                 <span class="t24600">
                     ارسال

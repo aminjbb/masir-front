@@ -23,7 +23,7 @@
                                     با ایجاد پروژه در مسیر می‌توانید افراد متخصص پیدا کنید.
                                 </span>
                             </div>
-                            <v-btn @click="$router.push('/service/list')" color="primary" width="240" height="90" outlined class="mt-md-15 mt-sm-1 br-20 banner-btn">
+                            <v-btn @click="$router.push('/service')" color="primary" width="240" height="90" outlined class="mt-md-15 mt-sm-1 br-20 banner-btn">
                                 <span class="primary--text t30600">سرویس‌ها</span>
                             </v-btn>
 
@@ -54,7 +54,7 @@
                                     با ایجاد سرویس در مسیر می‌توانید افراد متخصص پیدا کنید.
                                 </span>
                             </div>
-                            <v-btn  @click="$router.push('/service/list')"  color="primary" width="240" height="90" outlined class="mt-md-15 mt-sm-1 br-20 banner-btn">
+                            <v-btn  @click="$router.push('/service')"  color="primary" width="240" height="90" outlined class="mt-md-15 mt-sm-1 br-20 banner-btn">
                                 <span class="primary--text t30600">سرویس‌ها</span>
                             </v-btn>
 

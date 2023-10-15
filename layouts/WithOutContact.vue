@@ -57,9 +57,9 @@
     </v-app-bar>
     <HeaderPage/>
     <v-main>
-      <v-container>
+      <div class="main-container">
         <Nuxt />
-      </v-container>
+      </div>
     </v-main>
     <FooterWithOutContact/>
 

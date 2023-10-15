@@ -1385,7 +1385,7 @@ header {
 
 .headr-active {
   border-bottom: 3px solid #FFC51E !important;
-  padding-top: 7px;
+  padding-top: 2px;
 }
 
 .blog-banner {
@@ -1615,6 +1615,10 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+  .bg-cultured .v-text-field--outlined fieldset{
+    border-color: #F5F5F5 !important;
+    border-radius: 20px !important;
+  }
   .service__plp-filter-box{
     width: 90% !important;
     overflow-x: auto !important;
@@ -1627,7 +1631,7 @@ header {
     left: 20px !important;
   }
   .service__plp-banner-card{
-    width: 95% !important;
+    width: 90% !important;
     height: 70px !important;
 
   }
@@ -1817,7 +1821,7 @@ header {
 
 .about-box-img-up {
   position:absolute;
-  right: 40px;
+  right: 30px;
   top: 61px;
   width: 525px;
   height: 208px;
@@ -2046,7 +2050,6 @@ header {
 }
 
 .service__top-diver-box{
-  width: 528px;
 
   background-color: #ffffff;
   border-radius: 40px;
@@ -2092,6 +2095,7 @@ header {
 .panel {
   width: 100%;
   height: 237px;
+  display: none;
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
   background:  #FFC51E;
@@ -2278,4 +2282,15 @@ header {
   border-radius: 44.5px;
   border: 1px solid #E0E0E0;
   background:  #F5F5F5;
+}
+
+.discount-box{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFC51E;
+
+}
+.v-menu__content{
+  margin-top: 50px !important;
 }

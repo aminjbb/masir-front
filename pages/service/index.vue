@@ -25,6 +25,17 @@
       </div>
       <TopDiriver/>
     </v-col>
+    <v-col cols="10" class="d-none d-md-block" >
+      <div class="text-center my-15 ">
+        <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
+      </div>
+
+    </v-col>
+    <v-col cols="10" class="d-block d-md-none py-0" >
+      <div class="text-center ">
+        <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
+      </div>
+    </v-col>
     <v-col cols="10" >
       <RequestMasir/>
 

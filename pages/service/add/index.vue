@@ -136,141 +136,61 @@
         </span>
       </div>
     </div>
-    <v-row justify="center">
-      <div class="create-service-card bg-cultured mt-13 ">
-        <v-row justify="center" align="center" >
-          <v-col  md="6" cols="12">
-            <div class="text-right pr-4">
-              <span class="t18400 primary--text">انتخاب نوع سرویس</span>
-            </div>
-            <div class="mt-5">
-              <v-select
-                placeholder="انتخاب نوع سرویس"
-                outlined
-                append-icon="mdi-chevron-down-circle-outline"
-                :items="items"
-              >
-                <template v-slot:item="{ props, item }" class="pa-0">
+    <ProjectSection v-for="(project , index) in projects" :key="`project${index}`"/>
 
-                <div class="v-menu-content-box pa-5">
-                 <span class="white--text">
-                    {{item}}
-                 </span>
-
-                </div>
-
-                </template>
-              </v-select>
-            </div>
-          </v-col>
-          <v-col  md="6" cols="12">
-            <div class="text-right pr-4">
-              <span class="t18400 primary--text">بودجه مد نظر شما</span>
-            </div>
-            <div class="mt-5">
-              <v-text-field
-                placeholder="انتخاب محدوده"
-                outlined
-              ></v-text-field>
-            </div>
-          </v-col>
-        </v-row>
-        <v-row justify="center">
-          <div class="add-service-type-box">
-            <v-row justify="center">
-              <v-col md="6" cols="12" class="py-0">
-                <v-text-field
-                  placeholder="شکل زمین از نظر پستی و بلندی را بنویسید"
-                  outlined
-                ></v-text-field>
-              </v-col>
-              <v-col  md="6" cols="12" class="py-0">
-                <v-text-field
-                  placeholder="حجم خاک برداری را به متر مکعب بنویسید"
-                  outlined
-                ></v-text-field>
-              </v-col>
-              <v-col  md="6" cols="12" class="py-0">
-                <v-text-field
-                  placeholder="رمپ پروژه در انتها میماند و یا خیر؟"
-                  outlined
-                ></v-text-field>
-              </v-col>
-              <v-col  md="6" cols="12" class="py-0 px-10">
-                <v-row justify="space-between" align="center">
-                  <span class="t18400 primary--text">
-                    تصاویر پروژه:
-                  </span>
-                <div class="mt-mobile-5">
-                  <v-row class="pl-2 pt-2">
-                    <v-card outlined width="87" height="87" class="br-15 mx-1">
-                      <v-row justify="center" align="center" class="pt-6">
-                        <img src="~/assets/img/PlusCircleBlack.svg" alt="">
-                      </v-row>
-                    </v-card>
-                    <div class="mx-1">
-                      <img src="~/assets/img/addService.png" alt="">
-                    </div>
-                    <div class="mx-1">
-                      <img src="~/assets/img/addService.png" alt="">
-                    </div>
-                  </v-row>
-                </div>
-                </v-row>
-              </v-col>
-              <v-col cols="12" class="py-0 mt-mobile-10">
-                <v-textarea
-
-                  placeholder="توضیحات تکمیلی جهت پیدا کردن نیروی بهتر را وارد فرمایید"
-                  outlined
-                ></v-textarea>
-              </v-col>
-            </v-row>
-          </div>
-        </v-row>
-      </div>
-      <v-row justify="space-between" class="px-15 py-10 d-none d-md-flex">
-        <v-btn outlined color="primary" width="301" height="87" class="br-20">
+    <v-row justify="space-between" class="px-15 py-10 d-none d-md-flex">
+      <v-btn @click="addProject()" outlined color="primary" width="301" height="87" class="br-20">
               <span class="ml-5">
                 <v-icon>mdi-plus-circle-outline</v-icon>
               </span>
-          <span class="t18400 primary--text">
+        <span class="t18400 primary--text">
                    افزودن سرویس اضافه
               </span>
 
-        </v-btn>
-        <v-btn color="primaryYellow" width="251" height="101" class="br-20">
+      </v-btn>
+      <v-btn color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
                  ثبت پروژه
               </span>
-        </v-btn>
-      </v-row>
-      <v-row justify="center" class="px-15 py-10 d-flex d-md-none">
-        <v-btn outlined color="primary" width="301" height="87" class="br-20">
+      </v-btn>
+    </v-row>
+    <v-row justify="center" class="px-15 py-10 d-flex d-md-none">
+      <v-btn @click="addProject()" outlined color="primary" width="301" height="87" class="br-20">
               <span class="ml-5">
                 <v-icon>mdi-plus-circle-outline</v-icon>
               </span>
-          <span class="t18400 primary--text">
+        <span class="t18400 primary--text">
                   افزودن وسیله اضافه
               </span>
 
-        </v-btn>
-        <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
+      </v-btn>
+      <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
               <span class="t30600 primary--text">
                  ثبت پروژه
               </span>
-        </v-btn>
-      </v-row>
-
+      </v-btn>
     </v-row>
   </div>
 </template>
 
 <script>
+import ProjectSection from '~/components/Service/ProjectSection.vue'
 export default {
+  components:{ProjectSection},
 data(){return{
-  items:['test' , 'tesst']
+  items:['test' , 'tesst'],
+  projects:[
+    {name:''}
+  ]
 }},
+  methods:{
+    addProject(){
+      const form = {name:''}
+      this.projects.push(form)
+    },
+
+
+  },
   layout:'WithOutContact'
 }
 </script>

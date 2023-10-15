@@ -81,6 +81,7 @@
         acc[i].addEventListener("click", function() {
           this.classList.toggle("active");
           var panel = this.nextElementSibling;
+          console.log( this.nextElementSibling , 'nextElementSibling')
           if (panel.style.display === "block") {
             panel.style.display = "none";
           } else {

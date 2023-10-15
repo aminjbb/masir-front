@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" class="px-0 mx-0" >
+    <v-col cols="12" >
       <ServicebannerPlp/>
     </v-col>
     <v-col cols="12" class="my-10">
@@ -14,16 +14,16 @@
                 color="primaryYellow"
                 group
               >
-                <v-btn class="br-10 mx-md-10 mx-4">
+                <v-btn class="br-10">
                   <span class="t18400 primary--text ">وسیله</span>
                 </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
+                <v-btn  class="br-10">
                   <span class="t18400 primary--text ">راننده</span>
                 </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
+                <v-btn  class="br-10">
                   <span class="t18400 primary--text ">محدوده فعالیت</span>
                 </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
+                <v-btn  class="br-10">
                   <span class="t18400 primary--text ">زمینه فعالیت</span>
                 </v-btn>
               </v-btn-toggle>
@@ -33,10 +33,13 @@
         </v-row>
 
         <v-row justify="center" class="mt-15  d-none d-md-flex">
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
+          <v-col cols="4" class="mt-15 pt-10">
+            <ProductCard class="d-none d-md-block"/>
+          </v-col><v-col cols="4" class="mt-15 pt-10">
+            <ProductCard class="d-none d-md-block"/>
+          </v-col><v-col cols="4" class="mt-15 pt-10">
+            <ProductCard class="d-none d-md-block"/>
+          </v-col>
 
         </v-row>
 
@@ -54,7 +57,7 @@
 
 <script>
 import ServicebannerPlp from '~/components/Service/ServicebannerPlp'
-import DriverCard from '~/components/Service/DriverCard.vue'
+import ProductCard from '~/components/Store/ProductCard.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
 
 export default {
@@ -66,7 +69,7 @@ export default {
   },
   components:{
     ServicebannerPlp,
-    DriverCard,DriverCardMobile
+    ProductCard,DriverCardMobile,
   }
 }
 </script>

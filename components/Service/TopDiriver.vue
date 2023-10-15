@@ -9,14 +9,14 @@
      <DriverCardMobile/>
    </v-row>
    <v-row justify="center" class="mt-15 pt-10 d-none d-md-flex" >
-     <v-btn color="primary" width="251" height="101" class="br-25">
+     <v-btn  @click="$router.push('/service/list')"  color="primary" width="251" height="101" class="br-25">
         <span class="t30600 white--text">
           بیشتر
         </span>
      </v-btn>
    </v-row>
    <v-row justify="center" class=" d-flex d-md-none" >
-     <v-btn color="primary" width="164" height="66" class="br-15">
+     <v-btn @click="$router.push('/service/list')" color="primary" width="164" height="66" class="br-15">
         <span class="t20600 white--text">
           بیشتر
         </span>

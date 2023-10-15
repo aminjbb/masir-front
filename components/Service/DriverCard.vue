@@ -1,5 +1,6 @@
 <template>
-  <div class="service__top-diver-box pb-8 mx-3 px-10 position__relative">
+  <v-col md="5" lg="6" >
+  <div class="service__top-diver-box  pb-8 px-10 position__relative">
     <div class="rating-box">
       <div><img src="~/assets/img/heartY.png" alt=""></div>
       <div><img src="~/assets/img/heartY.png" alt=""></div>
@@ -44,7 +45,7 @@
           </v-row>
         </div>
 
-        <div>
+        <div class="mt-5">
           <div class="mt-15">
             <v-row  align="center" class="pr-15">
                   <span class="t14400 success--text mx-3">
@@ -65,6 +66,7 @@
       </v-row>
     </div>
   </div>
+  </v-col>
 </template>
 <script>
 export default {
