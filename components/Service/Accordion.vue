@@ -40,7 +40,7 @@
       </div>
 
     </div>
-    <div class=" d-block d-md-none">
+    <div class=" d-block d-md-none px-3 pl-4">
       <h6 class=" mr-3 mb-5">پرسش‌های شما</h6>
       <button class="accordion">
         <v-row justify="space-between" class="pa-4">
@@ -48,7 +48,7 @@
            چند روز قبل از پرواز، بلیط هواپیما را بخریم؟
          </span>
           <span>
-<v-icon>mdi-chevron-down-circle-outline</v-icon>
+          <v-icon>mdi-chevron-down-circle-outline</v-icon>
          </span>
         </v-row>
       </button>

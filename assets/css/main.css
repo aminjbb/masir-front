@@ -1615,6 +1615,9 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+  #serviceBanner .vueperslides__inner{
+    height: 361px !important;
+  }
   .bg-cultured .v-text-field--outlined fieldset{
     border-color: #F5F5F5 !important;
     border-radius: 20px !important;
@@ -1635,7 +1638,14 @@ header {
     height: 70px !important;
 
   }
+  .m-br-15{
+    border-radius: 15px !important;
+  }
+  .store__plp-filter-box{
+    height: 70px !important;
+    z-index: 0;
 
+  }
   .service__plp-banner-image-box-background{
 
     width: 129px !important;
@@ -2293,4 +2303,90 @@ header {
 }
 .v-menu__content{
   margin-top: 50px !important;
+}
+
+.store__plp-filter-box{
+  height: 89px;
+  border-radius: 15px;
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5
+
+}
+.store__pdp-filter-box{
+   height: 104px;
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5
+
+}
+
+.pdp__order-card{
+  height: 162px;
+  margin-top: 40px;
+  border-radius: 25px;
+  border: 1px solid  #E0E0E0;
+  background:  #FFF;
+  /* Shadow/8 */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pdp__order-card .avatar-box{
+  fill:  #FFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.10);
+
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+}
+
+.user-profile__head{
+  width: 100%;
+  min-height: 604px;
+  background: #0C385F;
+}
+.user-profile__head .avatar-box{
+  width: 250px;
+  height: 251px;border-radius: 35px;
+  border :1px solid #FFF
+
+}
+
+.user-profile__head .chip{
+  height: 44px;
+  background: #FFF;
+  border-radius: 22px;
+
+}
+
+.user-profile__detail-card{
+  width: 100%;
+  min-height: 894px;
+  border: 1px solid #E0E0E0;
+  border-radius: 50px;
+  background: #FFFFFF;
+}
+
+.user-profile__experience-box{
+  width: 100% ;
+  min-height: 415px;
+  border-radius: 15px;
+  background: #F5F5F5;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.user-profile__status-card{
+  height: 83px;
+  border-radius: 15px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+.user-profile__status-card-full{
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
 }

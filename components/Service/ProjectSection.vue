@@ -91,9 +91,9 @@
                 </div>
               </v-row>
             </v-col>
-            <v-col cols="12" class="py-0 mt-mobile-10">
+            <v-col cols="12" class="py-0  px-3 mt-mobile-10">
               <v-textarea
-
+                class="ml-5"
                 placeholder="توضیحات تکمیلی جهت پیدا کردن نیروی بهتر را وارد فرمایید"
                 outlined
               ></v-textarea>

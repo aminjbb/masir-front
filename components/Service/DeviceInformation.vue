@@ -76,7 +76,7 @@
             <div class="text-right  mt-5 mb-8 d-flex d-md-none">
               <span class="t18400 primary--text">تصاویر وسیله</span>
             </div>
-            <div  class="pl-2 pt-2 justify-center d-flex d-md-none" >
+            <div  class="pl-2 pt-2 justify-start d-flex d-md-none" >
 
               <v-card @click="selectFile()" outlined width="87" height="87" class="br-15 mx-1 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack.svg" alt="">
@@ -84,6 +84,7 @@
               <div class="mx-1 " v-for="(image , index) in base64Images">
                 <template v-if="index == 1">
                   <v-img class="br-15" width="87" height="87" :src="image" alt="" :key="index" >
+                    <div class="ma-1 position__absolute z-index-10" @click="deletePhoto(index)"><v-icon color="error">mdi-delete</v-icon></div>
                     <div class="d-flex justify-center align-center" v-if="base64.length > 2" style="height: 100% ; width: 100% ;background: rgba(0, 0, 0, 0.50);backdrop-filter: blur(4px);">
                       <span class="white--text dana-fa">{{base64.length -2}}</span>
                     </div>
@@ -91,6 +92,7 @@
                 </template>
                 <template v-if="index == 0">
                   <v-img class="br-15" width="87" height="87" :src="image" alt="" :key="index" >
+                    <div class="ma-1"  @click="deletePhoto(index)"><v-icon color="error">mdi-delete</v-icon></div>
                   </v-img>
                 </template>
 
@@ -117,13 +119,17 @@
                 <v-card v-if="certificateBase64 == null" @click="selectFileCertificate()" outlined width="141" height="141" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
                   <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                 </v-card>
-                <img width="141" height="141" v-else :src="certificateBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
+                <v-img width="141" height="141" v-else :src="certificateBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
+                  <div class="ma-1 position__absolute z-index-10" @click="deleteCertificatePhoto()"><v-icon color="error">mdi-delete</v-icon></div>
+                </v-img>
 
                 <v-card  v-if="certificateBase64 == null" @click="selectFileCertificate" outlined width="133" height="133" class="br-15  align-center justify-center d-flex d-md-none">
                   <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                 </v-card>
 
-                <img  width="133" height="133" v-else :src="certificateBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
+                <v-img   width="133" height="133" v-else :src="certificateBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
+                  <div class="ma-1 position__absolute z-index-10" @click="deleteCertificatePhoto()" style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+                </v-img>
                 <div class="text-right pr-4 mt-5">
                   <span class="t18400 primary--text d-none d-md-block">تصاویر گواهینامه</span>
                   <span class="t14400 primary--text d-block d-md-none">تصاویر گواهینامه</span>
@@ -133,11 +139,15 @@
                 <v-card  v-if="technicalDiagnosisBase64 == null" @click="selectFileTechnicalDiagnosis()" outlined width="141" height="141" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
                   <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                 </v-card>
-                <img width="141" height="141" v-else :src="technicalDiagnosisBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                <v-card  v-if="technicalDiagnosisBase64 == null" outlined width="133" height="133" class="br-15  align-center justify-center d-flex d-md-none">
+                <v-img  width="141" height="141" v-else :src="technicalDiagnosisBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
+                  <div class="ma-1 position__absolute z-index-10"  @click="deleteTechnicalDiagnosisPhoto()"  style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+                </v-img>
+                <v-card  v-if="technicalDiagnosisBase64 == null" @click="selectFileTechnicalDiagnosis()" outlined width="133" height="133" class="br-15  align-center justify-center d-flex d-md-none">
                   <img src="~/assets/img/PlusCircleBlack.svg" alt="">
                 </v-card>
-                <img  width="133" height="133" v-else :src="technicalDiagnosisBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
+                <v-img  width="133" height="133" v-else :src="technicalDiagnosisBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
+                  <div class="ma-1 position__absolute z-index-10" @click="deleteTechnicalDiagnosisPhoto()" style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+                </v-img>
                 <div class="text-right  mt-5">
                   <span class="t18400 primary--text d-none d-md-block">تصاویر برگه معاینه فنی</span>
                   <span class="t14400  primary--text d-block d-md-none">تصاویر برگه معاینه فنی</span>
@@ -169,6 +179,18 @@ export default {
   }},
 
   methods:{
+    deleteTechnicalDiagnosisPhoto(){
+      this.technicalDiagnosis =null
+        this. technicalDiagnosisBase64 =null
+    },
+    deleteCertificatePhoto(){
+      this.certificate =null
+        this. certificateBase64 =null
+    },
+    deletePhoto(index){
+      this.images.splice(index , 1)
+      this.base64.splice(index , 1)
+    },
     selectFile() {
       var input = document.createElement('input');
       input.type = 'file';

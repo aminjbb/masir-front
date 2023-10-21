@@ -350,6 +350,9 @@ p {
 .t50400 {
   font-size: 65px !important;
   font-weight: 600 !important;
+}.t100800 {
+  font-size: 100px !important;
+  font-weight: 800 !important;
 }
 
 .lh-40{

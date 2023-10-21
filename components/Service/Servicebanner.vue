@@ -1,6 +1,6 @@
 <template >
   <div >
-    <vueper-slides class="no-shadow pa-0 mt-mobile-10"  height="900" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
+    <vueper-slides id="serviceBanner" class="no-shadow pa-0 mt-mobile-10"  height="100" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
                    :arrows="false">
       <vueper-slide  >
         <template #content>

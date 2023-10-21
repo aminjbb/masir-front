@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-15 mb-15">
-    <v-card height="544" width="384" class="br-50 mx-3 d-none d-md-block">
-      <img width="384" height="288" src="~/assets/img/MagImage.png" alt="" class="br-unset">
+  <div >
+    <v-card height="544" class="br-50 mx-3 m-br-15">
+      <img  style="width: 100%" height="288" src="~/assets/img/MagImage.png" alt="" class="br-unset">
       <div class="text-right mt-8 pr-5">
             <span class="t24600 primary--text">
                 بابکت چرخی مینی لودر
@@ -14,7 +14,7 @@
       </div>
      <div class="d-flex justify-space-between px-10 mt-4">
        <div class="d-flex align-center">
-         <span><img src="~/assets/img/Storefrontplp.svg" alt=""></span>
+         <span class="d-none d-md-block"><img src="~/assets/img/Storefrontplp.svg" alt=""></span>
          <span class="primary--text t14400 mr-1">
 
          فروشگاه مسیر
