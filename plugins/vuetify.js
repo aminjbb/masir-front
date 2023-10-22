@@ -19,7 +19,7 @@ export default (ctx) => {
           secondary2: "#9E9E9E",
           cultured: "#F5F5F5",
           gray: "#616161",
-
+          error:"#EE4343"
         },
         dark: {},
       },

@@ -5,9 +5,9 @@
     </v-col>
     <v-col cols="12" class="my-10">
       <div class="main-container">
-        <v-row justify="center" align="start" class="px-5">
-          <v-col cols="3" >
-           <div class="mb-15">
+        <v-row justify="center" align="start" class="px-5 d-none d-md-flex">
+          <v-col md="3" cols="3" >
+            <div class="mb-15">
              <div>
               <span class="t24600 primary--text">
                 بابکت چرخی مینی لودر
@@ -39,7 +39,7 @@
             </div>
           </v-col>
 
-          <v-col cols="9" class="pr-15">
+          <v-col md="9" cols="9" class="pr-md-15">
             <div class="store__pdp-filter-box">
               <v-row justify="space-between" class="pa-11 px-13">
                 <div class="d-flex">
@@ -64,6 +64,8 @@
                   </span>
                 </div>
               </v-row>
+
+
             </div>
 
             <div class="text-left mt-15">
@@ -73,9 +75,62 @@
             </div>
           </v-col>
         </v-row>
+        <div class="d-block d-md-none justify-center align-start ">
+          <div class="mb-15">
+            <div>
+              <span class="t24600 primary--text">
+                بابکت چرخی مینی لودر
+              </span>
+            </div>
+            <div class="mt-5">
+              <span class="t18400 primary--text">
+                bobcat S76 skid-steer loader
+              </span>
+            </div>
+          </div>
+          <div class="px-5">
+            <div class="store__pdp-filter-box">
+              <div>
+                <div class="d-flex d-md-none justify-space-between pt-5 px-10">
+                  <span class="t16400 primary--text">وسیله: <span class="t16400 primary--text mr-2" >لودر</span></span>
+                  <span class="t16400 primary--text">فروشگاه مسیر </span>
+                </div>
+                <v-divider class="my-4"></v-divider>
+                <div class="text-center">
+                  <span class="t24600 primary--text">
+                    ۱.۹۳۰.۰۰۰.۰۰۰ تومان
+                  </span>
+                </div>
+              </div>
+            </div>
 
+          </div>
+          <div class="text-center mt-8">
+            <span class="primary--text t18400">
+              ۲ روز پیش، تهران، تهران، آذربایجان
+            </span>
+          </div>
+          <v-divider class="mt-5"></v-divider>
+          <div class="mt-8 pt-2 px-2">
+            <div class="mt-5">
+              <span class="t18400 primary--text">
+                بیل بکهو 130 موتور تازه تعمیر مدل85
+              </span>
+            </div>
+            <div class="mt-5">
+              <span class="t18400 primary--text">
+                بیل بکهو 130 موتور تازه تعمیر مدل85
+              </span>
+            </div>
+            <div class="mt-5">
+              <span class="t18400 primary--text">
+                بیل بکهو 130 موتور تازه تعمیر مدل85
+              </span>
+            </div>
+          </div>
+        </div>
         <v-row justify="space-between" class="mt-15 pt-15 px-5">
-            <v-btn color="error" width="125" height="43">
+            <v-btn color="error" width="125" height="43" class="br-10">
               <span class="t14400 white--text">گزارش مشکل</span>
             </v-btn>
           <div>
@@ -98,7 +153,7 @@
           </div>
         </v-row>
 
-        <div class="pdp__order-card px-15">
+        <div class="pdp__order-card px-15 d-none d-md-block">
           <div class="d-flex align-center">
               <div class="avatar-box"></div>
               <span class="mr-8 t18400 primary--text" > فروشنده:</span>
@@ -117,13 +172,34 @@
             </v-btn>
           </div>
         </div>
-        <v-row justify="center" class="mt-15  d-none d-md-flex">
-          <v-col cols="4" class="mt-15 pt-10">
-            <ProductCard class="d-none d-md-block"/>
-          </v-col><v-col cols="4" class="mt-15 pt-10">
-          <ProductCard class="d-none d-md-block"/>
-        </v-col><v-col cols="4" class="mt-15 pt-10">
-          <ProductCard class="d-none d-md-block"/>
+
+        <div class="pdp__order-card pt-5  d-block d-md-none mx-3">
+          <div class="d-flex align-center px-5">
+            <div class="avatar-box"></div>
+            <span class="mr-8 t18400 primary--text" > فروشنده:</span>
+            <span class="mr-5 t18600 primary--text" >عباس قادری</span>
+          </div>
+          <v-divider class="my-4"></v-divider>
+          <div class="d-flex justify-center align-center">
+            <v-btn color="primaryYellow" width="129" height="50" class="br-10 ml-5">
+              <span class="t16400 primary--text">
+                 ارسال پیام
+              </span>
+            </v-btn>
+            <v-btn color="primary" width="129" height="50" class="br-10">
+              <span class="t16400 white--text">
+                 ثبت پروژه
+              </span>
+            </v-btn>
+          </div>
+        </div>
+        <v-row justify="center" class="mt-15  ">
+          <v-col cols="12" md="4" class="mt-15 pt-10">
+            <ProductCard />
+          </v-col><v-col cols="12" md="4" class="mt-15 pt-10">
+          <ProductCard />
+        </v-col><v-col cols="12" md="4" class="mt-15 pt-10">
+          <ProductCard />
         </v-col>
 
         </v-row>

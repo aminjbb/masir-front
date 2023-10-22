@@ -1615,6 +1615,16 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+  .pdp__order-card .avatar-box{
+
+    width: 41px !important;
+    height: 41px !important;
+
+  }
+  .store__pdp-filter-box{
+    height: 134px !important;
+
+  }
   #serviceBanner .vueperslides__inner{
     height: 361px !important;
   }
@@ -2313,7 +2323,7 @@ header {
 
 }
 .store__pdp-filter-box{
-   height: 104px;
+  height: 104px;
   border-radius: 20px;
   border: 1px solid #E0E0E0;
   background: #F5F5F5
