@@ -49,7 +49,7 @@
                 <img src="~/assets/img/ShoppingCartDark.svg" alt="">
               </v-col>
               <v-col cols="2">
-                <img src="~/assets/img/UserCircleDark.svg" alt="">
+                <img @click="$router.push('/user-profile')" src="~/assets/img/UserCircleDark.svg" alt="">
               </v-col>
             </v-row>
           </v-col>
