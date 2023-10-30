@@ -1403,6 +1403,9 @@ header {
 .br-20 {
   border-radius: 20px !important;
 }
+.br-25 {
+  border-radius: 25px !important;
+}
 
 #blog-search fieldset {
   border-radius: 24.5px !important;
@@ -1628,6 +1631,11 @@ header {
   #serviceBanner .vueperslides__inner{
     height: 361px !important;
   }
+
+  #storeBanner .vueperslides__inner{
+    height: 550px !important;
+  }
+
   .bg-cultured .v-text-field--outlined fieldset{
     border-color: #F5F5F5 !important;
     border-radius: 20px !important;
@@ -1957,6 +1965,15 @@ header {
 .headerPage .v-input .v-label{
     color: #000 !important
 }
+.headerChat .v-text-field--outlined fieldset{
+  border-color: #0C385F !important;
+  border-radius: 22px !important;
+  background: #FFFFFF;
+}
+
+.headerChat .v-input .v-label{
+    color: #000 !important
+}
 .v-application--is-rtl .v-text-field .v-input__append-inner{
   margin-top: 11px !important;
 }
@@ -2201,6 +2218,36 @@ header {
 .create-service-card  .v-input__icon {
   margin-top: 5px;
   }
+.user-profile__detail-card .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot{
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5;
+  border-radius: 15px;
+  padding-right: 20px;
+}
+.user-profile__detail-card .v-select__slot {
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5;
+  border-radius: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.user-profile__detail-card  .v-input__icon {
+  margin-top: 5px;
+  }
+.modal-report .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot{
+  border: 1px solid #E0E0E0;
+  border-radius: 15px;
+  padding-right: 20px;
+}
+.modal-report .v-select__slot {
+  border: 1px solid #E0E0E0;
+  border-radius: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.modal-report  .v-input__icon {
+  margin-top: 5px;
+  }
 .pdp.rtl .pdp-group :first-child{
   display: none;
 }
@@ -2229,6 +2276,24 @@ header {
 
 .add-service-type-box .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot{
   border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding-right: 20px;
+}
+.add-address .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot{
+  border: 1px solid #E0E0E0;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding-right: 20px;
+}
+.add-address .v-text-field--outlined fieldset{
+  border: 1px solid #E0E0E0 !important  ;
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding-right: 20px;
+}
+.text-address .v-text-field--outlined fieldset{
+  border: unset !important;
   background: #FFFFFF;
   border-radius: 15px;
   padding-right: 20px;
@@ -2351,9 +2416,18 @@ header {
   border-radius: 50%;
 }
 
+.user-profile__detail-card .avatar-box{
+  fill:  #FFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.10);
+
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+}
+
 .user-profile__head{
   width: 100%;
-  min-height: 604px;
+  min-height: 500px;
   background: #0C385F;
 }
 .user-profile__head .avatar-box{
@@ -2372,7 +2446,13 @@ header {
 
 .user-profile__detail-card{
   width: 100%;
-  min-height: 894px;
+
+  border: 1px solid #E0E0E0;
+  border-radius: 50px;
+  background: #FFFFFF;
+}
+.user-profile__detail-card-create{
+  width: 100%;
   border: 1px solid #E0E0E0;
   border-radius: 50px;
   background: #FFFFFF;
@@ -2399,4 +2479,146 @@ header {
   border: 1px solid #E0E0E0;
   background: #FFF;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.user-profile__chat-card{
+  height: 500px;
+  border-radius: 20px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+}
+
+.user-profile__chat-user-card{
+  position: absolute;
+  right: 0;
+  width: 373px;
+  border-left:1px solid #E0E0E0;
+  height: 100%;
+}
+
+.user-profile__chat-user-card .header-chat{
+  height: 77px !important;
+}
+.user-profile__chat-user-chat .header-chat{
+  height: 77px;
+}
+.user-profile__chat-user-chat{
+  position: absolute;
+  left: 0;
+  width: calc(100% - 373px) ;
+  height: 100%;
+}
+
+.active-chat{
+  background: #DAF1FF;
+  border-radius:  10px;
+}
+
+.my-message{
+  border-radius: 10px;
+  background: #0C385F;
+  min-height: 57px;
+
+}
+.user-message{
+  border-radius: 10px;
+  background: #F5F5F5;
+  min-height: 57px;
+
+}
+
+.user-detail-dec-box{
+  height: 161px;
+  border-radius: 15px;
+  border: 1px solid #0C385F;
+}
+
+#storeBanner .vueperslides__inner{
+  height: 481px ;
+}
+
+.v-dialog{
+  background: #FFFFFF;
+}
+
+.contractor-card{
+  height: 198px;
+  border-radius: 15px;
+  background: #F5F5F5;
+  /* Shadow/4 */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+}
+.contractor-card-detail{
+  height: auto;
+  border-radius: 15px;
+  background: #F5F5F5;
+  /* Shadow/4 */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+}
+
+.contractor-chip{
+  height: 55px;
+  border-radius: 15px;
+  background: #FFF;
+  /* Shadow / 2 */
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+.contractor-detail-card{
+  border-radius: 50px;
+  border: 1px solid #E0E0E0;
+  background:  #FFF;
+}
+
+.address-card{
+  min-height: 81px;
+
+  border-radius: 10px;
+  background: #F5F5F5;
+  /* Shadow/8 */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+}
+.user-profile-navigation{
+  border-radius: 15px;
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5;
+  min-height: 553px;
+}
+
+.user-profile-navigation .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
+background: #FFC51E;
+  opacity: 0.8;
+}
+.user-profile-navigation .v-list-group  .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
+  background: unset;
+  opacity: 0.8;
+}
+.user-profile-navigation .v-list-group  .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
+
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+.user-profile-navigation .mobile-box{
+  border-radius: 30px;
+  background: #0C385F;
+  width: 157px;
+  height: 60px;
+  margin-top: -80px;
+  margin-bottom: 60px;
+}
+
+.v-list-item__icon{
+  display: none !important;
+}
+.create-product-box{
+  border-radius: 15px;
+  background: #F5F5F5;
+  height: 105px;
+  /* Shadow/4 */
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
+}
+.filter-green{
+  filter : invert(15%) sepia(59%) saturate(1527%) hue-rotate(182deg) brightness(63%) contrast(95%);
 }

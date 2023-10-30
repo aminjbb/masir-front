@@ -11,7 +11,7 @@
                   <div @click="$router.push('/service')" :class="$route.name === 'service' ? 'headr-active' : ''"  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                     <span class="t18400 Black--text"> سرویس‌ها</span>
                   </div>
-                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
+                  <div  @click="$router.push('/store')" :class="$route.name === 'store' ? 'headr-active' : ''" class="d-flex align-center pb-3 mb-0 px-3 mx-3">
 
                     <span class="t18400 Black--text"> فروشگاه</span>
                   </div>

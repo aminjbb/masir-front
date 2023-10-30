@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" >
-      <ServicebannerPlp/>
+      <StoreBanner/>
     </v-col>
     <v-col cols="12" class="my-10">
       <div class="main-container">
@@ -130,9 +130,7 @@
           </div>
         </div>
         <v-row justify="space-between" class="mt-15 pt-15 px-5">
-            <v-btn color="error" width="125" height="43" class="br-10">
-              <span class="t14400 white--text">گزارش مشکل</span>
-            </v-btn>
+            <ModalReport/>
           <div>
             <div >
               <v-row  align="center" class="pr-15">
@@ -153,7 +151,7 @@
           </div>
         </v-row>
 
-        <div class="pdp__order-card px-15 d-none d-md-block">
+        <div class="pdp__order-card px-15 d-none d-md-flex">
           <div class="d-flex align-center">
               <div class="avatar-box"></div>
               <span class="mr-8 t18400 primary--text" > فروشنده:</span>
@@ -213,9 +211,10 @@
 </template>
 
 <script>
-import ServicebannerPlp from '~/components/Service/ServicebannerPlp'
+import StoreBanner from '~/components/Store/StoreBanner'
 import ProductCard from '~/components/Store/ProductCard.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
+import ModalReport from "~/components/Store/ModalReport.vue";
 
 export default {
   layout:'WithOutContact',
@@ -225,8 +224,8 @@ export default {
     }
   },
   components:{
-    ServicebannerPlp,
-    ProductCard,DriverCardMobile,
+    StoreBanner,
+    ProductCard,DriverCardMobile,ModalReport
   }
 }
 </script>

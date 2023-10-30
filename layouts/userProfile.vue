@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-
+    <HeaderUserProfile/>
     <v-main>
       <Nuxt />
     </v-main>
@@ -9,12 +9,12 @@
 
 <script>
 import footerPage from '~/components/Public/footerPage.vue'
-import HeaderPage from '~/components/Public/HeaderPage.vue'
+import HeaderUserProfile from '~/components/Public/HeaderUserProfile.vue'
 export default {
   name: 'DefaultLayout',
   components:{
     footerPage,
-    HeaderPage
+    HeaderUserProfile
   },
   data () {
     return {

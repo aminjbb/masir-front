@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="user-profile__head pt-15">
+    <div class="user-profile__head ">
       <div class="main-container">
-        <v-row justify="start" align="start" class="pt-15">
+        <v-row justify="start" align="start" >
             <v-col cols="3" class="pl-5">
                 <div class="avatar-box"></div>
             </v-col>

@@ -1,0 +1,45 @@
+<template>
+  <div>
+
+    <div >
+      <div class="main-container">
+        <v-row>
+          <v-col cols="3">
+            <UserProfileNavigationMenu/>
+          </v-col>
+          <v-col cols="9">
+            <div class="user-profile__detail-card mt-15 mb-15 pa-5">
+
+              <MyMessage/>
+              <UserMessage/>
+              <MyMessage/>
+              <UserMessage/>
+              <MyMessage/>
+              <UserMessage/>
+
+            </div>
+          </v-col>
+        </v-row>
+
+      </div>
+    </div>
+
+
+  </div>
+</template>
+
+<script>
+import OrderCard from '~/components/UserProfile/OrderCard.vue'
+import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
+import MassageCard from "~/components/UserProfile/MassageCard.vue";
+import UserMessage from "~/components/UserProfile/UserMessage.vue";
+import MyMessage from "~/components/UserProfile/MyMessage.vue";
+export  default {
+  layout:'userProfile',
+  components:{
+    MyMessage, UserMessage,
+    UserProfileNavigationMenu,
+    MassageCard
+  }
+}
+</script>
