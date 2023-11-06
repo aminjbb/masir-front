@@ -1,6 +1,21 @@
 <template>
   <div class="user-profile-navigation mt-15 mb-15 pt-15">
     <v-row justify="center">
+
+      <div class="d-none d-md-flex justify-center">
+        <v-img style="margin-top: -172px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
+          <div class="d-flex justify-center">
+            <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
+          </div>
+        </v-img>
+      </div>
+      <v-col cols="8" class="d-block d-md-none">
+        <v-img style="margin-top: -184px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
+          <div class="d-flex justify-center">
+            <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
+          </div>
+        </v-img>
+      </v-col>
       <div class="mobile-box d-flex justify-center align-center">
                   <span class="primaryYellow--text t18400">
                     ۰۹۳۰۰۱۷۹۶۴۸

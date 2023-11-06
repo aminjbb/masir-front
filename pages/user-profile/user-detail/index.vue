@@ -3,13 +3,13 @@
 
     <div >
       <div class="main-container">
-        <v-row>
-          <v-col cols="3">
+        <v-row justify="center">
+          <v-col cols="11" md="3">
             <UserProfileNavigationMenu/>
           </v-col>
-          <v-col cols="9">
-            <div class="user-profile__detail-card mt-15 mb-15" id="create-form">
-              <v-row justify="space-between" class="mb-10 px-15 pt-10">
+          <v-col cols="11" md="9">
+            <div class="user-profile__detail-card mt-md-15  mb-15" id="create-form">
+              <v-row justify="space-between" class="mb-10 px-md-15 px-2 pt-10">
                 <v-col md="6" cols="12">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">نام و نام خانوادگی</span>
@@ -84,7 +84,7 @@
                   </div>
                 </v-col>
                 <v-col cols="12">
-                  <div class="user-detail-dec-box pa-5">
+                  <div class="user-detail-dec-box pa-5 mx-md-0 mx-3">
                     <div> <span class="t16400 primary--text">محرمانگی اطلاعات مشتری</span></div>
                     <div>
                       <span class="t16400 primary--text">داده‌های شخصی‌ای که فراهم می‌کنید برای پاسخ دادن به سوالات، پردازش سفارشات یا صدور اجازه دسترسی به اطلاعات خاص مورد استفاده قرار می‌گیرد. شما می‌توانید تمام اطلاعات شخصی که در صفحه «حساب‌کاربری من» وجود دارد را ویرایش یا حذف کنید.</span>

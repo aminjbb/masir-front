@@ -4,10 +4,10 @@
     <div >
       <div class="main-container">
         <v-row>
-          <v-col cols="3">
+          <v-col cols="3" class="d-none d-md-block">
             <UserProfileNavigationMenu/>
           </v-col>
-          <v-col cols="9">
+          <v-col cols="11" md="9">
             <div class="user-profile__detail-card mt-15 mb-15 pa-5">
 
               <MyMessage/>

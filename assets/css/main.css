@@ -592,7 +592,10 @@ ol li {
 ::-webkit-scrollbar-thumb:hover {
   background: #DFDFDF;
 }
-
+.scroller {
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
 
 
 /* .card-hover:hover .card-image{
@@ -1618,6 +1621,10 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+  .user-profile-header-box{
+    height: 105px !important  ;
+    background: #0C385F
+  }
   .pdp__order-card .avatar-box{
 
     width: 41px !important;
@@ -2379,7 +2386,12 @@ header {
 .v-menu__content{
   margin-top: 50px !important;
 }
+.main-container-header .v-menu__content{
+  margin-top: 0px !important;
+}
+.headerMenu{
 
+}
 .store__plp-filter-box{
   height: 89px;
   border-radius: 15px;
@@ -2528,7 +2540,7 @@ header {
 }
 
 .user-detail-dec-box{
-  height: 161px;
+  min-height: 161px;
   border-radius: 15px;
   border: 1px solid #0C385F;
 }
@@ -2542,7 +2554,7 @@ header {
 }
 
 .contractor-card{
-  height: 198px;
+  min-height: 198px;
   border-radius: 15px;
   background: #F5F5F5;
   /* Shadow/4 */
@@ -2615,10 +2627,47 @@ background: #FFC51E;
 .create-product-box{
   border-radius: 15px;
   background: #F5F5F5;
-  height: 105px;
+  min-height: 105px;
   /* Shadow/4 */
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
 }
 .filter-green{
   filter : invert(15%) sepia(59%) saturate(1527%) hue-rotate(182deg) brightness(63%) contrast(95%);
+}
+.user-profile-header-box{
+  height: 300px;
+  background: #0C385F
+}
+
+.about-us-image{
+  width: 90%;
+}
+.about-us-box-yellow{
+  position: absolute;
+  left:19%;
+  top: 30px;
+  width: 161px;
+  height: 152px;
+  border-radius: 50px;
+  background: #FFC51E;
+}
+.about-us-box-primary{
+  position: absolute;
+  left:27%;
+  top: 0;
+  z-index: 10;
+  width: 78px;
+  height: 73px;
+  border-radius: 20px;
+  background: #0C385F;
+}
+.about-us-box-white{
+  position: absolute;
+  right:15%;
+  top: 0;
+  z-index: 10;
+  width: 78px;
+  height: 73px;
+  border-radius: 20px;
+  background: #FFF;
 }

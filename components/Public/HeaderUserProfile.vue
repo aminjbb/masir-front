@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 300px; background: #0C385F">
+  <div class="user-profile-header-box">
     <header class="d-none d-md-flex">
       <div class="main-container-header pt-5 ">
         <v-row justify="center">
@@ -49,7 +49,32 @@
                 <img src="~/assets/img/ShoppingCartDark.svg" alt="">
               </v-col>
               <v-col cols="2">
-                <img @click="$router.push('/user-profile')" src="~/assets/img/UserCircleDark.svg" alt="">
+                <v-menu >
+                  <template v-slot:activator="{ on, attrs }">
+                    <img  v-bind="attrs" v-on="on" src="~/assets/img/UserCircle.svg" alt="">
+                  </template>
+                  <v-list style=" width: 108px;">
+                    <v-list-item
+                      to="/user-profile/user-detail"
+                    >
+                      <v-list-item-title>
+                        <div class="text-center">
+                          <span class="white--text">پروفایل</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item
+                      to="/user-profile"
+
+                    >
+                      <v-list-item-title  >
+                        <div class="text-center">
+                          <span class="white--text">داشبورد</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
               </v-col>
             </v-row>
           </v-col>

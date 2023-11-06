@@ -39,8 +39,8 @@
               append-icon="mdi-magnify"
             ></v-text-field>
           </v-col>
-          <v-col cols="4">
-            <v-menu>
+          <v-col cols="4" class="store">
+            <v-menu >
               <template v-slot:activator="{ on, attrs }">
 
                 <div   v-bind="attrs"
@@ -55,7 +55,7 @@
                   </v-row>
                 </div>
               </template>
-              <v-list class="mt-5 pt-6" >
+              <v-list class="mt-5 pt-6 store">
                 <v-list-item
                   v-for="(item, index) in items"
                   :key="index"

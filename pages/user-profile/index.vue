@@ -84,7 +84,7 @@
           </v-btn>
         </div>
 
-        <div class="user-profile__detail-card mt-15 mb-15">
+        <div class="user-profile__detail-card mt-15 mb-15 pb-10">
           <v-row justify="space-between" class="mb-10">
              <v-col cols="4" class="pr-15 pt-15">
                 <v-row justify="space-between" class="pt-15 pr-8">

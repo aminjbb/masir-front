@@ -3,12 +3,12 @@
 
     <div >
       <div class="main-container">
-        <v-row>
-          <v-col cols="3">
+        <v-row justify="center">
+          <v-col cols="11" md="3">
             <UserProfileNavigationMenu/>
           </v-col>
-          <v-col cols="9">
-            <div class="user-profile__detail-card mt-15 mb-15" id="create-form">
+          <v-col cols="11" md="9">
+            <div class="user-profile__detail-card mt-md-15 mb-15" id="create-form">
               <OrderCard/>
 
             </div>
