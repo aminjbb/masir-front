@@ -17,7 +17,7 @@
         <v-avatar color="primaryYellow" size="15" class=" my-15"></v-avatar>
       </div>
     </v-col>
-    <v-col cols="10" >
+    <v-col cols="11" >
       <div class="text-center py-15">
         <span class="t24600">
           رانندگان برتر ماه

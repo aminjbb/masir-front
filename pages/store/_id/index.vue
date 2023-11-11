@@ -77,18 +77,18 @@
         </v-row>
         <div class="d-block d-md-none justify-center align-start ">
           <div class="mb-15">
-            <div>
+            <div class="pr-2">
               <span class="t24600 primary--text">
                 بابکت چرخی مینی لودر
               </span>
             </div>
-            <div class="mt-5">
+            <div class="mt-5 pr-2">
               <span class="t18400 primary--text">
                 bobcat S76 skid-steer loader
               </span>
             </div>
           </div>
-          <div class="px-5">
+          <div class="px-2">
             <div class="store__pdp-filter-box">
               <div>
                 <div class="d-flex d-md-none justify-space-between pt-5 px-10">
@@ -129,7 +129,7 @@
             </div>
           </div>
         </div>
-        <v-row justify="space-between" class="mt-15 pt-15 px-5">
+        <v-row justify="space-between" class="mt-1 pt-15 px-5">
             <ModalReport/>
           <div>
             <div >
@@ -151,31 +151,39 @@
           </div>
         </v-row>
 
-        <div class="pdp__order-card px-15 d-none d-md-flex">
-          <div class="d-flex align-center">
-              <div class="avatar-box"></div>
+        <div class="pdp__order-card pa-5 d-none d-md-flex">
+          <div class="d-flex align-center ">
+              <div class="avatar-box">
+                <img src="~/assets/img/UserCircleProfile.svg" alt="">
+              </div>
               <span class="mr-8 t18400 primary--text" > فروشنده:</span>
               <span class="mr-5 t24600 primary--text" >عباس قادری</span>
+            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >09223732465</span>
           </div>
           <div class="d-flex align-center">
-            <v-btn color="primaryYellow" width="251" height="101" class="br-20 ml-5">
+            <v-btn color="primaryYellow" width="241" height="101" class="br-20 ml-5">
               <span class="t30600 primary--text">
                  ارسال پیام
               </span>
             </v-btn>
-            <v-btn color="primary" width="251" height="101" class="br-20">
+            <v-btn @click="showNumber =!showNumber" color="primary" width="241" height="101" class="br-20">
               <span class="t30600 white--text">
-                 ثبت پروژه
+                 تماس با فروشنده
               </span>
             </v-btn>
           </div>
         </div>
 
-        <div class="pdp__order-card pt-5  d-block d-md-none mx-3">
+        <div class="pdp__order-card py-5  d-block d-md-none mx-3">
           <div class="d-flex align-center px-5">
-            <div class="avatar-box"></div>
+            <div class="avatar-box">
+              <img width="41" height="41" src="~/assets/img/UserCircleProfile.svg" alt="">
+            </div>
             <span class="mr-8 t18400 primary--text" > فروشنده:</span>
             <span class="mr-5 t18600 primary--text" >عباس قادری</span>
+          </div>
+          <div class="d-flex align-center px-5">
+            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >09223732465</span>
           </div>
           <v-divider class="my-4"></v-divider>
           <div class="d-flex justify-center align-center">
@@ -184,19 +192,19 @@
                  ارسال پیام
               </span>
             </v-btn>
-            <v-btn color="primary" width="129" height="50" class="br-10">
+            <v-btn @click="showNumber =!showNumber" color="primary" width="129" height="50" class="br-10">
               <span class="t16400 white--text">
-                 ثبت پروژه
+                 تماس با فروشنده
               </span>
             </v-btn>
           </div>
         </div>
-        <v-row justify="center" class="mt-15  ">
-          <v-col cols="12" md="4" class="mt-15 pt-10">
+        <v-row justify="center" class="mt-1  ">
+          <v-col cols="12" md="4" class="mt-5 pt-10">
             <ProductCard />
-          </v-col><v-col cols="12" md="4" class="mt-15 pt-10">
+          </v-col><v-col cols="12" md="4" class="mt-5 pt-10">
           <ProductCard />
-        </v-col><v-col cols="12" md="4" class="mt-15 pt-10">
+        </v-col><v-col cols="12" md="4" class="mt-5 pt-10">
           <ProductCard />
         </v-col>
 
@@ -220,7 +228,8 @@ export default {
   layout:'WithOutContact',
   data(){
     return{
-      text:''
+      text:'',
+      showNumber:false
     }
   },
   components:{

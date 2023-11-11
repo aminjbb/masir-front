@@ -10,11 +10,11 @@
           <v-col cols="9">
             <div class="user-profile__detail-card mt-15 mb-15 " id="create-form">
               <div class="contractor-card-detail ma-7 pt-3 pb-5">
-                <div class="d-flex justify-center position__relative mr-3">
+                <div class="d-flex justify-center position__relative mt-5 mr-3">
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                  <div style="position: absolute; top: 20px ;left: 20px">
+                  <div style="position: absolute; top: 20px ;left: 20px" @click="$router.go(-1)">
                     <img src="~/assets/img/arrow-up-left.svg" alt="">
                   </div>
                 </div>

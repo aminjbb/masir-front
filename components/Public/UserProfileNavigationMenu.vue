@@ -91,9 +91,6 @@
       <v-list-item router to="/user-profile/my-product">
         <v-list-item-title > <span class="primary--text mr-15">محصولات شما</span></v-list-item-title>
       </v-list-item>
-      <v-list-item router to="/user-profile/product">
-        <v-list-item-title > <span class="primary--text mr-15">تاریخچه سفارش‌ها</span></v-list-item-title>
-      </v-list-item>
       <v-list-item router to="/user-profile/message">
         <v-list-item-title > <span class="primary--text mr-15">پیام های شما</span></v-list-item-title>
       </v-list-item>

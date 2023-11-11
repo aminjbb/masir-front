@@ -174,14 +174,24 @@
             به این پیمانکار امتیاز دهید
           </span>
 
-          <div class="d-flex justify-center mt-15">
-            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartYUs.png" alt=""></div>
-            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>
-            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>
-            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>
-            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>
-          </div>
-
+<!--          <div class="d-flex justify-center mt-15">-->
+<!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartYUs.png" alt=""></div>-->
+<!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
+<!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
+<!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
+<!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
+<!--          </div>-->
+          <v-rating
+            empty-icon="mdi-heart-outline"
+            full-icon="mdi-heart"
+            hover
+            length="5"
+            size="50"
+            value="3"
+            color="primaryYellow"
+            background-color="primary"
+            style="direction: ltr;"
+          ></v-rating>
           <div class="d-flex justify-center mt-15">
             <v-btn color="primary" class="br-15" width="204" height="65">
               <span class="white--text t24600"> ثبت امتیاز</span>

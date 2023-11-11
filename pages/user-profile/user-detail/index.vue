@@ -10,7 +10,7 @@
           <v-col cols="11" md="9">
             <div class="user-profile__detail-card mt-md-15  mb-15" id="create-form">
               <v-row justify="space-between" class="mb-10 px-md-15 px-2 pt-10">
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">نام و نام خانوادگی</span>
                   </div>
@@ -21,7 +21,7 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">شماره تماس</span>
                   </div>
@@ -32,7 +32,7 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">ایمیل</span>
                   </div>
@@ -43,7 +43,7 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">کد ملی</span>
                   </div>
@@ -54,7 +54,7 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">تاریخ تولد</span>
                   </div>
@@ -65,7 +65,7 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col md="6" cols="12">
+                <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">جنسیت</span>
                   </div>
@@ -76,14 +76,19 @@
                     ></v-text-field>
                   </div>
                 </v-col>
-                <v-col cols="12">
-                  <div class="d-flex justify-end">
+                <v-col cols="12" >
+                  <div class="d-none justify-end d-md-flex">
+                    <v-btn  color="primaryYellow" height="55" width="149" class="br-15">
+                      <span class="primary--text t18600">ویرایش</span>
+                    </v-btn>
+                  </div>
+                  <div class="d-flex justify-center d-md-none mb-3">
                     <v-btn  color="primaryYellow" height="55" width="149" class="br-15">
                       <span class="primary--text t18600">ویرایش</span>
                     </v-btn>
                   </div>
                 </v-col>
-                <v-col cols="12">
+                <v-col cols="12" class="py-0">
                   <div class="user-detail-dec-box pa-5 mx-md-0 mx-3">
                     <div> <span class="t16400 primary--text">محرمانگی اطلاعات مشتری</span></div>
                     <div>

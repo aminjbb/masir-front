@@ -1,0 +1,31 @@
+:root {
+  --body-desktop-t-16-400-font-family: "Dana-Regular", Helvetica;
+  --body-desktop-t-16-400-font-size: 16px;
+  --body-desktop-t-16-400-font-style: normal;
+  --body-desktop-t-16-400-font-weight: 400;
+  --body-desktop-t-16-400-letter-spacing: 0px;
+  --body-desktop-t-16-400-line-height: 22px;
+  --body-desktop-t-18-400-font-family: "Dana-Regular", Helvetica;
+  --body-desktop-t-18-400-font-size: 18px;
+  --body-desktop-t-18-400-font-style: normal;
+  --body-desktop-t-18-400-font-weight: 400;
+  --body-desktop-t-18-400-letter-spacing: 0px;
+  --body-desktop-t-18-400-line-height: 22px;
+  --headline-desktop-t-24-600-font-family: "Dana-DemiBold", Helvetica;
+  --headline-desktop-t-24-600-font-size: 24px;
+  --headline-desktop-t-24-600-font-style: normal;
+  --headline-desktop-t-24-600-font-weight: 700;
+  --headline-desktop-t-24-600-letter-spacing: 0px;
+  --headline-desktop-t-24-600-line-height: 24px;
+  --monocolorchinese-white: rgba(224, 224, 224, 1);
+  --monocolorcultured: rgba(245, 245, 245, 1);
+  --monocolorwhite: rgba(255, 255, 255, 1);
+  --primary-and-secondaryprimary: rgba(255, 197, 30, 1);
+  --primary-and-secondarysecondari: rgba(12, 56, 95, 1);
+  --subtitle-desktop-t-14-400-font-family: "Dana-Regular", Helvetica;
+  --subtitle-desktop-t-14-400-font-size: 14px;
+  --subtitle-desktop-t-14-400-font-style: normal;
+  --subtitle-desktop-t-14-400-font-weight: 400;
+  --subtitle-desktop-t-14-400-letter-spacing: 0px;
+  --subtitle-desktop-t-14-400-line-height: 22px;
+}

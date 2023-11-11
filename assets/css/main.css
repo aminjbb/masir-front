@@ -1211,11 +1211,16 @@ header {
 }
 .br-50 {
   border-radius: 50px !important;
+}.br-40 {
+  border-radius: 40px !important;
 }
 .br-unset {
   border-radius: unset !important;
 }
-
+.plp-image-radius{
+  border-top-left-radius: 40px !important;
+  border-top-right-radius: 40px !important;
+}
 
 .v-text-field-custom {
   height: 55px !important;
@@ -2230,6 +2235,8 @@ header {
   background: #F5F5F5;
   border-radius: 15px;
   padding-right: 20px;
+  height: 87px;
+
 }
 .user-profile__detail-card .v-select__slot {
   border: 1px solid #E0E0E0;
@@ -2408,7 +2415,7 @@ header {
 }
 
 .pdp__order-card{
-  height: 162px;
+
   margin-top: 40px;
   border-radius: 25px;
   border: 1px solid  #E0E0E0;
@@ -2460,7 +2467,7 @@ header {
   width: 100%;
 
   border: 1px solid #E0E0E0;
-  border-radius: 50px;
+  border-radius: 15px;
   background: #FFFFFF;
 }
 .user-profile__detail-card-create{
@@ -2524,6 +2531,10 @@ header {
 .active-chat{
   background: #DAF1FF;
   border-radius:  10px;
+}
+.unactive-chat{
+  background: #fff;
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .my-message{
@@ -2670,4 +2681,8 @@ background: #FFC51E;
   height: 73px;
   border-radius: 20px;
   background: #FFF;
+}
+
+.v-dialog--active{
+  border-radius: 25px !important;
 }

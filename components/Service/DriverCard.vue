@@ -1,5 +1,5 @@
 <template>
-  <v-col md="5" lg="6" >
+  <v-col md="5" lg="6" @click="$router.push('/peymankar/1')">
     <div class="service__top-diver-box  pb-8 px-10 position__relative">
     <div class="rating-box">
       <div><img src="~/assets/img/heartY.png" alt=""></div>

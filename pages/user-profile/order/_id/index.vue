@@ -10,11 +10,11 @@
           <v-col cols="11" md="9">
             <div class="user-profile__detail-card mt-15 mb-15 d-none d-md-block" id="create-form">
               <div class="contractor-card-detail ma-7 pt-3 pb-5">
-                <div class="d-flex justify-center position__relative mr-3">
+                <div class="d-flex justify-center position__relative mt-5 mr-3">
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                   <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                  <div style="position: absolute; top: 20px ;left: 20px">
+                  <div style="position: absolute; top: 20px ;left: 20px" @click="$router.go(-1)">
                     <img src="~/assets/img/arrow-up-left.svg" alt="">
                   </div>
                 </div>
@@ -81,7 +81,9 @@
                   <v-col cols="7">
                     <v-card height="129" class="br-25 ">
                       <div class="d-flex align-center justify-center" style="height: 100%">
-                        <div class="avatar-box"></div>
+                        <div class="avatar-box">
+                          <img src="~/assets/img/UserCircleProfile.svg" alt="">
+                        </div>
                         <span class="mr-8 t18400 primary--text" > فروشنده:</span>
                         <span class="mr-5 t24600 primary--text" >عباس قادری</span>
                       </div>
@@ -176,13 +178,17 @@
                   <v-col cols="12" md="7">
                     <v-card height="129" class="br-25 d-none d-md-block">
                       <div class="d-flex align-center justify-center" style="height: 100%">
-                        <div class="avatar-box"></div>
+                        <div class="avatar-box">
+                          <img src="~/assets/img/UserCircleProfile.svg" alt="">
+                        </div>
                         <span class="mr-8 t18400 primary--text" > فروشنده:</span>
                         <span class="mr-5 t24600 primary--text" >عباس قادری</span>
                       </div>
                     </v-card>
                     <div class="d-flex d-md-none  align-center justify-center">
-                      <div class="avatar-box"></div>
+                      <div class="avatar-box">
+                        <img src="~/assets/img/UserCircleProfile.svg" alt="">
+                      </div>
                     </div>
                     <div class="d-flex d-md-none mt-5 align-center justify-center">
                       <span class="t24600 primary--text" >عباس قادری</span>

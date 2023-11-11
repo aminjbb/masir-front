@@ -5,11 +5,13 @@
       <img width="148" height="148" src="~/assets/img/addService.png" alt="">
     </div>
     <div style="width: 100%;">
-      <div class="mt-10 mr-5">
-                  <span class="primary--text t24600">
-                    بابکت چرخی مینی لودر
-                  </span>
-
+      <div class="mt-10 mr-5 d-flex justify-space-between">
+        <span class="primary--text t24600">
+          بابکت چرخی مینی لودر
+        </span>
+        <span class="ml-5" style="    margin-top: -17px;" @click="$router.push('/user-profile/order/1')">
+          <img src="~/assets/img/arrow-up-left.svg" alt="">
+        </span>
       </div>
       <div class="mt-2 mr-5">
                   <span class="primary--text t18400">

@@ -1,9 +1,9 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12" >
+    <v-col cols="12" class="pb-0">
       <ServicebannerPlp/>
     </v-col>
-    <v-col cols="12" class="my-10">
+    <v-col cols="12" class="mb-10 pt-0">
       <div class="main-container">
         <v-row justify="center" align="center" class="d-none d-md-flex">
           <v-col cols="4" >
@@ -15,13 +15,13 @@
                   color="primaryYellow"
                   group
                 >
-                  <v-btn class="br-10">
+                  <v-btn class="br-10 mx-3" >
                     <span class="t18400 primary--text ">ماشین سنگین</span>
                   </v-btn>
-                  <v-btn  class="br-10">
+                  <v-btn  class="br-10 mx-3">
                     <span class="t18400 primary--text ">کامیون</span>
                   </v-btn>
-                  <v-btn  class="br-10">
+                  <v-btn  class="br-10 mx-3">
                     <span class="t18400 primary--text ">قطعات</span>
                   </v-btn>
 
@@ -30,7 +30,7 @@
             </div>
 
           </v-col>
-          <v-col cols="4" class="headerPage">
+          <v-col cols="4" class="headerPage pt-0">
             <v-text-field
               class="mt-8"
               outlined
@@ -42,7 +42,6 @@
           <v-col cols="4" class="store">
             <v-menu >
               <template v-slot:activator="{ on, attrs }">
-
                 <div   v-bind="attrs"
                        v-on="on" class="store__plp-filter-box z-index-10 position__relative" >
                   <v-row justify="space-between" align="center" class="px-10 py-5">
@@ -77,7 +76,6 @@
 
         <v-row justify="center" align="center" class="d-flex d-md-none px-2">
           <v-col cols="6" >
-
             <MobileFilterSheet/>
           </v-col>
 
@@ -85,7 +83,7 @@
             <MobileSortSheet/>
           </v-col>
 
-          <v-col cols="12" class="headerPage">
+          <v-col cols="12" class="headerPage pt-0">
             <v-text-field
               class="mt-8"
               outlined
@@ -96,14 +94,14 @@
           </v-col>
         </v-row>
 
-        <v-row justify="center" class="mt-15">
-          <v-col cols="12" md="4" class="mt-15 pt-10">
+        <v-row justify="center" class="">
+          <v-col cols="12" md="4" class=" pt-10">
             <ProductCard/>
           </v-col>
-          <v-col cols="12" md="4" class="mt-15 pt-10">
+          <v-col cols="12" md="4" class=" pt-10">
             <ProductCard />
           </v-col>
-          <v-col cols="12" md="4" class="mt-15 pt-10">
+          <v-col cols="12" md="4" class="pt-10">
             <ProductCard/>
           </v-col>
 

@@ -25,6 +25,7 @@ export default {
     { src: "~/assets/css/main.css", ssr: false },
     { src: "~/assets/css/font.css", ssr: false },
     { src: "~/assets/css/typography.css", ssr: false },
+    { src: "~/assets/css/styleguide.css", ssr: false },
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

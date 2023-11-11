@@ -4,7 +4,7 @@
     <div >
       <div class="main-container">
         <v-row justify="center">
-          <v-col cols="3" class="d-none d-md-block">>
+          <v-col cols="3" class="d-none d-md-block">
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
@@ -14,7 +14,7 @@
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div style="position: absolute; top: 20px ;left: 20px">
+                    <div style="position: absolute; top: 20px ;left: 20px" @click="$router.go(-1)">
                       <img src="~/assets/img/arrow-up-left.svg" alt="">
                     </div>
                   </div>
@@ -51,6 +51,7 @@
             </div>
             <div class="user-profile__detail-card mt-15 mb-15 d-block d-md-none" id="create-form">
               <div class="contractor-card-detail ma-7 py-3">
+
                 <div class="d-flex justify-start scroller position__relative mr-3">
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
@@ -75,30 +76,19 @@
                       <span class="primary--text t16400">تهران، سعادت آباد</span>
                     </div>
                   </div>
-                  <div class="d-flex justify-center pl-3 my-3">
-                    <div class="contractor-chip d-flex justify-start align-center px-2 ">
+                  <div class="d-flex justify-center pl-3 my-4">
+                    <div class="contractor-chip d-flex justify-start align-center px-5 ">
                       <span class="primary--text t16400">تاریخ شروع: ۱ بهمن ماه ۱۴۰۲</span>
                     </div>
                   </div>
-                  <div class="d-flex justify-center pl-3 my-3">
+                  <div class="d-flex justify-center pl-3 my-4">
                     <div class="contractor-chip d-flex justify-start align-center px-5 ">
-                      <span class="primary--text t16400">خاک برداری</span>
+                      <span class="primary--text t16400">تاریخ پایان: ۱ بهمن ماه ۱۴۰۲</span>
                     </div>
                   </div>
-
-
-
                 </div>
-
-
-
-<!--                -->
-
-<!--              <ContractorDetailCard/>-->
-<!--                <v-divider class="my-5"/>-->
-<!--                <ContractorDetailCard/>-->
               </div>
-              <v-divider class="my-5"></v-divider>
+              <v-divider class="mt-10 mb-3"></v-divider>
               <ContractorDetailCard/>
             </div>
           </v-col>

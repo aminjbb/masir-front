@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12">
+  <v-col cols="12" @click="$router.push('/peymankar/1')">
     <div class="service__top-diver-box mx-0 pb-10 px-5 mt-15 mb-15 position__relative">
 
       <div class="d-flex justify-center">

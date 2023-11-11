@@ -17,9 +17,9 @@
 <!--                  append-icon="mdi-magnify"-->
 <!--                ></v-text-field>-->
 <!--              </div>-->
-              <MassageCard @click="$router.push('/user-profile/message/1')"/>
-              <MassageCard/>
-              <MassageCard/>
+              <MassageCard activeClass="active-chat" @click="$router.push('/user-profile/message/1')"/>
+              <MassageCard activeClass="unactive-chat"/>
+              <MassageCard activeClass="unactive-chat"/>
 
             </div>
           </v-col>

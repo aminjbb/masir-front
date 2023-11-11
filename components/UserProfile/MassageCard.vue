@@ -1,6 +1,6 @@
 <template>
  <div>
-   <div class="d-none d-md-block active-chat ma-3">
+   <div class="d-none d-md-block  ma-3" :class="activeClass">
      <div class="d-flex justify-space-between pa-5 align-center">
        <div class="d-flex align-center">
          <span><img width="30" height="30" src="@/assets/img/UserCircle.svg" alt=""></span>
@@ -20,7 +20,7 @@
 
    </div>
 
-   <div class="d-block d-md-none active-chat ma-3">
+   <div class="d-block d-md-none ma-3" :class="activeClass">
      <div class="pa-5">
        <div class="d-flex justify-space-between align-center">
         <div class="d-flex align-center">
@@ -46,5 +46,9 @@
 </template>
 
 <script>
-
+  export default {
+    props:{
+      activeClass:''
+    }
+  }
 </script>
