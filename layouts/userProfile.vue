@@ -58,9 +58,9 @@
     </v-app-bar>
     <HeaderUserProfile/>
     <v-main>
-
       <Nuxt />
     </v-main>
+    <FooterWithOutContact/>
   </v-app>
 </template>
 
@@ -68,9 +68,11 @@
 import footerPage from '~/components/Public/footerPage.vue'
 import HeaderUserProfile from '~/components/Public/HeaderUserProfile.vue'
 import ModalSearch from "~/components/Public/ModalSearch.vue";
+import FooterWithOutContact from "~/components/Public/FooterWithOutContact.vue";
 export default {
   name: 'DefaultLayout',
   components:{
+    FooterWithOutContact,
     ModalSearch,
     footerPage,
     HeaderUserProfile

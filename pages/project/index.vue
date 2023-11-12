@@ -1,28 +1,14 @@
 <template>
-  <div class="services-peymankar">
-    <div class="div-2">
-      <Navbar />
-      <Overlap />
-      <Overlap />
-      <Overlap />
-      <Overlap />
-      <Overlap />
-<!--      <OverlapGroup />-->
-<!--      <OverlapWrapper />-->
-<!--      <OverlapGroupWrapper />-->
-<!--      <DivWrapper />-->
-<!--      <Div />-->
-<!--      <SectionComponentNode />-->
-<!--&lt;!&ndash;      <NamecandidateNameOverlapScore10001 />&ndash;&gt;-->
-<!--      <NamecandidateNameOverlapScore10002 />-->
-<!--      <NamecandidateNameOverlapGroupScore10001 />-->
-<!--      <NamecandidateNameOverlapScore10004 />-->
-<!--      <div class="feather-icons-wrapper">-->
-<!--        <FeatherIconsChevronRight class="feather-icons" color="#0C385F" />-->
-<!--      </div>-->
-<!--      <div class="feather-icons-chevron-left-wrapper">-->
-<!--        <FeatherIconsChevronLeft class="feather-icons-chevron-left" color="#0C385F" />-->
-<!--      </div>-->
+  <div class="main-container mt-15 pt-10 mt-md-0 pt-md-0">
+    <div class="services-peymankar">
+      <div class="div-2">
+        <Navbar />
+        <Overlap />
+        <Overlap />
+        <Overlap />
+        <Overlap />
+        <Overlap />
+      </div>
     </div>
   </div>
 </template>
@@ -47,7 +33,7 @@ import OverlapWrapper from "~/components/ServicesPeymankar/sections/OverlapWrapp
 import SectionComponentNode from "~/components/ServicesPeymankar/sections/SectionComponentNode.vue";
 
 export default {
-  name: "ServicesPeymankar",
+  layout: "WithOutContact",
   components: {
     FeatherIconsChevronLeft,
     FeatherIconsChevronRight,

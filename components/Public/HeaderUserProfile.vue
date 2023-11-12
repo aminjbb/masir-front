@@ -1,5 +1,5 @@
 <template>
-  <div class="user-profile-header-box mt-16 mt-md-0">
+  <div class="user-profile-header-box mt-16 mt-md-0 d-none d-md-block">
     <header class="d-none d-md-flex ">
       <div class="main-container-header pt-5 ">
         <v-row justify="center">

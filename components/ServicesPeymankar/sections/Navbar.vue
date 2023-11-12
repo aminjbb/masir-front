@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar d-flex justify-start align-center mt-16">
+  <div class="navbar d-none justify-start align-center mt-16 d-md-flex">
     <div class="overlap-30 mx-5 d-flex justify-center align-center">
       <div class="text-wrapper-49">خاک برداری</div>
     </div>
@@ -31,7 +31,7 @@ export default {
   border-color: var(--monocolorchinese-white);
   border-radius: 15px;
   height: 89px;
-  width: 1184px;
+
 }
 
 .navbar .overlap-30 {

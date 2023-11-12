@@ -1,22 +1,53 @@
 <template>
-  <div class="overlap d-flex justify-space-between align-center my-10">
-    <div class="d-flex justify-start align-center">
-      <div class="text-wrapper-5 ml-15 mr-10">پروژه حدادیان</div>
-      <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-        <div class="text-wrapper">خاک برداری</div>
+  <div >
+    <div class="overlap d-md-flex justify-space-between align-center my-10 d-none">
+      <div class="d-flex justify-start align-center">
+        <div class="text-wrapper-5 ml-15 mr-10">پروژه حدادیان</div>
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper">خاک برداری</div>
+        </div>
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper-2">تهران</div>
+        </div>
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper-3">سعادت آباد</div>
+        </div>
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper-4">۱ بهمن ماه ۱۴۰۲</div>
+        </div>
       </div>
-      <div class="overlap-group-3 d-flex justify-center align-center mx-3">
-        <div class="text-wrapper-2">تهران</div>
-      </div>
-      <div class="overlap-group-4 d-flex justify-center align-center mx-3">
-        <div class="text-wrapper-3">سعادت آباد</div>
-      </div>
-      <div class="overlap-group-5 d-flex justify-center align-center mx-3">
-        <div class="text-wrapper-4">۱ بهمن ماه ۱۴۰۲</div>
-      </div>
-    </div>
 
-    <div class="text-wrapper-6 ml-15 dana-fa"> ۱۲۵,۰۰۰,۰۰۰ تومان</div>
+      <div class="text-wrapper-6 ml-15 dana-fa"> ۱۲۵,۰۰۰,۰۰۰ تومان</div>
+    </div>
+    <div class="overlap d-md-none  my-10 d-block py-8">
+      <div class="d-flex justify-space-between align-center px-5 w-100">
+          <span class="primary--text t24600">
+            پروژه حدادیان
+          </span>
+        <span  class="primary--text t14400">
+            ۱ بهمن ماه ۱۴۰۲
+          </span>
+      </div>
+      <div class="px-5 mt-3">
+        <span class="primary--text t18400 ">
+          خاک برداری
+        </span>
+      </div>
+      <div class="d-flex mt-3">
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper  px-5">تهران</div>
+        </div>
+        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
+          <div class="text-wrapper  px-5">سعادت آباد</div>
+        </div>
+      </div>
+      <div class="text-wrapper-6 ml-15 mt-7 dana-fa">
+      <span class="t24600">
+        ۱۲۵,۰۰۰,۰۰۰ تومان
+      </span>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -33,14 +64,13 @@ export default {
   border-color: var(--monocolorchinese-white);
   border-radius: 40px;
   box-shadow: 0px 4px 8px #0000001a;
-  height: 137px;
-  width: 1184px;
+  min-height: 137px;
 }
 
 .overlap .overlap-group-2 {
   background-color: var(--monocolorcultured);
   border-radius: 10px;
-  height: 50px;width: 116px;
+  height: 50px;
 }
 
 

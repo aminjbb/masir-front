@@ -2452,6 +2452,11 @@ header {
   min-height: 500px;
   background: #0C385F;
 }
+.user-profile__head .status-mobile-box{
+  width: 281px;
+  height: 121px;
+  background: rgba(0, 26, 86, 0.50);
+}
 .user-profile__head .avatar-box{
   width: 250px;
   height: 251px;border-radius: 35px;
@@ -2463,7 +2468,6 @@ header {
   height: 44px;
   background: #FFF;
   border-radius: 22px;
-
 }
 
 .user-profile__detail-card{
