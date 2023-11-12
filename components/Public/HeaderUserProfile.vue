@@ -1,6 +1,6 @@
 <template>
-  <div class="user-profile-header-box">
-    <header class="d-none d-md-flex">
+  <div class="user-profile-header-box mt-16 mt-md-0">
+    <header class="d-none d-md-flex ">
       <div class="main-container-header pt-5 ">
         <v-row justify="center">
           <v-col cols="5">
@@ -46,12 +46,12 @@
                 ></v-text-field>
               </v-col>
               <v-col cols="2">
-                <img src="~/assets/img/ShoppingCartDark.svg" alt="">
+                <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCartDark.svg" alt="">
               </v-col>
               <v-col cols="2">
                 <v-menu >
                   <template v-slot:activator="{ on, attrs }">
-                    <img  v-bind="attrs" v-on="on" src="~/assets/img/UserCircle.svg" alt="">
+                    <img  v-bind="attrs" v-on="on" src="~/assets/img/UserCircleDark.svg" alt="">
                   </template>
                   <v-list style=" width: 108px;">
                     <v-list-item

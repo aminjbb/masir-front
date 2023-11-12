@@ -1253,7 +1253,7 @@ header {
 }
 
 .main-container {
-  width: 1200px !important;
+  max-width: 1200px !important;
   margin: auto;
   position: relative;
 }
@@ -1626,6 +1626,9 @@ header {
 }
 
 @media only screen and (max-width: 500px) {
+  .h-home-image{
+    height: unset !important;
+  }
   .user-profile-header-box{
     height: 105px !important  ;
     background: #0C385F
@@ -2685,4 +2688,15 @@ background: #FFC51E;
 
 .v-dialog--active{
   border-radius: 25px !important;
+}
+
+.h-home-image{
+  height: 666px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.v-card--link:before {
+  background: none !important;
 }

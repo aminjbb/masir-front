@@ -4,13 +4,13 @@
       <h2 class="mr-5 mb-5">پرسش‌های شما</h2>
 
 
-      <button class="accordion">
+      <button class="accordion"  @click="changeIcon(0)">
         <v-row justify="space-between" class="pa-4">
           <span class="secondary2--text t16300">
            چند روز قبل از پرواز، بلیط هواپیما را بخریم؟
          </span>
           <span>
-            <v-icon>mdi-chevron-down-circle-outline</v-icon>
+            <v-icon>{{icons[0]}}</v-icon>
          </span>
         </v-row>
       </button>
@@ -21,13 +21,13 @@
           روزهای نزدیک پرواز موکول کنید. البته اگر قصد سفر در ایام پرسفر نظیر تعطیلات را دارید، باید هر چه زودتر رزرو بلیط هواپیما را انجام دهید.
         </p>
       </div>
-      <button class="accordion mt-5">
+      <button class="accordion mt-5" @click="changeIcon(1)">
         <v-row justify="space-between" class="pa-4">
           <span class="secondary2--text t16300">
            چند روز قبل از پرواز، بلیط هواپیما را بخریم؟
          </span>
           <span>
-            <v-icon>mdi-chevron-down-circle-outline</v-icon>
+            <v-icon>{{ icons[1] }}</v-icon>
          </span>
         </v-row>
       </button>
@@ -48,7 +48,7 @@
            چند روز قبل از پرواز، بلیط هواپیما را بخریم؟
          </span>
           <span>
-          <v-icon>mdi-chevron-down-circle-outline</v-icon>
+          <v-icon>{{ icons[0] }}</v-icon>
          </span>
         </v-row>
       </button>
@@ -70,7 +70,8 @@
   export default {
     data(){
       return{
-        windowSize :1000
+        windowSize :1000,
+        icons:['mdi-chevron-down-circle-outline' , 'mdi-chevron-down-circle-outline']
       }
     },
     mounted() {
@@ -81,11 +82,12 @@
         acc[i].addEventListener("click", function() {
           this.classList.toggle("active");
           var panel = this.nextElementSibling;
-          console.log( this.nextElementSibling , 'nextElementSibling')
           if (panel.style.display === "block") {
             panel.style.display = "none";
+
           } else {
             panel.style.display = "block";
+
           }
         });
       }
@@ -95,6 +97,17 @@
       this.getWindowSize()
     },
     methods:{
+      changeIcon(index){
+        console.log(this.icons[index] === 'mdi-chevron-down-circle-outline')
+        if (this.icons[index] === 'mdi-chevron-down-circle-outline') {
+          this.icons[index] = 'mdi-chevron-up-circle-outline'
+          console.log(this.icons)
+        }
+        else {
+          this.icons[index] = 'mdi-chevron-down-circle-outline'
+          console.log(this.icons)
+        }
+      },
       getWindowSize(){
         setTimeout(()=>{
 

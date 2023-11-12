@@ -146,9 +146,13 @@
               <span class="t18400 primary--text">تصویر صفحه کاربری</span>
             </div>
             <div class="mt-5">
-              <v-card color="cultured" outlined height="251  " class="br-15 mx-1 d-flex align-center justify-center">
+
+              <v-card v-if="profile.base64 == null" @click="selectProfileImage" color="cultured" outlined height="251  " class="br-15 mx-1 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack2.svg" alt="">
               </v-card>
+              <v-img height="251" v-else :src="profile.base64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
+                <div class="ma-1 position__absolute z-index-10" @click="deleteProfilePhoto()"><v-icon color="error">mdi-delete</v-icon></div>
+              </v-img>
             </div>
           </v-col>
 
@@ -212,6 +216,7 @@ export default {
     DeviceInformation
   },
   data(){return{
+    profile:{base64:null , image:''},
     items:['test' , 'tesst'],
     projects:[
       {name:''}
@@ -223,7 +228,30 @@ export default {
       this.projects.push(form)
     },
 
+    deleteProfilePhoto(){
+      this.profile.base64 = null
+      this.profile.image = null
+    },
+    selectProfileImage() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.onchange = e => {
+        this.getBase64(e.target.files[0])
+      }
+      input.click();
+    },
 
+    getBase64(file) {
+      var reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload =  () => {
+
+        this.profile.image = file
+        this.profile.base64 = reader.result
+
+      };
+
+    },
   },
   layout:'WithOutContact'
 }

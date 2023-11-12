@@ -3,6 +3,7 @@
         <v-row justify="center" class="mt-5">
             <v-col md="6" cols="11">
                 <v-img
+                  class="h-home-image"
                 :src="require('~/assets/img/HomeService.png')"
                 >
                 <div class="about-box-img-down ">
@@ -27,7 +28,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="about-link-box-img-up">
+                <div class="about-link-box-img-up pointer" @click="$router.push('/service')">
                     <img src="~/assets/img/arrow-up-right.svg" alt="" class="d-block d-sm-none">
                     <img src="~/assets/img/arrow-up-right-desctot.svg" alt="" class="d-none d-md-flex">
                 </div>

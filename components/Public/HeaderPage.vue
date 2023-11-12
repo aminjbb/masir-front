@@ -44,7 +44,7 @@
                   ></v-text-field>
                 </v-col>
                  <v-col cols="2">
-                    <img src="~/assets/img/ShoppingCart.svg" alt="">
+                    <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCart.svg" alt="">
                  </v-col>
                  <v-col cols="2">
                    <v-menu >
