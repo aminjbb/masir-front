@@ -13,6 +13,11 @@
               append-icon="mdi-chevron-down-circle-outline"
 
             >
+              <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+              </template>
               <!--                <template v-slot:item="{ props, item }" class="pa-0">-->
 
               <!--                  <div class="v-menu-content-box pa-5">-->
@@ -47,7 +52,7 @@
         <v-col md="6" cols="12" class="py-0 px-10">
 
           <div class="">
-            <v-row justify="center" class="pl-2 pt-2  d-none d-md-flex" >
+            <v-row justify="end" class="pl-5 pt-2  d-none d-md-flex" >
               <v-card @click="selectFile()" outlined width="141" height="141" class="br-15 mx-2 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack.svg" alt="">
               </v-card>
@@ -77,7 +82,6 @@
               <span class="t18400 primary--text">تصاویر وسیله</span>
             </div>
             <div  class="pl-2 pt-2 justify-start d-flex d-md-none" >
-
               <v-card @click="selectFile()" outlined width="87" height="87" class="br-15 mx-1 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack.svg" alt="">
               </v-card>

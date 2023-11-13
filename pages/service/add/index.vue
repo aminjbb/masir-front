@@ -93,7 +93,11 @@
                 outlined
                   append-icon="mdi-chevron-down-circle-outline"
               >
-
+                <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+                </template>
               </v-select>
             </div>
           </v-col>
@@ -106,14 +110,21 @@
                 placeholder="انتخاب محدوده"
                 outlined
                 append-icon="mdi-chevron-down-circle-outline"
-              ></v-select>
+
+              >
+                <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+                </template>
+              </v-select>
             </div>
           </v-col>
           <v-col md="6" cols="12">
             <div class="text-right pr-4">
               <span class="t18400 primary--text">انتخاب زمان شروع پروژه</span>
             </div>
-            <div class="mt-5 px-4">
+            <div class="mt-5 ">
               <date-picker class="pb-8" mode="single" :column="1" color="primary"></date-picker>
             </div>
           </v-col>
@@ -121,7 +132,7 @@
             <div class="text-right pr-4">
               <span class="t18400 primary--text">انتخاب زمان شروع پروژه</span>
             </div>
-            <div class="mt-5 px-4">
+            <div class="mt-5">
               <date-picker class="pb-8" mode="single" :column="1" color="primary"></date-picker>
             </div>
           </v-col>

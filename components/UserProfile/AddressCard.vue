@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="pa-6">
-          <img src="~/assets/img/edit.svg" alt="">
+          <img @click="openAddress()" src="~/assets/img/edit.svg" alt="">
         </div>
       </div>
     </div>
@@ -25,10 +25,17 @@
 
       </div>
       <div class="d-flex justify-end px-6 pb-5">
-        <img src="~/assets/img/edit.svg" alt="">
+        <img @click="openAddress()" src="~/assets/img/edit.svg" alt="">
       </div>
     </div>
   </div>
 </template>
-<script setup>
+<script >
+export default {
+  methods:{
+    openAddress(){
+      this.$store.commit('set_addressMapModal' , true)
+    }
+  }
+}
 </script>

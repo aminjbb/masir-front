@@ -43,10 +43,8 @@
                     append-icon="mdi-magnify"
                   ></v-text-field>
                 </v-col>
-                 <v-col cols="2">
+                 <v-col cols="4">
                     <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCart.svg" alt="">
-                 </v-col>
-                 <v-col cols="2">
                    <v-menu >
                      <template v-slot:activator="{ on, attrs }">
                        <img  v-bind="attrs" v-on="on" src="~/assets/img/UserCircle.svg" alt="">
@@ -73,8 +71,8 @@
                        </v-list-item>
                      </v-list>
                    </v-menu>
-
                  </v-col>
+
                 </v-row>
             </v-col>
            </v-row>

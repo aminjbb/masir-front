@@ -12,7 +12,11 @@
               <AddressCard/>
               <AddressCard/>
               <div class="d-flex justify-end px-8 mb-8">
-                <ModalAddress/>
+<!--                <ModalAddress/>-->
+                <v-btn @click="openAddress()" height="62" outlined color="primary" class="br-10">
+                  <span class="primary--text t18600 ml-3"><v-icon>mdi-plus-circle-outline</v-icon></span>
+                  <span class="primary--text t18600">افزودن آدرس جدید</span>
+                </v-btn>
               </div>
             </div>
           </v-col>
@@ -21,7 +25,8 @@
       </div>
     </div>
 
-
+  <ModalMapuserAddress/>
+    <ModalAddress/>
   </div>
 </template>
 
@@ -29,11 +34,18 @@
 import AddressCard from '~/components/UserProfile/AddressCard.vue'
 import ModalAddress from '~/components/UserProfile/ModalAddress.vue'
 import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
+import ModalMapuserAddress from "~/components/UserProfile/Address/ModalMapuserAddress.vue";
 export  default {
   layout:'userProfile',
   components:{
+    ModalMapuserAddress,
     UserProfileNavigationMenu,
     AddressCard ,ModalAddress
+  },
+  methods:{
+    openAddress(){
+      this.$store.commit('set_addressMapModal' , true)
+    }
   }
 }
 </script>

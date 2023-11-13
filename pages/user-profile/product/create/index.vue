@@ -66,7 +66,13 @@
                        dense
                        placeholder="انتخاب دسته بندی"
                        class="br-25"
-                     ></v-select>
+                     >
+                       <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+                       </template>
+                     </v-select>
                    </v-col>
                  </v-row>
                 </v-col>

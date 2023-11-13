@@ -663,7 +663,7 @@ ol li {
 }
 
 .leaf_map {
-  height: 538px;
+  height: 400px;
 }
 
 .my_location-btn {
@@ -1924,7 +1924,7 @@ header {
   right: 32%;
 }.request-masir-svg-position{
   position: absolute;
-  right: 35%;
+  right: 29%;
 }
 .banner-masir-svg-position{
   position: absolute;
@@ -2466,6 +2466,7 @@ header {
 
 .user-profile__head .chip{
   height: 44px;
+  min-width:131px ;
   background: #FFF;
   border-radius: 22px;
 }
@@ -2624,17 +2625,13 @@ background: #FFC51E;
   background: unset;
   opacity: 0.8;
 }
-.user-profile-navigation .v-list-group  .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
 
-  font-size: 18px !important;
-  font-weight: 600 !important;
-}
 
 .user-profile-navigation .mobile-box{
   border-radius: 30px;
   background: #0C385F;
   width: 157px;
-  height: 60px;
+  min-height: 60px;
   margin-top: -80px;
   margin-bottom: 60px;
 }
@@ -2704,3 +2701,11 @@ background: #FFC51E;
 .v-card--link:before {
   background: none !important;
 }
+
+
+.create-service-card .v-text-field.v-text-field--enclosed .v-text-field__details, .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
+  padding: 0 !important;
+}
+/*.headerPage .v-text-field.v-text-field--enclosed .v-text-field__details, .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {*/
+/*  padding: 0 12px !important;*/
+/*}*/

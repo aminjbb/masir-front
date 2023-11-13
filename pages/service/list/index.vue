@@ -14,18 +14,77 @@
                 color="primaryYellow"
                 group
               >
-                <v-btn class="br-10 mx-md-10 mx-4">
-                  <span class="t18400 primary--text ">وسیله</span>
-                </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
-                  <span class="t18400 primary--text ">راننده</span>
-                </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
-                  <span class="t18400 primary--text ">محدوده فعالیت</span>
-                </v-btn>
-                <v-btn  class="br-10 mx-md-5 mx-4">
-                  <span class="t18400 primary--text ">زمینه فعالیت</span>
-                </v-btn>
+                <v-menu >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                      <span class="t18400 primary--text ">وسیله</span>
+                    </v-btn>
+                  </template>
+                  <v-list class="px-15">
+                    <v-list-item
+                    >
+                      <v-list-item-title  >
+                        <div class="text-center">
+                          <span class="white--text">دسته بندی</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+                <v-menu >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                      <span class="t18400 primary--text ">راننده</span>
+                    </v-btn>
+                  </template>
+                  <v-list class="px-15">
+                    <v-list-item
+                    >
+                      <v-list-item-title  >
+                        <div class="text-center">
+                          <span class="white--text">دسته بندی</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+                <v-menu >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                      <span class="t18400 primary--text ">محدوده فعالیت</span>
+                    </v-btn>
+                  </template>
+                  <v-list class="px-15">
+                    <v-list-item
+                    >
+                      <v-list-item-title  >
+                        <div class="text-center">
+                          <span class="white--text">دسته بندی</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+                <v-menu >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                      <span class="t18400 primary--text ">زمینه فعالیت</span>
+                    </v-btn>
+                  </template>
+                  <v-list class="px-15">
+                    <v-list-item
+                    >
+                      <v-list-item-title  >
+                        <div class="text-center">
+                          <span class="white--text">دسته بندی</span>
+                        </div>
+                      </v-list-item-title>
+                    </v-list-item>
+                  </v-list>
+                </v-menu>
+
+
+
               </v-btn-toggle>
             </v-row>
           </div>

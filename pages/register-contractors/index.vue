@@ -92,7 +92,11 @@
                 outlined
                 append-icon="mdi-chevron-down-circle-outline"
               >
-
+                <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+                </template>
               </v-select>
             </div>
           </v-col>
@@ -105,7 +109,13 @@
                 placeholder="انتخاب محدوده"
                 outlined
                 append-icon="mdi-chevron-down-circle-outline"
-              ></v-select>
+              >
+                <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+                </template>
+              </v-select>
             </div>
           </v-col>
           <v-col md="6" cols="12">

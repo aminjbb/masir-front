@@ -61,7 +61,7 @@
                   </div>
                 </div>
 
-                <div class="about-link-box-img-down">
+                <div class="about-link-box-img-down" @click="$router.push('/service')">
                     <img src="~/assets/img/arrow-up-right.svg" alt="" class="d-block d-sm-none">
                     <img src="~/assets/img/arrow-up-right-desctot.svg" alt="" class="d-none d-md-flex">
                 </div>

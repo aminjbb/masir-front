@@ -13,6 +13,11 @@
               append-icon="mdi-chevron-down-circle-outline"
               :items="serviceType"
             >
+              <template #no-data>
+                  <span class="white--text">
+                    گزینه ای وجود ندارد
+                  </span>
+              </template>
               <template v-slot:item="{ props, item }" class="pa-0">
 
                 <div class="v-menu-content-box pa-5">

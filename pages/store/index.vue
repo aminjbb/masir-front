@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" class="pb-0">
-      <ServicebannerPlp/>
+      <StorePlpBanner/>
     </v-col>
     <v-col cols="12" class="mb-10 pt-0">
       <div class="main-container">
@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import ServicebannerPlp from '~/components/Service/ServicebannerPlp'
+import StorePlpBanner from '~/components/Store/StorePlpBanner'
 import ProductCard from '~/components/Store/ProductCard.vue'
 import MobileSortSheet from '~/components/Store/MobileSortSheet.vue'
 import MobileFilterSheet from '~/components/Store/MobileFilterSheet.vue'
@@ -137,7 +137,7 @@ export default {
     }
   },
   components:{
-    ServicebannerPlp,
+    StorePlpBanner,
     ProductCard,DriverCardMobile,MobileSortSheet,MobileFilterSheet,
   }
 }
