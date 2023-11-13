@@ -21,7 +21,9 @@ export default (ctx) => {
           gray: "#616161",
           gray02: "#E0E0E0",
           error:"#EE4343",
-          green:"#1BA94C"
+          green:"#1BA94C",
+          dimGray:"#636D77",
+          Azure:"#0082FD",
         },
         dark: {},
       },
