@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div @click="$router.push('/project/1')">
     <div class="overlap d-md-flex justify-space-between align-center my-10 d-none">
       <div class="d-flex justify-start align-center">
         <div class="text-wrapper-5 ml-15 mr-10">پروژه حدادیان</div>
