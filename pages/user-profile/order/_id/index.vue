@@ -96,11 +96,15 @@
                        ارسال پیام
                     </span>
                   </v-btn>
-                  <v-btn color="primary" width="251" height="101" class="br-20">
+                  <v-btn v-if="!showMobile" @click="showMobile = true" color="primary" width="251" height="101" class="br-20">
                     <span class="t30600 white--text">
-                       ثبت پروژه
+                       تماس با فروشنده
                     </span>
                   </v-btn>
+
+                  <span class="t30600 primary--text" v-if="showMobile">
+                       09223732465
+                    </span>
                 </div>
               </div>
 
@@ -204,12 +208,18 @@
                   </v-btn>
 
                 </div>
-                <div class="d-flex align-center justify-center my-10">
-                  <v-btn color="primary" width="251" height="101" class="br-20">
+                <div class="d-flex align-center justify-center my-10" v-if="!showMobile">
+                  <v-btn @click="showMobile=true" color="primary" width="251" height="101" class="br-20">
                     <span class="t30600 white--text">
-                       ثبت پروژه
+                        تماس با فروشنده
                     </span>
                   </v-btn>
+
+                </div>
+                <div class="d-flex align-center justify-center my-10" v-if="showMobile">
+                  <span class="t30600 white--text">
+                        تماس با فروشنده
+                    </span>
 
                 </div>
               </div>
@@ -230,6 +240,11 @@ import ContractorDetailCard from '~/components/UserProfile/ContractorDetailCard.
 import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
 export  default {
   layout:'userProfile',
+  data(){
+    return{
+      showMobile:false
+    }
+  },
   components:{
     UserProfileNavigationMenu,
     ContractorDetailCard

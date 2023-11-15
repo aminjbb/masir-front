@@ -13,10 +13,11 @@
               ></v-text-field>
             </div>
             <v-divider></v-divider>
-            <ChatCard/>
+            <ChatCard activeClass="active-chat" />
+            <ChatCard activeClass="unactive-chat"/>
           </div>
 
-          <div class="user-profile__chat-user-chat">
+          <div class="user-profile__chat-user-chat  position__relative">
             <div class=" header-chat d-flex align-center px-10">
               <span><img src="@/assets/img/UserCircle.svg" alt=""></span>
               <span class="t16400 primary--text mr-5">میترا حجار</span>
@@ -24,6 +25,14 @@
             <v-divider></v-divider>
             <MyMessage/>
             <UserMessage/>
+            <div style="    position: absolute;left: 0;right: 0;margin: 0 15px;bottom: 0">
+              <div class="messageSend pt-5 position__relative">
+                <v-text-field outlined ></v-text-field>
+                <div style="   position: absolute;left: 17px;top: 29px;">
+                  <img src="~/assets/img/send.svg"/>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
      </div>
@@ -34,8 +43,10 @@
 import ChatCard from '~/components/UserProfile/ChatCard.vue'
 import MyMessage from '~/components/UserProfile/MyMessage.vue'
 import UserMessage from '~/components/UserProfile/UserMessage.vue'
+import MassageCard from "~/components/UserProfile/MassageCard.vue";
 export default {
   components:{
+    MassageCard,
     ChatCard,
     MyMessage,
     UserMessage

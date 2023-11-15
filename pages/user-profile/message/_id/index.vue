@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
-            <div class="user-profile__detail-card mt-15 mb-15 pa-5">
+            <div class="user-profile__detail-card mt-15 mb-15 pa-5 pb-1 position__relative">
 
               <MyMessage/>
               <UserMessage/>
@@ -16,7 +16,14 @@
               <UserMessage/>
               <MyMessage/>
               <UserMessage/>
-
+              <div class="messageSend pt-5 position__relative">
+                <v-text-field outlined ></v-text-field>
+                <div style="    position: absolute;
+    left: 17px;
+    top: 29px;">
+                  <img src="~/assets/img/send.svg"/>
+                </div>
+              </div>
             </div>
           </v-col>
         </v-row>

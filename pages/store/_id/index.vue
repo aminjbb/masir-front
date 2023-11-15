@@ -3,7 +3,7 @@
     <v-col cols="12" >
       <StoreBanner/>
     </v-col>
-    <v-col cols="12" class="my-10">
+    <v-col cols="12" class="my-5">
       <div class="main-container">
         <v-row justify="center" align="start" class="px-5 d-none d-md-flex">
           <v-col md="3" cols="3" >

@@ -1,5 +1,5 @@
 <template>
-  <div class="active-chat ma-3">
+  <div class=" ma-3"  :class="activeClass">
     <div class="d-flex justify-space-between pa-5 align-center">
     <div class="d-flex align-center">
       <span><img width="30" height="30" src="@/assets/img/UserCircle.svg" alt=""></span>
@@ -19,5 +19,9 @@
 </template>
 
 <script>
-
+export default {
+  props:{
+    activeClass:''
+  }
+}
 </script>

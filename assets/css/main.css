@@ -1648,8 +1648,15 @@ header {
   }
 
   #storeBanner .vueperslides__inner{
-    height: 550px !important;
+    height: 440px !important;
   }
+  #storePlpBanner .vueperslides__inner{
+    height: 600px !important;
+  }
+  #storePlpBanner .vueperslides__parallax-wrapper{
+    height: 600px !important;
+  }
+
 
   .bg-cultured .v-text-field--outlined fieldset{
     border-color: #F5F5F5 !important;
@@ -1978,6 +1985,16 @@ header {
 }
 
 .headerPage .v-input .v-label{
+    color: #000 !important
+}
+.chatHeader .v-text-field--outlined fieldset{
+  border-color: #0C385F !important;
+  border-radius: 22px !important;
+
+}
+
+
+.chatHeader .v-input .v-label{
     color: #000 !important
 }
 .headerChat .v-text-field--outlined fieldset{
@@ -2478,11 +2495,18 @@ header {
   border-radius: 15px;
   background: #FFFFFF;
 }
+.user-profile__detail-card-chat{
+  width: 100%;
+
+  border: 1px solid #E0E0E0;
+  border-radius: 15px;
+  background: #FFFFFF;
+}
 .user-profile__detail-card-create{
   width: 100%;
   border: 1px solid #E0E0E0;
   border-radius: 50px;
-  background: #FFFFFF;
+  background: #F5F5F5;
 }
 
 .user-profile__experience-box{
@@ -2709,3 +2733,45 @@ background: #FFC51E;
 /*.headerPage .v-text-field.v-text-field--enclosed .v-text-field__details, .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {*/
 /*  padding: 0 12px !important;*/
 /*}*/
+.user-profile__detail-card-chat .chatHeader  .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot{
+  border: unset !important;
+  background: unset!important;
+  padding: 0 12px !important;
+}
+.user-profile__detail-card-chat .chatHeader  .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
+  padding: 0 12px !important;
+  padding-bottom: 16px !important;
+
+}
+.headerPage .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
+  padding: 0 12px !important;
+
+}
+.user-profile__detail-card-chat .chatHeader .v-text-field--outlined fieldset {
+
+  height: 44px !important;
+}
+.user-profile__detail-card-create .v-text-field.v-text-field--solo.v-input--dense>.v-input__control  {
+
+  min-height: 52px !important;
+}
+.user-profile__detail-card-create .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
+  padding: 0 12px !important;
+
+}
+
+.user-profile__detail-card .messageSend .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot {
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5;
+  border-radius: 15px;
+  padding-right: 20px;
+  height: 61px;
+}
+.user-profile__chat-user-chat .messageSend .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot {
+  border: 1px solid #E0E0E0;
+  background: #F5F5F5;
+  border-radius: 15px;
+  padding-right: 20px;
+  height: 61px;
+}
+

@@ -4,22 +4,22 @@
       <div class="d-flex justify-start align-center">
         <div class="text-wrapper-5 ml-15 mr-10">پروژه حدادیان</div>
         <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper">خاک برداری</div>
+          <div class="text-wrapper px-5">خاک برداری</div>
         </div>
         <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-2">تهران</div>
+          <div class="text-wrapper-2 px-5">تهران</div>
         </div>
         <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-3">سعادت آباد</div>
+          <div class="text-wrapper-3 px-5">سعادت آباد</div>
         </div>
         <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-4">۱ بهمن ماه ۱۴۰۲</div>
+          <div class="text-wrapper-4 px-5">۱ بهمن ماه ۱۴۰۲</div>
         </div>
       </div>
 
       <div class="text-wrapper-6 ml-15 dana-fa"> ۱۲۵,۰۰۰,۰۰۰ تومان</div>
     </div>
-    <div class="overlap d-md-none  my-10 d-block py-8">
+    <div class="overlap d-md-none  my-10 d-block py-8 px-5">
       <div class="d-flex justify-space-between align-center px-5 w-100">
           <span class="primary--text t24600">
             پروژه حدادیان

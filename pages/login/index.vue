@@ -1,17 +1,21 @@
 <template>
-    <div class="main-container">
+    <div class="px-md-15">
         <v-row class="d-none d-md-flex" justify="center">
           <v-img :src="require('~/assets/img/login-img.png')">
-            <div class="d-flex justify-start align-center height-vh-100">
-              <div>
-                <v-card width="391" min-height="407" outlined color="cultured" class="br-15 mt-5 pr-15">
-                  <Step1Login v-if="step ===1" :login="login"/>
-                  <Step2Login v-if="step ===2" :editNumber="editNumber"/>
-                </v-card>
-                <div class="d-flex justify-center mt-5">
-                  <img src="~/assets/img/headerLogo.png" alt="logo">
+            <div class=" d-flex justify-end align-center height-vh-100">
+              <v-col cols="10">
+                <div class="d-flex justify-start align-center height-vh-100">
+                  <div>
+                    <v-card width="391" min-height="407" outlined color="cultured" class="br-15 mt-5 pr-15">
+                      <Step1Login v-if="step ===1" :login="login"/>
+                      <Step2Login v-if="step ===2" :editNumber="editNumber"/>
+                    </v-card>
+                    <div class="d-flex justify-center mt-5">
+                      <img src="~/assets/img/headerLogo.png" alt="logo">
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </v-col>
             </div>
 
           </v-img>
@@ -24,10 +28,12 @@
             <div class="d-flex justify-center mt-5">
               <img src="~/assets/img/headerLogo.png" alt="logo">
             </div>
-            <v-card width="391" min-height="407" outlined color="cultured" class="br-15 mt-5 pr-15">
-              <Step1Login v-if="step ===1" :login="login"/>
-              <Step2Login v-if="step ===2" :editNumber="editNumber"/>
-            </v-card>
+            <div >
+              <v-card width="291" min-height="407" outlined color="cultured" class="br-15 mt-5 pr-5 ">
+                <Step1Login v-if="step ===1" :login="login"/>
+                <Step2Login v-if="step ===2" :editNumber="editNumber"/>
+              </v-card>
+            </div>
           </div>
         </div>
     </div>

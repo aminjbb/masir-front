@@ -13,10 +13,10 @@
 
 
             <v-col cols="3">
-              <img src="~/assets/img/ShoppingCart.svg" alt="">
+              <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCart.svg" alt="">
             </v-col>
             <v-col cols="3">
-              <img src="~/assets/img/UserCircle.svg" alt="">
+              <img @click="$router.push('/user-profile/uer-detail')" src="~/assets/img/UserCircle.svg" alt="">
             </v-col>
           </v-row>
         </v-col>
@@ -97,13 +97,13 @@ export default {
         {
           icon: require('~/assets/img/TrafficCone.svg'),
           title: 'سرویس‌ها',
-          to: '/lavean-mag'
+          to: '/service'
         },
         {
           icon: require('~/assets/img/Storefront.svg'),
           // icon: require('~/assets/img/laveanMenu.svg'),
           title: 'فروشگاه',
-          to: '/about-us'
+          to: '/store'
         },
         {
           icon: require('~/assets/img/UsersFour.svg'),

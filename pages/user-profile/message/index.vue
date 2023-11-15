@@ -7,17 +7,19 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
-            <div class="user-profile__detail-card mt-md-15 mb-15 pa-5">
-<!--              <div class="px-10 headerPage header-chat d-flex align-center">-->
-<!--                <v-text-field-->
-<!--                  class="mt-7"-->
-<!--                  outlined-->
-<!--                  color="black"-->
-<!--                  placeholder="جست‌و‌جو کنید"-->
-<!--                  append-icon="mdi-magnify"-->
-<!--                ></v-text-field>-->
-<!--              </div>-->
-              <MassageCard activeClass="active-chat" @click="$router.push('/user-profile/message/1')"/>
+            <div class="user-profile__detail-card-chat mt-md-15 mb-15 pa-5">
+
+              <div class="chatHeader">
+                <v-col cols="4" class="py-0">
+                  <v-text-field
+                    outlined
+
+                    placeholder="جست‌و‌جو کنید"
+                    append-icon="mdi-magnify"
+                  ></v-text-field>
+                </v-col>
+              </div>
+              <MassageCard activeClass="active-chat" />
               <MassageCard activeClass="unactive-chat"/>
               <MassageCard activeClass="unactive-chat"/>
 

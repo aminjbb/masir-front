@@ -1,16 +1,31 @@
 <template>
-  <div class="navbar d-none justify-start align-center mt-16 d-md-flex">
-    <div class="overlap-30 mx-5 d-flex justify-center align-center">
-      <div class="text-wrapper-49">خاک برداری</div>
+  <div>
+    <div class="navbar d-none justify-start align-center mt-16 d-md-flex scroller">
+      <div class="overlap-30 mx-5 d-flex justify-center align-center">
+        <div class="text-wrapper-49">خاک برداری</div>
+      </div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8 ml-15  d-flex justify-center align-center">خاک برداری</div>
+      <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2 mr-15" color="#0C385F" />
     </div>
-    <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
-    <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
-    <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
-    <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
-    <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
-    <div class="text-wrapper-50 mx-8 ml-15  d-flex justify-center align-center">خاک برداری</div>
-    <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2 mr-15" color="#0C385F" />
+    <div class="navbar-mobile d-flex justify-start align-center mt-16 d-md-none scroller">
+      <div class="overlap-30 mx-5 d-flex justify-center align-center">
+        <div class="text-wrapper-49">خاک برداری</div>
+      </div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
+      <div class="text-wrapper-50 mx-8 ml-15  d-flex justify-center align-center">خاک برداری</div>
+      <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2 mr-15" color="#0C385F" />
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -32,6 +47,14 @@ export default {
   border-radius: 15px;
   height: 89px;
 
+}
+.navbar-mobile{
+  background-color: var(--monocolorcultured);
+  border: 1px solid;
+  border-color: var(--monocolorchinese-white);
+  border-radius: 15px;
+  height: 89px;
+  width: 345px;
 }
 
 .navbar .overlap-30 {
@@ -61,6 +84,18 @@ export default {
   line-height: 40px;
   text-align: justify;
   white-space: nowrap;
+
+}
+.navbar-mobile .text-wrapper-50 {
+  color: var(--primary-and-secondarysecondari);
+  direction: rtl;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 40px;
+  text-align: justify;
+  white-space: nowrap;
+
 }
 
 .navbar .text-wrapper-51 {

@@ -3,6 +3,18 @@
     <div class="services-peymankar">
       <div class="div-2">
         <Navbar />
+        <div class="d-flex justify-end mt-5">
+          <v-btn color="primaryYellow" width="199" height="55" class="br-10">
+            <span class="primary--text t18400">
+              محدوده فعالیت
+            </span>
+              <span class="mr-3">
+                <v-icon>
+                  mdi-chevron-down-circle-outline
+                </v-icon>
+              </span>
+          </v-btn>
+        </div>
         <Overlap />
         <Overlap />
         <Overlap />
@@ -68,7 +80,6 @@ export default {
 .services-peymankar .div-2 {
   background-color: #ffffff;
   position: relative;
-  width: 1920px;
 }
 
 .services-peymankar .text-wrapper-73 {

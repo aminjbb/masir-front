@@ -1,6 +1,6 @@
 <template >
   <div >
-    <vueper-slides class="no-shadow pa-0 mt-mobile-5  "  height="900" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
+    <vueper-slides id="storePlpBanner" class=" no-shadow pa-0 mt-mobile-5  "  height="900" fade :touchable="false" rtl :slide-ratio="1 / 3.1"
                    :arrows="true">
       <template #arrow-left>
         <div class=" d-none d-md-block" style="    margin-left: 195px; margin-bottom: 228px;">

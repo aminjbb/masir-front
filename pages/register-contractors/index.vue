@@ -138,7 +138,7 @@
             </div>
           </v-col>
 
-          <v-col md="8" cols="11">
+          <v-col md="9" cols="11">
             <div class="text-right pr-4">
               <span class="t18400 primary--text">از تجربیات خود بنویسید.</span>
             </div>
@@ -151,13 +151,13 @@
               ></v-textarea>
             </div>
           </v-col>
-          <v-col md="4" cols="11">
+          <v-col md="3" cols="11">
             <div class="text-right pr-4">
               <span class="t18400 primary--text">تصویر صفحه کاربری</span>
             </div>
             <div class="mt-5">
 
-              <v-card v-if="profile.base64 == null" @click="selectProfileImage" color="cultured" outlined height="251  " class="br-15 mx-1 d-flex align-center justify-center">
+              <v-card v-if="profile.base64 == null" @click="selectProfileImage" color="cultured" outlined height="251  " width="251" class="br-15 mx-1 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack2.svg" alt="">
               </v-card>
               <v-img height="251" v-else :src="profile.base64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">

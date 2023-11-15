@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="12" md="9">
-            <div class="user-profile__detail-card-create mb-15" id="create-form">
+            <div class="user-profile__detail-card-create mt-15 mb-15 " >
               <v-row justify="center" align="center" class="pa-5">
                 <v-col cols="12" md="6">
                   <v-row class="pa-5" justify="center">
@@ -69,7 +69,8 @@
                         solo
                         dense
                         placeholder="نام محصول"
-                        class="br-25"
+                        class="br-25 create-product"
+
                       ></v-text-field>
                     </v-col>
                     <v-col

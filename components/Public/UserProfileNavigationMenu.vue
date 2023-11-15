@@ -24,7 +24,7 @@
       </div>
 
     </div>
-    <div class="user-profile-navigation mt-15 pt-15 mb-15 pt-15" v-if="show">
+    <div class="user-profile-navigation mt-15 pt-15 mb-15 pt-15 px-2" v-if="show">
       <v-row justify="center">
         <div class="d-none d-md-flex justify-center">
           <v-img style="margin-top: -172px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
@@ -60,10 +60,10 @@
         :value="$route.name === 'user-profile-contractor-list' ||$route.name === 'user-profile-histort-contractor' ? true : false"
         no-action
         sub-group
-
+        class="px-2"
       >
         <template v-slot:activator >
-          <div  class="pa-2 mx-2 d-flex"
+          <div  class="py-2 px-2 d-flex"
                 style=" border-radius: 10px; background: #fff;width: 100%" >
             <v-list-item-action class="z-index-10">
               <img width="24" height="24" src="~/assets/img/Barricade.svg"  >
@@ -88,10 +88,10 @@
         :value="$route.name === 'user-profile-order' ||$route.name === 'user-profile-my-product' ||$route.name === 'user-profile-message' || $route.name === 'user-profile-order-history'? true : false"
         no-action
         sub-group
-
+        class="px-2 mt-4"
       >
         <template v-slot:activator>
-          <div  class="mt-4 pa-2 mx-2 d-flex"
+          <div  class=" pa-2  d-flex"
                 style=" border-radius: 10px; background: #fff;width: 100%" >
             <v-list-item-action class="z-index-10">
 
@@ -140,6 +140,15 @@
             <span class="t18400 primary--text">پشتیبانی </span></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
+
+      <div class="d-flex mt-10 mb-5 px-4 align-center">
+        <span class="mt-2">
+          <img src="~/assets/img/log-out.svg">
+        </span>
+        <span class="error--text t18400 mr-10">
+          خروج
+        </span>
+      </div>
     </div>
   </div>
 </template>
