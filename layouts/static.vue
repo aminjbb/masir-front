@@ -102,7 +102,7 @@ export default {
           icon: require('~/assets/img/Storefront.svg'),
           // icon: require('~/assets/img/laveanMenu.svg'),
           title: 'فروشگاه',
-          to: '/about-us'
+          to: '/store'
         },
         {
           icon: require('~/assets/img/UsersFour.svg'),
@@ -120,7 +120,7 @@ export default {
           icon: require('~/assets/img/Books.svg'),
           // icon: require('~/assets/img/contactusMenu.svg'),
           title: 'مقالات',
-          to: '/contact-us'
+          to: '/blog'
         },
 
       ],

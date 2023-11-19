@@ -16,13 +16,13 @@
                     <span class="t18400 Black--text"> فروشگاه</span>
                   </div>
 
-                  <div  class="d-flex align-center pb-3 mb-0px-3 mx-3">
+                  <div @click="$router.push('/about-us')" class="d-flex align-center pb-3 mb-0px-3 mx-3">
                     <span class="t18400 Black--text"> درباره ما </span>
                   </div>
                   <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                     <span class="t18400 Black--text"> تماس با ما </span>
                   </div>
-                  <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
+                  <div @click="$router.push('/blog')" class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                     <span class="t18400 Black--text"> مقالات</span>
                   </div>
                 </v-row>

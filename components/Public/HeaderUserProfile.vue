@@ -18,13 +18,13 @@
                   <span class="t18400 white--text"> فروشگاه</span>
                 </div>
 
-                <div  class="d-flex align-center pb-3 mb-0px-3 mx-3">
+                <div @click="$router.push('/about-us')" class="d-flex align-center pb-3 mb-0px-3 mx-3">
                   <span class="t18400 white--text"> درباره ما </span>
                 </div>
                 <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                   <span class="t18400 white--text"> تماس با ما </span>
                 </div>
-                <div  class="d-flex align-center pb-3 mb-0 px-3 mx-3">
+                <div @click="$router.push('/blog')" class="d-flex align-center pb-3 mb-0 px-3 mx-3">
                   <span class="t18400 white--text"> مقالات</span>
                 </div>
               </v-row>
@@ -35,7 +35,7 @@
               </v-row>
 
             </v-col>
-            <v-col cols="3" class="headerPageUserProfile">
+            <v-col cols="3" class="headerPageUserProfile" >
               <v-row class="pt-3">
                 <v-col cols="8">
                   <v-text-field

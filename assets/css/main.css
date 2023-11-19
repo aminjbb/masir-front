@@ -2017,6 +2017,10 @@ header {
   min-height: 44px !important;
   height: 44px !important;
 }
+.headerPageUserProfile .v-text-field--outlined>.v-input__control>.v-input__slot{
+  min-height: 44px !important;
+  height: 44px !important;
+}
 
 .background_unset{
   background: unset !important;
@@ -2643,6 +2647,7 @@ header {
   border: 1px solid #E0E0E0;
   background: #F5F5F5;
   min-height: 553px;
+  margin-top: 123PX;
 }
 
 .user-profile-navigation .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
@@ -2748,6 +2753,10 @@ background: #FFC51E;
 
 }
 .headerPage .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
+  padding: 0 12px !important;
+
+}
+.headerPageUserProfile .v-text-field.v-text-field--enclosed:not(.v-text-field--rounded)>.v-input__control>.v-input__slot {
   padding: 0 12px !important;
 
 }

@@ -120,7 +120,7 @@ export default {
           icon: require('~/assets/img/Books.svg'),
           // icon: require('~/assets/img/contactusMenu.svg'),
           title: 'مقالات',
-          to: '/contact-us'
+          to: '/blog'
         },
 
       ],

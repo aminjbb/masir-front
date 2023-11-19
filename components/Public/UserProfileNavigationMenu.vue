@@ -15,6 +15,7 @@
           </v-img>
         </div>
       </div>
+
       <div class="d-flex justify-center">
         <div class="mobile-box-sm d-flex justify-center align-center">
                   <span class="primaryYellow--text t18400">
@@ -24,22 +25,29 @@
       </div>
 
     </div>
-    <div class="user-profile-navigation mt-15 pt-15 mb-15 pt-15 px-2" v-if="show">
+    <div class="user-profile-navigation  pt-15 mb-15 pt-15 px-2" v-if="show">
       <v-row justify="center">
         <div class="d-none d-md-flex justify-center">
-          <v-img style="margin-top: -172px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
+          <v-img style="margin-top: -235px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
             <div class="d-flex justify-center">
               <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
             </div>
           </v-img>
+
+        </div>
+        <div>
+          <div class="primary--text t30600" style="  margin-top: -139px">
+            عباس قادری
+          </div>
         </div>
         <v-col cols="8" class="d-block d-md-none">
-          <v-img style="margin-top: -184px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
+          <v-img style="margin-top: -246px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
             <div class="d-flex justify-center">
               <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
             </div>
           </v-img>
         </v-col>
+
         <div class="mobile-box d-flex justify-center align-center">
                   <span class="primaryYellow--text t18400">
                     ۰۹۳۰۰۱۷۹۶۴۸
@@ -59,14 +67,15 @@
       <v-list-group
         :value="$route.name === 'user-profile-contractor-list' ||$route.name === 'user-profile-histort-contractor' ? true : false"
         no-action
+        router
         sub-group
         class="px-2"
       >
         <template v-slot:activator >
           <div  class="py-2 px-2 d-flex"
-                style=" border-radius: 10px; background: #fff;width: 100%" >
+                :class="$route.name === 'user-profile-contractor-list' ||$route.name === 'user-profile-histort-contractor' ? 'active-navigation' : 'none-active-navigation'" >
             <v-list-item-action class="z-index-10">
-              <img width="24" height="24" src="~/assets/img/Barricade.svg"  >
+              <img width="24" height="24" src="~/assets/img/Barricade.svg"  :class="$route.name === 'user-profile-contractor-list' ||$route.name === 'user-profile-histort-contractor' ? 'filter-green' :''" >
             </v-list-item-action>
             <v-list-item-content class="z-index-10">
               <v-list-item-title class="mr-8">
@@ -91,11 +100,11 @@
         class="px-2 mt-4"
       >
         <template v-slot:activator>
-          <div  class=" pa-2  d-flex"
-                style=" border-radius: 10px; background: #fff;width: 100%" >
+          <div  class=" pa-2  d-flex "
+          :class="$route.name === 'user-profile-order' ||$route.name === 'user-profile-my-product' ||$route.name === 'user-profile-message' || $route.name === 'user-profile-order-history' ? 'active-navigation' : 'none-active-navigation'">
             <v-list-item-action class="z-index-10">
 
-              <img width="24" height="24" src="~/assets/img/package.svg" >
+              <img width="24" height="24" src="~/assets/img/package.svg" :class="$route.name === 'user-profile-order' ||$route.name === 'user-profile-my-product' ||$route.name === 'user-profile-message' || $route.name === 'user-profile-order-history' ? 'filter-green' :''"  >
             </v-list-item-action>
             <v-list-item-content class="z-index-10">
               <v-list-item-title class="mr-8">
@@ -177,6 +186,12 @@ export default {
 </script>
 
 <style scoped>
+.none-active-navigation{
+  border-radius: 10px; background: #fff;width: 100%
+}
+.active-navigation{
+  border-radius: 10px; background: #FFC51E;width: 100%
+}
 .burger-menu-profile{
   position: absolute;
   top: -58px;
