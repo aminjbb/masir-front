@@ -1139,6 +1139,10 @@ ol li {
 }
 
 @media (max-width: 1902px) {
+  .about-us-image{
+    width: 90%;
+    height: 421px ;
+  }
   .search_box {
     left: 18%;
     top: 70px;
