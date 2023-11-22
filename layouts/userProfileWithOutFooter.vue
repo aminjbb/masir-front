@@ -60,6 +60,9 @@
     <v-main>
       <Nuxt />
     </v-main>
+    <div class="d-none d-md-block">
+      <FooterWithOutContact/>
+    </div>
   </v-app>
 </template>
 

@@ -27,7 +27,7 @@
     </div>
     <div class="user-profile-navigation  pt-15 mb-15 pt-15 px-2" v-if="show">
       <v-row justify="center">
-        <div class="d-none d-md-flex justify-center">
+        <div class="d-none d-md-flex">
           <v-img style="margin-top: -235px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
             <div class="d-flex justify-center">
               <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
@@ -41,7 +41,7 @@
           </div>
         </div>
         <v-col cols="8" class="d-block d-md-none">
-          <v-img style="margin-top: -246px;" width="204" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
+          <v-img style="margin-top: -249px;" width="250" height="100" :src="require('~/assets/img/Untitled.png')" alt="">
             <div class="d-flex justify-center">
               <img src="~/assets/img/untitled-design-98-2.png" width="80" height="80" alt="">
             </div>
@@ -138,11 +138,11 @@
             <span class="t18400 primary--text">آدرس‌ها </span></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item class="my-4 pa-2 mx-2" to="/user-profile/message" router exact
+      <v-list-item class="my-4 pa-2 mx-2" to="/user-profile/suport" router exact
                    style="height: 60px; border-radius: 10px; background: #fff"  v-model="page">
         <v-list-item-action class="z-index-10">
 
-          <img width="24" height="24" src="~/assets/img/ChatCircleDots.svg" :class="$route.fullPath == '/user-profile/message' ? 'filter-green' :''">
+          <img width="24" height="24" src="~/assets/img/ChatCircleDots.svg" :class="$route.fullPath == '/user-profile/suport' ? 'filter-green' :''">
         </v-list-item-action>
         <v-list-item-content class="z-index-10">
           <v-list-item-title>

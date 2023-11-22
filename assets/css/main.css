@@ -1628,8 +1628,16 @@ header {
 .vue-magnifier-container .preview:hover .magnifying-glass {
   display: block;
 }
-
+.mt-user-profile{
+  margin-top: 124px;
+}
 @media only screen and (max-width: 500px) {
+  .mt-user-profile{
+    margin-top: 0px !important;
+  }
+  .user-profile-navigation .mobile-box {
+    margin-top: -99px !important;
+  }
   .h-home-image{
     height: unset !important;
   }
@@ -2513,7 +2521,7 @@ header {
 .user-profile__detail-card-create{
   width: 100%;
   border: 1px solid #E0E0E0;
-  border-radius: 50px;
+  border-radius: 15px;
   background: #F5F5F5;
 }
 
@@ -2772,6 +2780,10 @@ background: #FFC51E;
   padding: 0 12px !important;
 
 }
+.user-profile__detail-card-create  .v-text-field__slot textarea {
+  padding: 12px 12px !important;
+
+}
 
 .user-profile__detail-card .messageSend .v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot {
   border: 1px solid #E0E0E0;
@@ -2786,5 +2798,10 @@ background: #FFC51E;
   border-radius: 15px;
   padding-right: 20px;
   height: 61px;
+}
+.loginForm .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)>.v-input__control>.v-input__slot {
+  border-radius: 10px !important;
+  padding-right: 20px !important;
+  height: 60px;
 }
 

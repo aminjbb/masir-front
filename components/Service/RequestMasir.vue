@@ -7,7 +7,7 @@
               <span class="t24600 primary--text  d-block d-sm-none ">
                   درخواست <span class="primaryYellow--text">سرویس</span> از مسیر به چه صورت است؟
              </span>
-      <div class="request-masir-svg-position">
+      <div class="request-masir-svg-position d-none d-md-block">
         <img src="~/assets/img/WhyMasirSvg.svg" alt="">
 
       </div>

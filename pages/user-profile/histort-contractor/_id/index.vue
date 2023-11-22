@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="9">
-            <div class="user-profile__detail-card mt-15 mb-15" id="create-form">
+            <div class="user-profile__detail-card mt-user-profile mb-15" id="create-form">
               <div class="contractor-card-detail ma-7 pt-3">
                 <div class="d-flex justify-start position__relative mr-3">
                     <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>

@@ -19,7 +19,7 @@
 
       <div class="text-wrapper-6 ml-15 dana-fa"> ۱۲۵,۰۰۰,۰۰۰ تومان</div>
     </div>
-    <div class="overlap d-md-none  my-10 d-block py-8 px-5">
+    <div class="overlap d-md-none  my-10 d-block py-8 px-3 mx-5">
       <div class="d-flex justify-space-between align-center px-5 w-100">
           <span class="primary--text t24600">
             پروژه حدادیان

@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
-            <div class="user-profile__detail-card mt-15 mb-15 pa-5 pb-1 position__relative">
+            <div class="user-profile__detail-card mt-user-profile mb-15 pa-5 pb-1 position__relative">
 
               <MyMessage/>
               <UserMessage/>
@@ -42,7 +42,7 @@ import MassageCard from "~/components/UserProfile/MassageCard.vue";
 import UserMessage from "~/components/UserProfile/UserMessage.vue";
 import MyMessage from "~/components/UserProfile/MyMessage.vue";
 export  default {
-  layout:'userProfile',
+  layout:'userProfileWithOutFooter',
   components:{
     MyMessage, UserMessage,
     UserProfileNavigationMenu,

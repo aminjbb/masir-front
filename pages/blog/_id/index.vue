@@ -98,7 +98,7 @@
            </div>
          </div>
        </div>
-       <div class="pdp-blog-status-box mt-15 pa-5 d-md-none d-block ">
+       <div class="pdp-blog-status-box mt-15 pa-5 mx-5 d-md-none d-block ">
          <div class="chip my-2">
             <span class="primary--text t18400">
               سنگ های گرانبها
@@ -111,17 +111,19 @@
          </div>
 
        </div>
-       <div class="d-md-none d-block text-center pa-15">
-         <div class="chip-mobile  mx-2">
+        <div class="d-md-none d-flex justify-center">
+          <div class="d-md-none d-block text-center pa-15">
+            <div class="chip-mobile  mx-2 px-5">
 
             <span class="primary--text t18400">
               Copy Link
             </span>
-           <span class="mr-2">
+              <span class="mr-2 mt-2">
               <img src="~/assets/img/copy.svg">
             </span>
-         </div>
-       </div>
+            </div>
+          </div>
+        </div>
      </div>
    </div>
 
@@ -140,7 +142,7 @@ export default {
     height: 51px;
     border-radius: 24.5px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: #DAF1FF;
   }
@@ -148,6 +150,7 @@ export default {
     width: 289px;
     height: 194px;
     margin-top: 48px;
+    border-radius: 20px ;
   }
   .margin-lg{
     margin-top: -324px  !important;

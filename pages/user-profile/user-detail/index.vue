@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
-            <div class="user-profile__detail-card mt-md-15  mb-15" id="create-form">
+            <div class="user-profile__detail-card mt-user-profile  mb-15" id="create-form">
               <v-row justify="space-between" class="mb-10 px-md-15 px-2 pt-10">
                 <v-col md="6" cols="12" class="py-0">
                   <div class="text-right pr-4">
@@ -119,3 +119,4 @@ export  default {
   layout:'userProfile'
 }
 </script>
+

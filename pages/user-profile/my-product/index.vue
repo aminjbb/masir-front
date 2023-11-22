@@ -8,7 +8,7 @@
             <UserProfileNavigationMenu/>
           </v-col>
           <v-col cols="11" md="9">
-            <div class="user-profile__detail-card mt-md-15 mb-15" id="create-form">
+            <div class="user-profile__detail-card mt-user-profile mb-15" id="create-form">
               <div class="create-product-box d-md-flex d-none justify-space-between align-center px-5 ma-7">
                 <div class="d-flex align-center">
                   <img src="~/assets/img/imageCreate.svg" alt="">

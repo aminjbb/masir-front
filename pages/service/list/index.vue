@@ -14,7 +14,7 @@
                 color="primaryYellow"
                 group
               >
-                <v-menu >
+                <v-menu class="mx-5" >
                   <template v-slot:activator="{ on, attrs }">
                     <v-btn v-bind="attrs" v-on="on" class="br-10">
                       <span class="t18400 primary--text ">وسیله</span>
@@ -31,9 +31,9 @@
                     </v-list-item>
                   </v-list>
                 </v-menu>
-                <v-menu >
+                <v-menu class="mx-5" >
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10 mx-5">
                       <span class="t18400 primary--text ">راننده</span>
                     </v-btn>
                   </template>
@@ -48,9 +48,9 @@
                     </v-list-item>
                   </v-list>
                 </v-menu>
-                <v-menu >
+                <v-menu class="mx-5" >
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10  mx-5">
                       <span class="t18400 primary--text ">محدوده فعالیت</span>
                     </v-btn>
                   </template>
@@ -65,9 +65,9 @@
                     </v-list-item>
                   </v-list>
                 </v-menu>
-                <v-menu >
+                <v-menu class="mx-5" >
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn v-bind="attrs" v-on="on" class="br-10">
+                    <v-btn v-bind="attrs" v-on="on" class="br-10  mx-5">
                       <span class="t18400 primary--text ">زمینه فعالیت</span>
                     </v-btn>
                   </template>

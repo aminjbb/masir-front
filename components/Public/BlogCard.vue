@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-15 mb-15">
+  <div class="mt-15 mb-15" @click="$router.push('/blog/1')">
     <v-card height="431" width="360" class="br-50 mx-3 d-none d-md-block">
       <img width="360" src="~/assets/img/MagImage.png" alt="" class="br-unset">
       <div class="text-center mt-8">

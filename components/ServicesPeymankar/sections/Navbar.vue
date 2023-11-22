@@ -10,19 +10,17 @@
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8 ml-15  d-flex justify-center align-center">خاک برداری</div>
-      <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2 mr-15" color="#0C385F" />
+      <PhosphorIconsCaretcircleleft2 className="ml-5" class="phosphor-icons-caretcircleleft-2" color="#0C385F" />
     </div>
-    <div class="navbar-mobile d-flex justify-start align-center mt-16 d-md-none scroller">
-      <div class="overlap-30 mx-5 d-flex justify-center align-center">
-        <div class="text-wrapper-49">خاک برداری</div>
-      </div>
+    <div class="navbar-mobile d-flex justify-start align-center mt-16 mx-4 d-md-none scroller">
+      <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8  d-flex justify-center align-center">خاک برداری</div>
       <div class="text-wrapper-50 mx-8 ml-15  d-flex justify-center align-center">خاک برداری</div>
-      <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2 mr-15" color="#0C385F" />
+      <PhosphorIconsCaretcircleleft2 class="phosphor-icons-caretcircleleft-2" color="#0C385F" />
     </div>
   </div>
 
@@ -54,7 +52,7 @@ export default {
   border-color: var(--monocolorchinese-white);
   border-radius: 15px;
   height: 89px;
-  width: 345px;
+  width: 332px;
 }
 
 .navbar .overlap-30 {

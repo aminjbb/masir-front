@@ -16,7 +16,7 @@
               <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCart.svg" alt="">
             </v-col>
             <v-col cols="3">
-              <img @click="$router.push('/user-profile/uer-detail')" src="~/assets/img/UserCircle.svg" alt="">
+              <img @click="$router.push('/user-profile/user-detail')" src="~/assets/img/UserCircle.svg" alt="">
             </v-col>
           </v-row>
         </v-col>

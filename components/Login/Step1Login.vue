@@ -11,7 +11,7 @@
                      شماره تلفن همراه خود را وارد کنید.
                     </span>
       </div>
-      <div class="mt-8">
+      <div class="mt-8 loginForm">
         <v-form ref="login" v-model="valid" class="pl-15">
           <v-text-field :rules="rule" solo v-model="mobile">
           </v-text-field>
@@ -46,8 +46,8 @@
                      شماره تلفن همراه خود را وارد کنید.
                     </span>
       </div>
-      <div class="mt-8">
-        <v-form ref="login" v-model="valid" class="pl-5">
+      <div class="mt-8 loginForm">
+        <v-form ref="login" v-model="valid" class="pl-5 " >
           <v-text-field :rules="rule" solo v-model="mobile">
           </v-text-field>
         </v-form>
