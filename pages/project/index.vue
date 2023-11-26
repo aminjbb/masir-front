@@ -7,7 +7,7 @@
           <v-menu class="mx-5" >
             <template v-slot:activator="{ on, attrs }">
 
-              <v-btn v-bind="attrs" v-on="on" color="primaryYellow" width="199" height="55" class="br-10">
+              <v-btn v-bind="attrs" v-on="on" color="primaryYellow" width="199" height="55" class="br-10 ml-md-0 ml-5">
                 <span class="primary--text t18400">
                   محدوده فعالیت
                 </span>

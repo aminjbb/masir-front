@@ -53,7 +53,13 @@
           مقاله های اخیرا منتشر شده
         </span>
        </div>
-       <v-row justify="center" class="mt-15">
+       <v-row justify="center" class="mt-15 position__relative">
+         <span class="bg-white d-none d-md-flex justify-center align-center arrow-left-blog-card">
+           <img src="~/assets/img/arrow-left-circle.svg" alt="">
+         </span>
+         <span class="bg-white d-none d-md-flex justify-center align-center arrow-right-blog-card" >
+           <img   src="~/assets/img/arrow-right-circle-banner.svg" alt="">
+         </span>
          <BlogCard/>
          <BlogCard/>
          <BlogCard/>
@@ -66,12 +72,12 @@
        </div>
 
        <div class="d-flex justify-center mt-15 position__relative" >
-         <div class=" d-none d-md-block arrow-left-blog">
+         <span class="bg-white d-none d-md-block arrow-left-blog">
            <img src="~/assets/img/arrow-left-circle.svg" alt="">
-         </div>
-         <div class=" d-none d-md-block arrow-right-blog" >
+         </span>
+         <span class="bg-white d-none d-md-block arrow-right-blog" >
            <img   src="~/assets/img/arrow-right-circle-banner.svg" alt="">
-         </div>
+         </span>
          <v-card width="370" height="166 " class="br-20 d-flex justify-center align-center mx-2">
            <span class="mx-1">
               <img width="65" height="65" src="~/assets/img/Truck.svg">
@@ -293,15 +299,43 @@ export default {
 <style>
 .arrow-left-blog{
   position: absolute;
-  left: -5px;
+  left: -2px;
   z-index: 1;
   top: 34%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+}
+.arrow-left-blog-card{
+  position: absolute;
+  left: 14px;
+  z-index: 1;
+  top: 40%;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #fff;
 }
 .arrow-right-blog{
   position: absolute;
-  right: -5px;
+  right: -2px;
   z-index: 1;
   top: 34%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+}
+.arrow-right-blog-card{
+  position: absolute;
+  right: 14px;
+  z-index: 1;
+  top: 40%;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #fff;
 }
 .link-primary{
 

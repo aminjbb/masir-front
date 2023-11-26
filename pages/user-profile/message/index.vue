@@ -10,7 +10,7 @@
             <div class="user-profile__detail-card-chat mt-user-profile mb-15 pa-5">
 
               <div class="chatHeader">
-                <v-col cols="4" class="py-0">
+                <v-col md="4" cols="12" class="py-0">
                   <v-text-field
                     outlined
 

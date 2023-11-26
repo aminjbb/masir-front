@@ -42,7 +42,7 @@ export default {
           icon: require('~/assets/img/Storefront.svg'),
           // icon: require('~/assets/img/laveanMenu.svg'),
           title: 'فروشگاه',
-          to: '/about-us'
+          to: '/store'
         },
         {
           icon: require('~/assets/img/UsersFour.svg'),

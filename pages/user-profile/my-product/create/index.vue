@@ -125,7 +125,7 @@
                       ></v-text-field>
                     </v-col>
                     <v-col cols="6" md="4">
-                      <div class="d-flex justify-end align-start">
+                      <div class="d-flex justify-end align-start ml-md-5">
                         <v-btn width="149" height="50" color="primaryYellow" class="br-15">
                           <span class="primary--text t18600">
                             ساخت محصول

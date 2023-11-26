@@ -63,8 +63,8 @@
          فروشگاه مسیر
         </span>
     </div>
-    <div  class="text-center mt-5 px-10">
-      <div class="contractor-chip d-flex justify-start align-center px-3 ">
+    <div  class="text-center mt-5 px-8">
+      <div class="contractor-chip d-flex justify-center align-center  ">
         <span class="primary--text t18600">۱.۹۳۰.۰۰۰.۰۰۰ تومان</span>
       </div>
     </div>

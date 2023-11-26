@@ -1632,6 +1632,7 @@ header {
   margin-top: 124px;
 }
 @media only screen and (max-width: 500px) {
+
   .mt-user-profile{
     margin-top: 0px !important;
   }
@@ -2661,6 +2662,7 @@ header {
 .user-profile-navigation .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
 background: #FFC51E;
   opacity: 0.8;
+  border-radius: 10px;
 }
 .user-profile-navigation .v-list-group  .theme--light.v-list-item--active:before, .theme--light.v-list-item--active:hover:before, .theme--light.v-list-item:focus:before {
   background: unset;
@@ -2688,7 +2690,7 @@ background: #FFC51E;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
 }
 .filter-green{
-  filter : invert(15%) sepia(59%) saturate(1527%) hue-rotate(182deg) brightness(63%) contrast(95%);
+  filter : invert(15%) sepia(59%) saturate(1527%) hue-rotate(182deg) brightness(43%) contrast(100%);
 }
 .user-profile-header-box{
   height: 300px;

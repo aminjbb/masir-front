@@ -109,7 +109,7 @@ export default {
           icon: require('~/assets/img/UsersFour.svg'),
           // icon: require('~/assets/img/contactusMenu.svg'),
           title: 'درباره ما',
-          to: '/contact-us'
+          to: '/about-us'
         },
         {
           icon: require('~/assets/img/Chats.svg'),

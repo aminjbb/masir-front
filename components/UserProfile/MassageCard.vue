@@ -20,7 +20,7 @@
 
    </div>
 
-   <div class="d-block d-md-none ma-3" :class="activeClass">
+   <div class="d-block d-md-none ma-3" :class="activeClass"  @click="$router.push(`/user-profile/${route}/1`)">
      <div class="pa-5">
        <div class="d-flex justify-space-between align-center">
         <div class="d-flex align-center">

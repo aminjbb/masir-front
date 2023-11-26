@@ -17,10 +17,9 @@
       </div>
 
       <div class="d-flex justify-center">
-        <div class="mobile-box-sm d-flex justify-center align-center">
-                  <span class="primaryYellow--text t18400">
-                    ۰۹۳۰۰۱۷۹۶۴۸
-                  </span>
+
+        <div class="primary--text t30600" >
+          عباس قادری
         </div>
       </div>
 
@@ -187,10 +186,14 @@ export default {
 
 <style scoped>
 .none-active-navigation{
-  border-radius: 10px; background: #fff;width: 100%
+  border-radius: 10px;
+  background: #fff;
+  width: 100%;
+  height: 60px;
+
 }
 .active-navigation{
-  border-radius: 10px; background: #FFC51E;width: 100%
+  border-radius: 10px; background: #FFC51E;width: 100%;  height: 60px;
 }
 .burger-menu-profile{
   position: absolute;
