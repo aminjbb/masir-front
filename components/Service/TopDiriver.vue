@@ -1,12 +1,12 @@
 <template>
  <div class="my-15">
    <v-row justify="center" class="mt-15 mb-15  d-none d-md-flex" >
-     <DriverCard/>
-     <DriverCard/>
+     <DriverCard rate="5" />
+     <DriverCard rate="3.5" />
    </v-row>
    <v-row justify="center" class="mt-15 mb-5 d-flex d-md-none" >
-     <DriverCardMobile/>
-     <DriverCardMobile/>
+     <DriverCardMobile  rate="3.5" />
+     <DriverCardMobile  rate="5" />
    </v-row>
    <v-row justify="center" class="mt-15 pt-10 d-none d-md-flex" >
      <v-btn  @click="$router.push('/service/list')"  color="primary" width="251" height="101" class="br-25">

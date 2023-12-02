@@ -89,6 +89,8 @@
  </div>
 </template>
 <script >
+import axios from "axios";
+
 export default {
   props:{
     editNumber:{type:Function }
@@ -101,12 +103,63 @@ export default {
     }
   },
   methods:{
+    convertPersianNumber(str) {
+      var persianNumbers = [
+        /۰/g,
+        /۱/g,
+        /۲/g,
+        /۳/g,
+        /۴/g,
+        /۵/g,
+        /۶/g,
+        /۷/g,
+        /۸/g,
+        /۹/g,
+      ];
+      var englishnumber = [
+        /0/g,
+        /1/g,
+        /2/g,
+        /3/g,
+        /4/g,
+        /5/g,
+        /6/g,
+        /7/g,
+        /8/g,
+        /9/g,
+      ];
+
+      if (typeof str === "string") {
+        for (var i = 0; i < 10; i++) {
+          str = str.replace(persianNumbers[i], i).replace(englishnumber[i], i);
+        }
+      }
+      return str;
+    },
     validate(){
       this.$refs.login.validate()
       setTimeout(()=>{
-        if (this.valid) this.login()
+        if (this.valid) this.setToken()
       }, 200)
-    }
+    },
+
+    setToken(){
+      axios({
+        method: "get",
+        url: process.env.apiUrl + "user/client/otp",
+        params: {
+          mobile: this.convertPersianNumber(this.phone),
+        },
+      })
+        .then((response) => {
+          this.resendLoading = false;
+          this.code = "";
+        })
+        .catch((err) => {
+          this.resendLoading = false;
+        });
+    },
+
   }
 }
 </script>

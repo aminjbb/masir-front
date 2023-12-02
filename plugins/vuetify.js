@@ -13,6 +13,7 @@ export default (ctx) => {
       themes: {
         light: {
           primary: "#0C385F",
+          primary2: "#008CE0",
           primaryYellow: "#FFC51E",
           success: "#1BA94C",
           secondary: "#9BA5B7",

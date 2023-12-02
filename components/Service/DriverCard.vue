@@ -2,11 +2,16 @@
   <v-col md="5" lg="6" @click="$router.push('/peymankar/1')">
     <div class="service__top-diver-box  pb-8 px-10 position__relative">
     <div class="rating-box">
-      <div><img src="~/assets/img/heartY.png" alt=""></div>
-      <div><img src="~/assets/img/heartY.png" alt=""></div>
-      <div><img src="~/assets/img/heartY.png" alt=""></div>
-      <div><img src="~/assets/img/heartY.png" alt=""></div>
-      <div><img src="~/assets/img/heart.png" alt=""></div>
+      <div>
+        <span class="primary--text t14400">
+          امتیاز راننده
+        </span>
+      </div>
+      <div class="dir-ltr mt-2">
+        <span class=" t18600 dana-fa" :class="rateColor">
+         {{ rate }} / ۵
+        </span>
+      </div>
     </div>
     <div class="d-flex justify-center">
       <img class="avatar-img" src="~/assets/img/untitled-design-98-2.png" alt="">
@@ -70,6 +75,16 @@
 </template>
 <script>
 export default {
+ props:{
+   rate:0
+ },
 
+  computed:{
+   rateColor(){
+     if (this.rate >= 4) return 'green--text'
+     else if (this.rate <= 4 && this.rate > 2) return 'primaryYellow--text'
+     else  return 'error--text'
+   }
+  }
 }
 </script>

@@ -161,19 +161,25 @@
             <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >09223732465</span>
           </div>
           <div class="d-flex align-center">
-            <v-btn color="primaryYellow" width="241" height="101" class="br-20 ml-5">
-              <span class="t30600 primary--text">
+            <v-btn color="primary" width="241" height="101" class="br-20 ml-5">
+              <span class="t24600 white--text">
                  ارسال پیام
               </span>
             </v-btn>
             <v-btn @click="showNumber =!showNumber" color="primary" width="241" height="101" class="br-20">
-              <span class="t30600 white--text">
+              <span class="t24600 white--text">
                  تماس با فروشنده
               </span>
             </v-btn>
           </div>
         </div>
-
+        <div class="d-md-flex d-none justify-center mt-15">
+          <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">
+              <span class="t18600 primary--text">
+                ارسال درخواست ثبت سفارش
+              </span>
+          </v-btn>
+        </div>
         <div class="pdp__order-card py-5  d-block d-md-none mx-3">
           <div class="d-flex align-center px-5">
             <div class="avatar-box">
@@ -187,14 +193,22 @@
           </div>
           <v-divider class="my-4"></v-divider>
           <div class="d-flex justify-center align-center">
-            <v-btn color="primaryYellow" width="129" height="50" class="br-10 ml-5">
-              <span class="t16400 primary--text">
+            <v-btn color="primary" width="129" height="50" class="br-10 ml-5">
+              <span class="t16400 white--text">
                  ارسال پیام
               </span>
             </v-btn>
             <v-btn @click="showNumber =!showNumber" color="primary" width="129" height="50" class="br-10">
               <span class="t16400 white--text">
                  تماس با فروشنده
+              </span>
+            </v-btn>
+          </div>
+
+          <div class="d-flex d-md-none justify-center mt-5">
+            <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">
+              <span class="t18600 primary--text">
+                ارسال درخواست ثبت سفارش
               </span>
             </v-btn>
           </div>

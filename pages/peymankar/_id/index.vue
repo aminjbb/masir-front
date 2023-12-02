@@ -212,28 +212,28 @@
           </div>
 
           <div class="text-center my-15">
-            <span class="primary--text t24600">
-              به این پیمانکار امتیاز دهید
-            </span>
+            <v-row justify="center" >
+              <v-col class="pa-12" cols="6">
+                <v-slider
+                  v-vuetify-ltr
+                  color="primaryYellow"
+                  track-fill-color="primaryYellow"
+                  step="1"
+                  :max="4"
+                  ticks="always"
+                  hide-details
+                  tick-size="15"
 
-            <!--          <div class="d-flex justify-center mt-15">-->
-            <!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartYUs.png" alt=""></div>-->
-            <!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
-            <!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
-            <!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
-            <!--            <div class="mx-3"><img width="58" height="58" src="~/assets/img/heartUs.png" alt=""></div>-->
-            <!--          </div>-->
-            <v-rating
-              empty-icon="mdi-heart-outline"
-              full-icon="mdi-heart"
-              hover
-              length="5"
-              size="50"
-              value="3"
-              color="primaryYellow"
-              background-color="primary"
-              style="direction: ltr;"
-            ></v-rating>
+                >
+                </v-slider>
+              <v-row justify="space-between" class="dir-ltr">
+                <v-col  v-for="ticksLabel in ticksLabels" cols="1">
+                  <span class="dana-fa primary--text t18600">{{ticksLabel}}</span>
+                </v-col>
+              </v-row>
+
+              </v-col>
+            </v-row>
             <div class="d-flex justify-center mt-15">
               <v-btn color="primary" class="br-15" width="204" height="65">
                 <span class="white--text t24600"> ثبت امتیاز</span>
@@ -374,5 +374,21 @@
 <script>
 export  default {
   layout:'Peymankar',
+  data: () => ({
+    ticksLabels: [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+    ],
+  }),
+
+  methods: {
+    season (val) {
+      return this.icons[val]
+    },
+  },
+
 }
 </script>

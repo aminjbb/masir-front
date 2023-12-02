@@ -37,16 +37,21 @@
                </span>
           </v-row>
         </div>
-        <v-row justify="end">
+        <v-row justify="end" align="center">
 
-          <v-row class="rating-box-mobile pr-5">
-            <div class="mx-1"><img src="~/assets/img/heart.png" alt=""></div>
-            <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
-            <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
-            <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
-            <div class="mx-1"><img src="~/assets/img/heartY.png" alt=""></div>
+          <div class="rating-box-mobile text-right mt-15  pr-5">
+            <div>
+              <span class="primary--text t14400">
+                امتیاز راننده
+              </span>
+            </div>
+            <div class="dir-ltr mt-2">
+              <span class=" t18600 dana-fa" :class="rateColor">
+               {{ rate }} / ۵
+              </span>
+            </div>
 
-          </v-row>
+          </div>
           <div class="ml-2">
             <div class="mt-15">
               <v-row  align="center" class="pr-15">
@@ -72,6 +77,15 @@
 </template>
 <script>
 export default {
-
+  props:{
+    rate:0
+  },
+  computed:{
+    rateColor(){
+      if (this.rate >= 4) return 'green--text'
+      else if (this.rate <= 4 && this.rate > 2) return 'primaryYellow--text'
+      else  return 'error--text'
+    }
+  }
 }
 </script>

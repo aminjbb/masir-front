@@ -190,7 +190,7 @@
       </v-btn>
       <v-btn color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
-                 ثبت پروژه
+                ثبت‌نام
               </span>
       </v-btn>
     </v-row>
@@ -209,7 +209,7 @@
         <div class="d-flex justify-center ">
           <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
                 <span class="t30600 primary--text">
-                   ثبت پروژه
+                  ثبت‌نام
                 </span>
           </v-btn>
         </div>

@@ -92,16 +92,16 @@
         </v-row>
 
         <v-row justify="center" class="mt-15  d-none d-md-flex">
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard class="d-none d-md-block mt-15 pt-10"/>
+          <DriverCard rate="4" class="d-none d-md-block mt-15 pt-10"/>
+          <DriverCard rate="3.4"  class="d-none d-md-block mt-15 pt-10"/>
+          <DriverCard rate="3"  class="d-none d-md-block mt-15 pt-10"/>
+          <DriverCard rate="5"  class="d-none d-md-block mt-15 pt-10"/>
 
         </v-row>
 
         <v-row justify="center" class="mt-15 mb-5 d-flex d-md-none px-5" >
-          <DriverCardMobile/>
-          <DriverCardMobile/>
+          <DriverCardMobile  rate="5"/>
+          <DriverCardMobile  rate="3"/>
         </v-row>
       </div>
 
