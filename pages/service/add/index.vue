@@ -110,7 +110,7 @@
                 placeholder="انتخاب محدوده"
                 outlined
                 append-icon="mdi-chevron-down-circle-outline"
-
+                multiple
               >
                 <template #no-data>
                   <span class="white--text">

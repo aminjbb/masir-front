@@ -2063,7 +2063,7 @@ header {
 }
 
 .service__service-box-mobile{
-  width: 85%;
+  width: 95%;
   height: 110px;
   border-radius: 15px;
   border: 1px solid var(--monocolor-chinese-white, #E0E0E0);
@@ -2835,5 +2835,9 @@ background: #FFC51E;
 .v-slider__tick-label{
   margin-top: 14px;
   font-family: Dana !important;
+}
+
+.v-slider__track-container {
+  height: 6px !important;
 }
 
