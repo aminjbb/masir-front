@@ -7,7 +7,7 @@
       </div>
       <div class="text-right pr-5 mt-5">
          <span class="t24600 primary--text">
-           عباس قادری
+            {{employee?.user?.firstName }}
          </span>
       </div>
       <div>
@@ -17,7 +17,7 @@
                  وسیله:
                </span>
             <span class="18400 primary--text">
-               لودر
+               {{employee?.vehicles[0].vehicle.name}}
                </span>
           </v-row>
           <v-row justify="space-between" class="px-10  my-4">
@@ -78,7 +78,9 @@
 <script>
 export default {
   props:{
-    rate:0
+    rate:0,
+    employee: null
+
   },
   computed:{
     rateColor(){

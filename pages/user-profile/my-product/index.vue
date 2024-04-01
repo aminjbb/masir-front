@@ -32,7 +32,7 @@
                 </div>
 
               </div>
-              <ProduCard/>
+              <ProduCard :product="product" v-for="(product , index) in myProducts" :key="`product${product.id}`"/>
             </div>
           </v-col>
         </v-row>
@@ -52,6 +52,21 @@ export  default {
   components:{
     UserProfileNavigationMenu,
     ProduCard
+  },
+  mounted() {
+    this.$store.dispatch('set_myProduct')
+  },
+
+  computed:{
+    myProducts(){
+      try {
+        return this.$store.getters['get_myProduct']
+      }
+      catch (e) {
+        return  []
+
+      }
+    }
   }
 }
 </script>

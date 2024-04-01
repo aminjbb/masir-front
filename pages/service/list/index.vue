@@ -92,16 +92,11 @@
         </v-row>
 
         <v-row justify="center" class="mt-15  d-none d-md-flex">
-          <DriverCard rate="4" class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard rate="3.4"  class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard rate="3"  class="d-none d-md-block mt-15 pt-10"/>
-          <DriverCard rate="5"  class="d-none d-md-block mt-15 pt-10"/>
-
+          <DriverCard :employee="employee" :key="`employee${index}`" :ref="`employee${index}`" rate="4" class="d-none d-md-block mt-15 pt-10" v-for="(employee, index) in employees"/>
         </v-row>
 
         <v-row justify="center" class="mt-15 mb-5 d-flex d-md-none px-5" >
-          <DriverCardMobile  rate="5"/>
-          <DriverCardMobile  rate="3"/>
+          <DriverCardMobile :employee="employee" :key="`employeeM${index}`" :ref="`employeeM${index}`" rate="5" v-for="(employee, index) in employees"/>
         </v-row>
       </div>
 
@@ -115,13 +110,49 @@
 import ServicebannerPlp from '~/components/Service/ServicebannerPlp'
 import DriverCard from '~/components/Service/DriverCard.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
+import {gql} from "nuxt-graphql-request";
 
 export default {
   layout:'WithOutContact',
   data(){
     return{
-      text:''
+      text:'',
+      employees:[]
     }
+  },
+  methods:{
+   async getClientEmployees(page){
+
+      const query = gql`
+        query{
+            clientEmployees(limit:10,offset:${page}){
+            results{
+            id
+              description
+                vehicles{
+                  vehicle{
+                    name
+                  }
+                }
+                user{
+                  firstName
+                },
+                neighborhood{
+                  name
+                },
+                skills{
+                  name
+                }
+              }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query, {});
+      this.employees = obj.clientEmployees.results
+    }
+  },
+
+  mounted() {
+    this.getClientEmployees(0)
   },
   components:{
     ServicebannerPlp,

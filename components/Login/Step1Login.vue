@@ -17,18 +17,15 @@
           </v-text-field>
         </v-form>
       </div>
-      <div class="d-flex ">
-        <v-btn @click="validate()" color="primaryYellow" width="121" height="60" class="br-10 mx-2">
+      <div class="d-flex mt-5 pl-5">
+        <v-btn @click="validate()" color="primaryYellow" width="223" height="60" class="br-10 mx-2">
                       <span class="primary--text t18400">
-                         ورود کارفرما
+                         ورود
                       </span>
         </v-btn>
-        <v-btn @click="validate()" color="primary" width="121" height="60" class="br-10 mx-2">
-                      <span class="primaryYellow--text t18400">
-                          ورود پیمانکار
-                      </span>
-        </v-btn>
+
       </div>
+
       <div class="text-center mt-5 pl-15">
       <span class="dimGray--text t14400">
         ورود شما به معنای پذیرش شرایط ‌وقوانین حریم‌خصوصی مسیر است.
@@ -55,14 +52,10 @@
       <div class="d-flex pl-5">
         <v-btn :loading="loading" @click="validate()" color="primaryYellow" width="121" height="60" class="br-10 mx-1">
                       <span class="primary--text t18400">
-                         ورود کارفرما
+                         ورود
                       </span>
         </v-btn>
-        <v-btn :loading="loading" @click="validate()" color="primary" width="121" height="60" class="br-10 mx-1">
-                      <span class="primaryYellow--text t18400">
-                          ورود پیمانکار
-                      </span>
-        </v-btn>
+
       </div>
       <div class="text-center mt-5 pl-5">
       <span class="dimGray--text t14400">
@@ -130,11 +123,12 @@ export default {
     sendPhone(){
       axios({
         method: "get",
-        url: process.env.apiUrl + `client/request-token/${this.convertPersianNumber(this.mobile)}/`,
+        url: process.env.apiUrl + `user/v1/client/request-token/${this.convertPersianNumber(this.mobile)}/`,
 
       })
         .then((response) => {
           this.resendLoading = false;
+          localStorage.setItem('mobile' , this.mobile)
           this.login()
         })
         .catch((err) => {

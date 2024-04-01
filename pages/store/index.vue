@@ -24,7 +24,7 @@
               <v-list class="mt-5 pt-6 store">
                 <v-list-item
                   v-for="(item, index) in filters"
-                  :key="index"
+                  :key="`index${index}`"
                   :value="index"
 
                 >
@@ -104,14 +104,8 @@
         </v-row>
 
         <v-row justify="center" class="">
-          <v-col cols="12" md="4" class=" pt-10">
-            <ProductCard/>
-          </v-col>
-          <v-col cols="12" md="4" class=" pt-10">
-            <ProductCard />
-          </v-col>
-          <v-col cols="12" md="4" class="pt-10">
-            <ProductCard/>
+          <v-col cols="12" md="4" class=" pt-10" v-for="(product , index) in products" :key="`product-${index}`">
+            <ProductCard :product="product"/>
           </v-col>
 
         </v-row>
@@ -131,11 +125,13 @@ import ProductCard from '~/components/Store/ProductCard.vue'
 import MobileSortSheet from '~/components/Store/MobileSortSheet.vue'
 import MobileFilterSheet from '~/components/Store/MobileFilterSheet.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
-
+import {gql} from 'nuxt-graphql-request';
 export default {
   layout:'WithOutContact',
   data(){
     return{
+      products:[],
+      pageLength:1,
       text:'',
       items: [
         { title: 'بر اساس محبوبیت' },
@@ -153,6 +149,39 @@ export default {
   components:{
     StorePlpBanner,
     ProductCard,DriverCardMobile,MobileSortSheet,MobileFilterSheet,
+  },
+  methods:{
+  async  getProducts(form){
+      const query = gql`
+        query{
+            clientProducts(limit:10  ` + form + `){
+                totalCount,
+                results{
+                    id,
+                    englishName,
+                    persianName,
+                    metaDescription,
+                    metaTitle,
+                    canonical,
+                    schema,
+                    price,
+                    nofollow,
+                    noindex,
+                    description,
+                    images{
+                      image
+                    }
+                }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query , {});
+      this.pageLength = Math.ceil(obj.clientProducts.totalCount /10)
+      this.products =  obj.clientProducts.results
+    }
+  },
+
+  beforeMount() {
+    this.getProducts('')
   }
 }
 </script>

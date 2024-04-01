@@ -17,7 +17,6 @@
                 </div>
               </v-col>
             </div>
-
           </v-img>
         </v-row>
         <div class="d-flex justify-center d-md-none pt-10">

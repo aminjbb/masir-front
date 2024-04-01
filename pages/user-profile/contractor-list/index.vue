@@ -8,8 +8,7 @@
           </v-col>
           <v-col cols="11" md="9">
             <div class="user-profile__detail-card mt-user-profile mb-15" id="create-form">
-            <ContractorCard/>
-            <ContractorCard/>
+            <ContractorCard :project="project" v-for="(project , index) in myProject " :key="`myProject${project.id}`"/>
 
             </div>
           </v-col>
@@ -25,6 +24,7 @@
 <script>
 import ContractorCard from '~/components/UserProfile/ContractorCard.vue'
 import UserProfileNavigationMenu from '~/components/Public/UserProfileNavigationMenu.vue'
+import {gql} from "nuxt-graphql-request";
 export  default {
   layout:'userProfile',
   components:{
@@ -32,49 +32,16 @@ export  default {
   },
   data(){
     return{
-      page:'',
-      admins: [
-        ['Management', 'mdi-account-multiple-outline'],
-        ['Settings', 'mdi-cog-outline'],
-      ],
-      items: [
-        // {
-        //   icon: require('~/assets/img/shopMenu.svg'),
-        //   title: 'فروشگاه',
-        //   to: '/products'
-        // },
-        {
-          icon: require('~/assets/img/House.svg'),
-          title: 'اطلاعات شخصی',
-          to: '/user-profile/contractor-list'
-        },
-        {
-          icon: require('~/assets/img/TrafficCone.svg'),
-          title: 'پروژه‌ها',
-          to: '/service'
-        },
-        {
-          icon: require('~/assets/img/Storefront.svg'),
-          // icon: require('~/assets/img/laveanMenu.svg'),
-          title: 'فروشگاه',
-          to: '/about-us'
-        },
-        {
-          icon: require('~/assets/img/UsersFour.svg'),
-          // icon: require('~/assets/img/contactusMenu.svg'),
-          title: 'آدرس‌ها',
-          to: '/contact-us'
-        },
-        {
-          icon: require('~/assets/img/Chats.svg'),
-          // icon: require('~/assets/img/contactusMenu.svg'),
-          title: 'پشتیبانی',
-          to: '/contact-us'
-        },
 
-
-      ],
     }
+  },
+  computed:{
+    myProject(){
+      return this.$store.getters['get_myProjects']
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_myProjects')
   }
 }
 </script>

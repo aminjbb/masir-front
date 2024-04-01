@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer class="d-block d-sm-none position__relative" v-model="drawer" :clipped="clipped"  right app
+    <v-navigation-drawer  v-if="windowSize <= 1432 && windowSize != 0"  class="position__relative" v-model="drawer" :clipped="clipped"  right app
     style="height:100% ; z-index: 99;">
     <div class="pa-2">
       <v-col>
@@ -40,9 +40,7 @@
       <img src="~/assets/img/ArrowCircleRight.svg" alt="" @click="drawer =false">
     </div>
     </v-navigation-drawer>
-
-
-    <v-app-bar class="d-block d-sm-none pr-5 pl-5" :clipped-left="clipped" app color="white" height="75" >
+    <v-app-bar v-if="windowSize <= 1432 && windowSize != 0"  class=" pr-5 pl-5" :clipped-left="clipped" app color="white" height="75" >
       <v-btn
         dark
         @click.stop="drawer = !drawer"
@@ -56,7 +54,7 @@
       <v-spacer />
         <ModalSearch/>
       </v-app-bar>
-      <HeaderPage/>
+      <HeaderPage v-if="windowSize > 1432" />
     <v-main>
       <div class="main-container">
         <Nuxt />
@@ -80,6 +78,7 @@ export default {
   },
   data () {
     return {
+      windowSize:0,
       clipped: false,
       drawer: false,
       drawerSearch: false,
@@ -130,6 +129,23 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
+    }
+  },
+
+  beforeMount() {
+    this.getWindowSize()
+  },
+  methods:{
+    getWindowSize(){
+      setTimeout(()=>{
+
+        try {
+          this.windowSize = screen.width
+        }
+        catch (e) {
+          return e
+        }
+      },1000)
     }
   }
 }

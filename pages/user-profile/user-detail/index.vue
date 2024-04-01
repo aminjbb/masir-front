@@ -18,6 +18,7 @@
                     <v-text-field
                       placeholder="نام و نام خانوادگی"
                       outlined
+                      v-model="form.name"
                     ></v-text-field>
                   </div>
                 </v-col>
@@ -29,6 +30,7 @@
                     <v-text-field
                       placeholder="شماره تماس"
                       outlined
+                      v-model="form.mobile"
                     ></v-text-field>
                   </div>
                 </v-col>
@@ -40,6 +42,7 @@
                     <v-text-field
                       placeholder="ایمیل"
                       outlined
+                      v-model="form.email"
                     ></v-text-field>
                   </div>
                 </v-col>
@@ -51,6 +54,7 @@
                     <v-text-field
                       placeholder="ایمیل"
                       outlined
+                      v-model="form.nationalId"
                     ></v-text-field>
                   </div>
                 </v-col>
@@ -59,10 +63,11 @@
                     <span class="t18400 primary--text">تاریخ تولد</span>
                   </div>
                   <div class="mt-5">
-                    <v-text-field
-                      placeholder="تاریخ تولد"
-                      outlined
-                    ></v-text-field>
+                    <client-only>
+                      <date-picker mode="single" v-model="form.birthdate" format="jYYYY-jMM-jDD"
+                                    custom-input=".birthdate" />
+                    </client-only>
+
                   </div>
                 </v-col>
                 <v-col md="6" cols="12" class="py-0">
@@ -78,7 +83,7 @@
                 </v-col>
                 <v-col cols="12" >
                   <div class="d-none justify-end d-md-flex">
-                    <v-btn  color="primaryYellow" height="55" width="149" class="br-15">
+                    <v-btn :loading="loading" @click="userUpdate()" color="primaryYellow" height="55" width="149" class="br-15">
                       <span class="primary--text t18600">ویرایش</span>
                     </v-btn>
                   </div>
@@ -101,9 +106,6 @@
             </div>
           </v-col>
         </v-row>
-
-
-
       </div>
     </div>
 
@@ -113,10 +115,79 @@
 
 <script>
 import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
-
+import {gql} from "nuxt-graphql-request";
+import axios from 'axios'
+import {convertDateToGregorian} from "~/assets/js/public";
 export  default {
   components: {UserProfileNavigationMenu},
-  layout:'userProfile'
+  data(){
+    return{
+      clientDetail:null,
+      loading:false,
+      form:{
+        name:'',
+        mobile:null,
+        email:null,
+        nationalId:null,
+        birthdate:null
+      }
+    }
+  },
+  layout:'userProfile',
+  methods:{
+    async  getClientDetail(){
+      const requestHeaders = {
+        Authorization: "Bearer " + this.$cookies.get("userToken"),
+      };
+      const query = gql`
+        query{
+            clientMe{
+                id,
+                    firstName,
+                    lastName,
+                    nationalId,
+                    mobile
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query , {} , requestHeaders);
+      this.clientDetail =  obj.clientMe
+    },
+    setForm(){
+      this.form.name= this.clientDetail.firstName
+      this.form.nationalId= this.clientDetail.nationalId
+      this.form.mobile= this.clientDetail.mobile
+    },
+    userUpdate(){
+      this.loading = true
+      axios({
+        method: "PATCH",
+        url: process.env.apiUrl + "user/v1/client/me/",
+        headers: {
+          Authorization: "Bearer " + this.$cookies.get("userToken"),
+        },
+        data: {
+          first_name: this.form.name,
+          national_id: this.form.nationalId,
+          birthdate:convertDateToGregorian(this.form.birthdate , '-' , false)
+        },
+      })
+        .then((response) => {
+          this.loading = false;
+        })
+        .catch((err) => {
+          this.loading = false;
+        });
+
+    }
+  },
+  beforeMount() {
+    this.getClientDetail()
+  },
+  watch:{
+    clientDetail(){
+      this.setForm()
+    }
+  }
 }
 </script>
 

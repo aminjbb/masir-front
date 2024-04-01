@@ -42,8 +42,52 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    ['@alireza-ab/vue-persian-datepicker/nuxt', { PersianDate: true }]
+    'nuxt-graphql-request',
+      ['@alireza-ab/vue-persian-datepicker/nuxt', { PersianDate: true }]
   ],
+  graphql: {
+    /**
+     * An Object of your GraphQL clients
+     */
+    clients: {
+      default: {
+        /**
+         * The client endpoint url
+         */
+        endpoint: process.env.gqUrl,
+        /**
+         * Per-client options overrides
+         * See: https://github.com/prisma-labs/graphql-request#passing-more-options-to-fetch
+         */
+        options: {},
+      },
+      secondClient: {
+        // ...client config
+      },
+      // ...your other clients
+    },
+
+    /**
+     * Options
+     * See: https://github.com/prisma-labs/graphql-request#passing-more-options-to-fetch
+     */
+    options: {
+      method: 'get', // Default to `POST`
+    },
+
+    /**
+     * Optional
+     * default: true (this includes cross-fetch/polyfill before creating the graphql client)
+     */
+    useFetchPolyfill: true,
+
+    /**
+     * Optional
+     * default: false (this includes graphql-tag for node_modules folder)
+     */
+    includeNodeModules: true,
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',

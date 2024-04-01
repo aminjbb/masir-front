@@ -1,5 +1,5 @@
 <template>
-  <v-col md="5" lg="6" @click="$router.push('/peymankar/1')">
+  <v-col md="5" lg="6" @click="$router.push('/peymankar/'+employee.id)">
     <div class="service__top-diver-box  pb-8 px-10 position__relative">
     <div class="rating-box">
       <div>
@@ -18,7 +18,7 @@
     </div>
     <div class="text-right mt-5">
          <span class="t24600 primary--text">
-           عباس قادری
+          {{employee?.user?.firstName }}
          </span>
     </div>
     <div>
@@ -29,7 +29,7 @@
                  وسیله:
                </span>
             <span class="18400 primary--text">
-               لودر
+               {{employee?.vehicles[0].vehicle.name}}
                </span>
           </v-row>
           <v-row justify="space-between" class="px-10  my-4">
@@ -76,7 +76,8 @@
 <script>
 export default {
  props:{
-   rate:0
+   rate:0,
+   employee: null
  },
 
   computed:{

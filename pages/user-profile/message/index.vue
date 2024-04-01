@@ -19,9 +19,9 @@
                   ></v-text-field>
                 </v-col>
               </div>
-              <MassageCard route="message" activeClass="active-chat" />
-              <MassageCard route="message" activeClass="unactive-chat"/>
-              <MassageCard route="message" activeClass="unactive-chat"/>
+              <MassageCard :message="message" v-for="(message, index) in massages" :key="`message${message.id}`" route="message" activeClass="active-chat" />
+<!--              <MassageCard route="message" activeClass="unactive-chat"/>-->
+<!--              <MassageCard route="message" activeClass="unactive-chat"/>-->
 
             </div>
           </v-col>
@@ -43,6 +43,14 @@ export  default {
   components:{
     UserProfileNavigationMenu,
     MassageCard
+  },
+  computed:{
+    massages(){
+      return this.$store.getters['get_clientMessages']
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_clientMessages')
   }
 }
 </script>

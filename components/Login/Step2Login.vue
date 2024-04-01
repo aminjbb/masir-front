@@ -145,14 +145,17 @@ export default {
 
     setToken(){
       axios({
-        method: "get",
-        url: process.env.apiUrl + "user/client/otp",
-        params: {
-          mobile: this.convertPersianNumber(this.phone),
+        method: "post",
+        url: process.env.apiUrl + "user/v1/client/verify-token/",
+        data: {
+          mobile: this.convertPersianNumber(localStorage.getItem('mobile')),
+          code: this.otp
         },
       })
         .then((response) => {
           this.resendLoading = false;
+          this.$cookies.set('userToken' , response.data.access)
+          this.$router.push('/')
           this.code = "";
         })
         .catch((err) => {

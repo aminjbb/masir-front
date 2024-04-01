@@ -40,8 +40,6 @@
         <img src="~/assets/img/ArrowCircleRight.svg" alt="" @click="drawer =false">
       </div>
     </v-navigation-drawer>
-
-
     <v-app-bar class="d-block d-sm-none pr-5 pl-5" :clipped-left="clipped" app color="white" height="75" >
       <v-btn
         dark

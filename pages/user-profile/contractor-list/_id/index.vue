@@ -20,32 +20,26 @@
                   </div>
                 <div class="d-flex justify-start mr-7 my-3">
                    <span class="primary--text t24600">
-                    پروژه حدادیان
+                    {{ project?.name }}
                   </span>
                   <span class="primary--text t18400 mr-8 mt-1">
-                    کارفرما: گلزار حیدری
+                    کارفرما: {{ project?.employer?.user?.firstName }}
                   </span>
                 </div>
                 <div class="d-flex justify-start align-start mt-5 mr-5">
                   <div class="contractor-chip d-flex justify-start align-center px-5 ">
-                    <span class="primary--text t18400">تهران، سعادت آباد</span>
+                    <span class="primary--text t18400">{{ project?.city?.name }}، {{ project?.neighborhood?.name }}</span>
                   </div>
-                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3">
-                    <span class="primary--text t18400">خاک برداری</span>
+                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3" v-for="(service , index) in project?.projectServices">
+                    <span class="primary--text t18400">{{ service?.service?.name }}</span>
                   </div>
-                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3">
-                    <span class="primary--text t18400">خاک برداری</span>
-                  </div>
-
                 </div>
                 <v-divider class="my-5"></v-divider>
+                <div v-for="(service , index) in project?.projectServices" :key="`service${service.id}`">
+                  <ContractorDetailCard :service="service"/>
+                  <v-divider class="my-5"/>
+                </div>
 
-
-<!--                -->
-
-              <ContractorDetailCard/>
-                <v-divider class="my-5"/>
-                <ContractorDetailCard/>
               </div>
 
             </div>
@@ -60,20 +54,20 @@
                   </div>
                 <div class="text-center my-3">
                    <span class="primary--text t24600">
-                    پروژه حدادیان
+                    {{ project?.name }}
                   </span>
 
                 </div>
                 <div class="text-center  my-3">
                    <span class="primary--text t18400  mt-1">
-                    کارفرما: گلزار حیدری
+                    کارفرما: {{ project?.employer?.user?.firstName }}
                   </span>
 
                 </div>
                 <div class=" mt-5 mr-5">
                   <div class="d-flex justify-center pl-3 my-3">
                     <div class="contractor-chip d-flex justify-start align-center px-5 ">
-                      <span class="primary--text t16400">تهران، سعادت آباد</span>
+                      <span class="primary--text t16400">{{ project?.city?.name }}، {{ project?.neighborhood?.name }}</span>
                     </div>
                   </div>
                   <div class="d-flex justify-center pl-3 my-4">
@@ -89,7 +83,10 @@
                 </div>
               </div>
               <v-divider class="mt-10 mb-3"></v-divider>
-              <ContractorDetailCard/>
+              <div v-for="(service , index) in project?.projectServices" :key="`service${service.id}`">
+                <ContractorDetailCard :service="service"/>
+                <v-divider class="my-5"/>
+              </div>
             </div>
           </v-col>
         </v-row>
@@ -109,6 +106,14 @@ export  default {
   components:{
     UserProfileNavigationMenu,
     ContractorDetailCard
+  },
+  computed:{
+    project(){
+      return this.$store.getters['get_myProject']
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_myProject' , this.$route.params.id)
   }
 }
 </script>

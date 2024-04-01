@@ -20,13 +20,13 @@
                 </div>
                 <div class="d-flex justify-center mr-7 mt-10">
                    <span class="primary--text t24600">
-                  بابکت چرخی مینی لودر
+                  {{ product?.persianName }}
                   </span>
 
                 </div>
                 <div class="d-flex justify-center mr-7 mt-2">
                    <span class="primary--text t18400">
-                      bobcat S76 skid-steer loader
+                    {{product?.englishName}}
                   </span>
 
                 </div>
@@ -35,16 +35,11 @@
                     <v-row justify="space-between" class="pa-11 px-13 ">
                       <div class="d-flex">
                         <div class="d-flex">
-                      <span class="t18400 primary--text">
-                        وسیله:
-                      </span>
-                          <span class="mr-8 t18400 primary--text">
-                        لودر
-                        </span>
+
                         </div>
                         <div class="d-flex mr-15">
                           <span class="t18400 primary--text">
-                            فروشگاه مسیر
+                            {{ product?.seller?.user?.firstName }}
                           </span>
 
                         </div>
@@ -54,7 +49,7 @@
                         شماره تماس:
                       </span>
                         <span class="mr-8 t18400 primary--text">
-                        ۰۹۳۰۰۱۷۹۶۴۸
+                        {{ product?.seller?.mobile}}
                         </span>
                       </div>
                     </v-row>
@@ -66,37 +61,30 @@
                     <div class="">
                       <div class="mt-5">
                         <span class="t18400 primary--text">
-                          بیل بکهو 130 موتور تازه تعمیر مدل85
+                          {{product?.description}}
                         </span>
                       </div>
-                      <div class="mt-5">
-                        <span class="t18400 primary--text">
-                          بیل بکهو 130 موتور تازه تعمیر مدل85
-                        </span>
-                      </div>
-                      <div class="mt-5">
-                        <span class="t18400 primary--text">
-                          بیل بکهو 130 موتور تازه تعمیر مدل85
-                        </span>
-                      </div>
+
                     </div>
                   </v-col>
                   <v-col cols="7">
                     <v-card height="129" class="br-25 ">
                       <div class="d-flex align-center justify-center" style="height: 100%">
-                        <span class="primary--text t24600">۱.۹۳۰.۰۰۰.۰۰۰ تومان</span>
+                        <span class="primary--text t24600">{{ splitChar(product?.price) }} تومان</span>
                       </div>
                     </v-card>
                   </v-col>
                 </v-row>
-                <div class="d-flex align-center justify-center my-10">
-                  <v-btn color="primaryYellow" width="251" height="101" class="br-20 ml-5">
-                    <span class="t24600 primary--text">
-                      فروخته شد
-                    </span>
-                  </v-btn>
 
-                </div>
+
+<!--                <div class="d-flex align-center justify-center my-10">-->
+<!--                  <v-btn color="primaryYellow" width="251" height="101" class="br-20 ml-5">-->
+<!--                    <span class="t24600 primary&#45;&#45;text">-->
+<!--                      فروخته شد-->
+<!--                    </span>-->
+<!--                  </v-btn>-->
+
+<!--                </div>-->
               </div>
 
             </div>
@@ -113,11 +101,21 @@
 <script>
 import ContractorDetailCard from '~/components/UserProfile/ContractorDetailCard.vue'
 import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
+import {splitChar} from "../../../../assets/js/public";
 export  default {
+  methods: {splitChar},
   layout:'userProfile',
   components:{
     UserProfileNavigationMenu,
     ContractorDetailCard
+  },
+  computed:{
+    product() {
+      return this.$store.getters['get_product'];
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_product' , this.$route.params.id)
   }
 }
 </script>

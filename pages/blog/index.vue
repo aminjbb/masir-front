@@ -23,26 +23,26 @@
       <div style="margin-top: -1026px;z-index: 1;position: relative;">
        <div class="text-center">
         <span class="primary--text t40600">
-         چرا مسیر رو انتخاب کنیم؟
+         {{ firstBlog?.mainTitle }}
         </span>
        </div>
        <div class="text-center mt-5">
         <span class="primary--text t24600">
-         ایجاد پروژه برای نیروی متخصص
+         {{ firstBlog?.metaDescription.substring(0 , 20) }}
         </span>
        </div>
        <div class="text-center mt-5">
         <span class="primary--text t18400">
-        نویسنده: بهار قاسمی
+        نویسنده: {{ firstBlog?.createdBy?.user?.lastName }} {{ firstBlog?.createdBy?.user?.fristName }}
         </span>
        </div>
        <div class="text-center mt-5">
-        <span class="primary--text t18400">
-       تاریخ: ۱۴۰۲/۱۲/۲۴
-        </span>
+        <span class="primary--text t18400" v-if="firstBlog">
+       تاریخ:   {{convertDateToJalai(firstBlog?.CreatedAt , '-' , true)}}
+         </span>
        </div>
        <div class="text-center my-15">
-         <v-btn color="primary" width="251" height="101" class="br-25">
+         <v-btn @click="$router.push(`/blog/${firstBlog?.id}`)" color="primary" width="251" height="101" class="br-25">
           <span class="white--text t30600">
             بازدید از مقاله
           </span>
@@ -60,9 +60,8 @@
          <span class="bg-white d-none d-md-flex justify-center align-center arrow-right-blog-card" >
            <img   src="~/assets/img/arrow-right-circle-banner.svg" alt="">
          </span>
-         <BlogCard/>
-         <BlogCard/>
-         <BlogCard/>
+         <BlogCard :blog="blog" v-for="(blog , index) in bannerBlogs"/>
+
        </v-row>
 
        <div class="text-center mt-15 pt-15">
@@ -111,7 +110,7 @@
         </span>
        </div>
        <div class="mt-10 px-7">
-         <v-card min-height="240" class="d-flex justify-space-between align-center br-20 px-7">
+         <v-card min-height="240" class="d-flex justify-space-between align-center br-20 px-7" v-for="(blog , index) in blogs">
            <div class="d-flex justify-start align-center">
              <div>
                <img width="237" height="183" src="~/assets/img/addService.png">
@@ -119,17 +118,17 @@
              <div class="mr-10">
                <div>
                 <span class="primaryYellow--text t18600">
-                  ماشین‌های سنگین
+                 {{blog?.mainTitle }}
                 </span>
                </div>
                <div class="mt-8">
                 <span class="primary--text t18600">
-                 ایجاد پروژه برای نیروی متخصص
+                 {{blog?.mainTitle }}
                 </span>
                </div>
                <div class="mt-3">
                 <span class="t16400">
-                بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
+                  {{ blog?.metaDescription.substring(0 , 20) }}
                 </span>
                </div>
              </div>
@@ -138,11 +137,11 @@
            <div>
              <div>
               <span class="primary--text t18400">
-                تاریخ: ۱۴۰۲/۱۲/۲۴
+                تاریخ: {{ convertDateToJalai(blog?.CreatedAt , '-' , true) }}
               </span>
              </div>
 
-             <div @click="$router.push('/blog/1')" class="link-primary d-flex justify-center align-center mr-8 mt-10">
+             <div @click="$router.push(`/blog/${blog?.id}`)" class="link-primary d-flex justify-center align-center mr-8 mt-10">
                <img src="~/assets/img/arrow-up-right-Yellow.svg" alt="">
              </div>
            </div>
@@ -169,27 +168,27 @@
       <div class="main-container" style="margin-top: -275px;">
         <div class="text-center px-15">
           <span class="primary--text t18600">
-          ایجاد پروژه برای نیروی متخصص
+         {{ firstBlog?.mainTitle }}
           </span>
         </div>
         <div class="text-center mt-2">
           <span class="primary--text t16600">
-         ایجاد پروژه برای نیروی متخصص
+         {{ firstBlog?.metaDescription.substring(0 , 20) }}
           </span>
         </div>
 
         <div class="text-center mt-5">
           <span class="primary--text t16400">
-          نویسنده: بهار قاسمی
+          نویسنده: {{ firstBlog?.createdBy?.user?.lastName }} {{ firstBlog?.createdBy?.user?.fristName }}
           </span>
         </div>
         <div class="text-center mt-5">
-        <span class="primary--text t16400">
-       تاریخ: ۱۴۰۲/۱۲/۲۴
+        <span class="primary--text t16400"  v-if="firstBlog">
+       تاریخ:  {{convertDateToJalai(firstBlog?.CreatedAt , '-' , true)}}
         </span>
         </div>
         <div class="text-center my-15">
-          <v-btn color="primary" width="166" height="67" class="br-15">
+          <v-btn @click="$router.push(`/blog/${firstBlog?.id}`)" color="primary" width="166" height="67" class="br-15">
           <span class="white--text t18600">
             بازدید از مقاله
           </span>
@@ -201,9 +200,8 @@
         </span>
         </div>
         <v-row justify="center" class="mt-15">
-          <BlogCard/>
-          <BlogCard/>
-          <BlogCard/>
+          <BlogCard :blog="blog" v-for="(blog , index) in bannerBlogs"/>
+ ]
         </v-row>
 
         <div class="text-center mt-15 pt-15">
@@ -213,7 +211,7 @@
         </div>
 
         <div class=" mt-15" >
-          <v-card  height="166 " class="br-20 d-flex justify-center align-center ma-2">
+          <v-card  height="166 " class="br-20 d-flex justify-center align-center ma-2" >
            <span class="mx-1">
               <img width="65" height="65" src="~/assets/img/Truck.svg">
            </span>
@@ -246,35 +244,35 @@
           </span>
         </div>
         <div class="mt-10">
-          <v-card min-height="240" class="  br-20 pa-7">
+          <v-card min-height="240" class="  br-20 pa-7" v-for="(blog , index) in blogs">
             <div class="d-flex justify-center align-center">
               <img src="~/assets/img/addService.png" height="209" style="width: 100%">
             </div>
             <div class="px-5 mt-5">
               <span class="primaryYellow--text t18600">
-                ماشین‌های سنگین
+                 {{blog?.mainTitle }}
               </span>
             </div>
 
             <div class="px-5 mt-4">
               <span class="primary--text t18600">
-               ایجاد پروژه برای نیروی متخصص
+                 {{blog?.mainTitle }}
               </span>
             </div>
             <div class="px-5 mt-4">
               <span class="t16400">
-             بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
+                  {{ blog?.metaDescription.substring(0 , 20) }}
               </span>
             </div>
 
             <div class="d-flex align-end justify-center">
               <div>
                 <span class="primary--text t18400">
-                  تاریخ:۱۴۰۲/۱۲/۲۴
+                تاریخ: {{ convertDateToJalai(blog?.CreatedAt , '-' , true) }}
                 </span>
               </div>
 
-              <div @click="$router.push('/blog/1')" class="link-primary d-flex justify-center align-center mr-8 mt-10">
+              <div @click="$router.push(`/blog/${blog?.id}`)"  class="link-primary d-flex justify-center align-center mr-8 mt-10">
                 <img src="~/assets/img/arrow-up-right-Yellow.svg" alt="">
               </div>
             </div>
@@ -289,10 +287,38 @@
 <script>
 
 import BlogCard from "~/components/Public/BlogCard.vue";
+import {convertDateToJalai} from "../../assets/js/public";
 
 export default {
+  methods: {convertDateToJalai},
   components: {BlogCard},
-  layout:'static'
+  layout:'static',
+  computed:{
+    firstBlog(){
+      try {
+        return this.blogs[0]
+      }
+      catch (e) {
+        return null
+      }
+    },
+    blogs(){
+      return this.$store.getters['get_clientBlogPosts']
+    },
+
+    bannerBlogs(){
+      try {
+        if (this.blogs.length > 3) return this.blogs.slice(0 ,  3)
+        else return  this.blogs
+      }
+      catch (e) {
+        return  e
+      }
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_clientBlogPosts')
+  }
 }
 </script>
 

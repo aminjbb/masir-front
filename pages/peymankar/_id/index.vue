@@ -9,23 +9,23 @@
           <v-col cols="6" class="pl-15">
             <div class="pt-4">
                 <span class="white--text t30600">
-                  عباس قادری
+                 {{employee?.user?.firstName }}
                 </span>
             </div>
             <div class="d-flex justify-start mt-10">
               <div class="chip px-5 d-flex justify-center align-center ml-2">
-                <span class="primary--text t18400">خاک برداری، تخریب </span>
+                <span class="primary--text t18400" v-for="(skill , index) in employee?.skills" :key="`skill${index}`">{{ skill.name }}, </span>
               </div>
               <div class="chip px-5 d-flex justify-center align-center mx-2">
-                <span class="primary--text t18400">سعادت آباد</span>
+                <span class="primary--text t18400">{{ employee?.neighborhood?.name }}</span>
               </div>
               <div class="chip px-10 d-flex justify-center align-center mx-2">
-                <span class="primary--text t18400">لودر</span>
+                <span class="primary--text t18400">{{ employee?.vehicles[0]?.vehicle?.name }}</span>
               </div>
             </div>
             <div class="mt-8 text-right pl-15 ">
               <p class="white--text t14400 lh-28">
-                لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود
+               {{employee?.description}}
               </p>
             </div>
           </v-col>
@@ -77,18 +77,18 @@
             </div>
             <div class="pt-2 text-center mt-8">
               <span class="white--text t18600">
-                عباس قادری
+                {{employee?.user?.firstName }}
               </span>
             </div>
             <div class="d-flex justify-start mt-15 position__relative scroller px-10" style="max-width: 359px;">
               <div class="chip  d-flex justify-center align-center ml-2"  style="min-width: 150px;">
-                <span class="primary--text t14400">خاک برداری، تخریب </span>
+                <span class="primary--text t14400" v-for="(skill , index) in employee?.skills" :key="`skill${index}`">{{ skill.name }}, </span>
               </div>
               <div class="chip px-5 d-flex justify-center align-center mx-2" style="min-width: 120px;">
-                <span class="primary--text t14400">سعادت آباد</span>
+                <span class="primary--text t14400"> {{ employee?.neighborhood?.name }}</span>
               </div>
               <div class="chip px-10 d-flex justify-center align-center mx-2">
-                <span class="primary--text t14400">لودر</span>
+                <span class="primary--text t14400">{{ employee?.vehicles[0]?.vehicle?.name }}</span>
               </div>
             </div>
             <div class="text-justify px-13 mt-8">
@@ -131,23 +131,23 @@
               <v-col cols="4" class="pr-15 pt-15">
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">نام و نام خانوادگی</span>
-                  <span class="primary--text t18400">گلزار حیدری</span>
+                  <span class="primary--text t18400">{{ employee?.user?.firstName }}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">شماره تماس</span>
-                  <span class="primary--text t18400">۰۹۳۰۰۱۷۹۶۴۸</span>
+                  <span class="primary--text t18400">{{ employee?.user?.mobile }}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">مهارت ها</span>
-                  <span class="primary--text t18400">خاک برداری، تخریب</span>
+                  <span class="primary--text t18400" v-for="(skill , index) in employee?.skills" :key="`skill${index}`">{{ skill.name }}, </span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">محدوده</span>
-                  <span class="primary--text t18400">سعادت آباد</span>
+                  <span class="primary--text t18400">{{ employee?.neighborhood?.name }}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">کد پیمانکاری</span>
-                  <span class="primary--text t18400 dana-fa ">۱۲۵۴۴۷۸۷۲۴۱۱</span>
+                  <span class="primary--text t18400 dana-fa ">{{ employee?.code }}</span>
                 </v-row>
               </v-col>
               <v-col cols="7" class=" pt-15 pl-15">
@@ -156,7 +156,8 @@
                 </span>
                 <div class="user-profile__experience-box mt-10 pa-10">
                   <p class="t18400 primary--text lh-40 text-justify">
-                    لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
+                    {{employee?.description}}
+
                   </p>
                 </div>
               </v-col>
@@ -164,22 +165,19 @@
 
             <v-divider class="mb-10"></v-divider>
 
-            <v-row justify="start" class="pr-5">
+            <v-row justify="start" class="pr-5" >
               <v-col cols="6" class="px-15">
                 <div class="d-flex justify-space-between">
                     <span class="primary--text t18600">
                       تصاویر وسیله
                     </span>
-                  <span class="primary--text t18600">
+                    <span class="primary--text t18600" v-if="employee?.vehicles[0]?.doesHaveTechnicalExamination">
                      دارای معاینه فنی سلامت
                     </span>
                 </div>
 
                 <div class="d-flex justify-start mt-10">
-                  <img class="br-15 ml-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                  <img class="br-15 mx-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                  <img class="br-15 mr-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-
+<!--                  <img class="br-15 ml-4" width="140" height="140" :src="baseUrl+image" alt=""  v-for="(image , index) in vehicle?.images" :key="`image${index}`">-->
                 </div>
               </v-col>
               <v-col cols="6">
@@ -198,7 +196,7 @@
                   </v-col>
                   <v-col cols="6" class="pt-13 pl-8 ">
                     <div class="user-profile__status-card-full px-10 position__relative">
-                      <p class="primaryYellow--text t100800 dena-fa">۱۰</p>
+                      <p class="primaryYellow--text t100800 dena-fa">{{ employee?.skills?.length }}</p>
                       <div>
                         <span class="primary--text t18400  " style="position: absolute; top: 120px">مهارت انتخاب شده</span>
                       </div>
@@ -230,7 +228,7 @@
                 >
                 </v-slider>
               <v-row justify="space-between" class="dir-ltr">
-                <v-col  v-for="ticksLabel in ticksLabels" cols="1">
+                <v-col  v-for="(ticksLabel , index) in ticksLabels" cols="1" :key="`pppp${index}`">
                   <span class="dana-fa primary--text t18600">{{ticksLabel}}</span>
                 </v-col>
               </v-row>
@@ -257,7 +255,7 @@
                   نام و نام خانوادگی
                 </p>
                 <p class="t18400 mt-5">
-                  گلزار حیدری
+                  {{ employee?.user?.firstName }}
                 </p>
               </div>
               <div class="text-center primary--text mt-15">
@@ -265,7 +263,7 @@
                   شماره تماس
                 </p>
                 <p class="t18400 mt-5">
-                  ۰۹۳۰۰۱۷۹۶۴۸
+                  {{ employee?.user?.mobile }}
                 </p>
               </div>
               <div class="text-center primary--text mt-15">
@@ -273,7 +271,7 @@
                   مهارت ها
                 </p>
                 <p class="t18400 mt-5">
-                  خاک برداری، تخریب
+                  <span class="primary--text t18600">{{ employee?.neighborhood?.name }}</span>
                 </p>
               </div>
               <div class="text-center primary--text mt-15">
@@ -281,7 +279,7 @@
                   محدوده
                 </p>
                 <p class="t18400 mt-5">
-                  سعادت آباد
+                  {{ employee?.neighborhood?.name }}
                 </p>
               </div>
               <div class="text-center primary--text mt-15">
@@ -289,7 +287,7 @@
                   کد پیمانکاری
                 </p>
                 <p class="t18400 mt-5">
-                  ۱۲۵۴۴۷۸۷۲۴۱۱
+                  {{ employee?.code }}
                 </p>
               </div>
               <v-divider class="mt-10"></v-divider>
@@ -298,7 +296,7 @@
                 از تجربیات پیمانکار
               </p>
               <p class="t18400 mt-5 lh-40 text-justify px-10">
-                لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
+                {{employee?.description}}
               </p>
             </div>
             <v-divider class="mt-10"></v-divider>
@@ -360,7 +358,7 @@
                 >
                 </v-slider>
                 <v-row justify="space-between" class="dir-ltr">
-                  <v-col  v-for="ticksLabel in ticksLabels" cols="1" class="pr-6">
+                  <v-col  v-for="(ticksLabel , index) in ticksLabels" :key="`ppppp${index}`" cols="1" class="pr-6">
                     <span class="dana-fa primary--text t18600">{{ticksLabel}}</span>
                   </v-col>
                 </v-row>
@@ -384,9 +382,12 @@
 </template>
 
 <script>
+import {gql} from "nuxt-graphql-request";
+
 export  default {
   layout:'Peymankar',
   data: () => ({
+    employee:null,
     ticksLabels: [
       '1',
       '2',
@@ -397,10 +398,46 @@ export  default {
   }),
 
   methods: {
-    season (val) {
-      return this.icons[val]
-    },
+
+    async getClientEmployees(){
+
+      const query = gql`
+        query{
+            clientEmployee(employeeId:${this.$route.params.id}){
+             id
+              description
+              code
+                vehicles{
+                 doesHaveTechnicalExamination
+                  vehicle{
+                    name
+
+                  }
+                }
+                user{
+                  firstName
+                  mobile
+                },
+                neighborhood{
+                  name
+                },
+                skills{
+                  name
+                }
+              }
+          } `;
+      const obj = await this.$graphql.default.request(query, {});
+      this.employee = obj.clientEmployee
+    }
   },
 
+  computed:{
+    baseUrl(){
+      return process.env.baseUrl
+    }
+  },
+  mounted() {
+    this.getClientEmployees()
+  }
 }
 </script>

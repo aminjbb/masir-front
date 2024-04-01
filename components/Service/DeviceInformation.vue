@@ -8,8 +8,10 @@
           </div>
           <div class="mt-5">
             <v-select
+              :items="vehicleItems"
               placeholder="انتخاب نوع وسیله"
               outlined
+              v-model="form.vehicle"
               append-icon="mdi-chevron-down-circle-outline"
 
             >
@@ -42,7 +44,7 @@
             <v-col md="1" cols="3" class="py-0">
               <v-switch
                 inset
-
+                v-model="form.does_have_technical_examination"
                 color="primary"
               ></v-switch>
             </v-col>
@@ -171,15 +173,23 @@
 </template>
 <script>
 export default {
-  data(){return{
-    items:['test' , 'tesst'],
-    images : [],
-    base64 : [],
-    certificate:null,
-    certificateBase64:null,
-    technicalDiagnosis:null,
-    technicalDiagnosisBase64:null,
-    serviceType:['خاک ریزی','خاک برداری', 'مقاوم سازی گود' , 'محوطه سازی' , 'زیر سازی' , 'آسفالت' , 'حمل مصالح' , 'درخواست ماشین آلات سنگین' , 'درخواست راننده  (برای صاحبان دستگاه)' , 'حمل نخاله' , 'تخریب']
+  props:{
+    vehicleItems:[]
+  },
+  data(){
+    return{
+      items:['test' , 'tesst'],
+      images : [],
+      base64 : [],
+      form:{
+        vehicle:'',
+        does_have_technical_examination:false
+      },
+      certificate:null,
+      certificateBase64:null,
+      technicalDiagnosis:null,
+      technicalDiagnosisBase64:null,
+      serviceType:['خاک ریزی','خاک برداری', 'مقاوم سازی گود' , 'محوطه سازی' , 'زیر سازی' , 'آسفالت' , 'حمل مصالح' , 'درخواست ماشین آلات سنگین' , 'درخواست راننده  (برای صاحبان دستگاه)' , 'حمل نخاله' , 'تخریب']
   }},
 
   methods:{
@@ -208,10 +218,8 @@ export default {
       var reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload =  () => {
-
         this.images.push(file)
         this.base64.push(reader.result)
-        console.log(this.base64);
       };
 
     },

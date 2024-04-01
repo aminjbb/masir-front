@@ -48,8 +48,8 @@
         </v-col>
 
         <div class="mobile-box d-flex justify-center align-center">
-                  <span class="primaryYellow--text t18400">
-                    ۰۹۳۰۰۱۷۹۶۴۸
+                  <span class="primaryYellow--text t18400 dana-fa">
+                    {{clientDetail?.mobile}}
                   </span>
         </div>
       </v-row>
@@ -161,17 +161,36 @@
   </div>
 </template>
 <script >
+import {gql} from "nuxt-graphql-request";
+
 export default {
   data(){
     return{
-      show:false
+      show:false,
+      clientDetail:null
     }
   },
   beforeMount() {
     this.getWindowSize()
-    console.log(this.$route)
   },
   methods:{
+    async  getClientDetail(){
+      const requestHeaders = {
+        Authorization: "Bearer " + this.$cookies.get("userToken"),
+      };
+      const query = gql`
+        query{
+            clientMe{
+                id,
+                    firstName,
+                    lastName,
+                    nationalId,
+                    mobile
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query , {} , requestHeaders);
+      this.clientDetail =  obj.clientMe
+    },
     getWindowSize(){
       try {
         if ( screen.width>955) this.show = true
@@ -180,6 +199,9 @@ export default {
         return e
       }
     }
+  },
+  mounted() {
+    this.getClientDetail()
   }
 }
 </script>

@@ -10,12 +10,12 @@
             <div class="mb-15">
              <div>
               <span class="t24600 primary--text">
-                بابکت چرخی مینی لودر
+                {{product?.persianName}}
               </span>
              </div>
              <div class="mt-5">
               <span class="t18400 primary--text">
-                bobcat S76 skid-steer loader
+                {{ product?.englishName }}
               </span>
              </div>
            </div>
@@ -23,19 +23,10 @@
             <div class="mt-15 pt-2">
               <div class="mt-5">
               <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
+                {{product?.description}}
               </span>
               </div>
-              <div class="mt-5">
-              <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
-              </span>
-              </div>
-              <div class="mt-5">
-              <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
-              </span>
-              </div>
+
             </div>
           </v-col>
 
@@ -53,14 +44,14 @@
                   </div>
                   <div class="d-flex mr-15">
                     <span class="t18400 primary--text">
-                      فروشگاه مسیر
+                      {{ product?.seller?.user?.firstName }}
                     </span>
 
                   </div>
                 </div>
                 <div>
                   <span class="t24600 primary--text">
-                    ۱.۹۳۰.۰۰۰.۰۰۰ تومان
+                    {{ splitChar(product?.price) }} تومان
                   </span>
                 </div>
               </v-row>
@@ -79,12 +70,12 @@
           <div class="mb-15">
             <div class="pr-2">
               <span class="t24600 primary--text">
-                بابکت چرخی مینی لودر
+                {{product?.persianName}}
               </span>
             </div>
             <div class="mt-5 pr-2">
               <span class="t18400 primary--text">
-                bobcat S76 skid-steer loader
+                {{ product?.englishName }}
               </span>
             </div>
           </div>
@@ -93,12 +84,12 @@
               <div>
                 <div class="d-flex d-md-none justify-space-between pt-5 px-10">
                   <span class="t16400 primary--text">وسیله: <span class="t16400 primary--text mr-2" >لودر</span></span>
-                  <span class="t16400 primary--text">فروشگاه مسیر </span>
+                  <span class="t16400 primary--text"> {{ product?.seller?.user?.firstName }}</span>
                 </div>
                 <v-divider class="my-4"></v-divider>
                 <div class="text-center">
                   <span class="t24600 primary--text">
-                    ۱.۹۳۰.۰۰۰.۰۰۰ تومان
+                      {{ splitChar(product?.price) }}  تومان
                   </span>
                 </div>
               </div>
@@ -114,17 +105,7 @@
           <div class="mt-8 pt-2 px-2">
             <div class="mt-5">
               <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
-              </span>
-            </div>
-            <div class="mt-5">
-              <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
-              </span>
-            </div>
-            <div class="mt-5">
-              <span class="t18400 primary--text">
-                بیل بکهو 130 موتور تازه تعمیر مدل85
+                {{product?.description}}
               </span>
             </div>
           </div>
@@ -157,8 +138,8 @@
                 <img src="~/assets/img/UserCircleProfile.svg" alt="">
               </div>
               <span class="mr-8 t18400 primary--text" > فروشنده:</span>
-              <span class="mr-5 t24600 primary--text" >عباس قادری</span>
-            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >09223732465</span>
+              <span class="mr-5 t24600 primary--text" >{{ product?.seller?.user?.firstName }}</span>
+            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >{{ product?.seller?.mobile }}</span>
           </div>
           <div class="d-flex align-center">
             <v-btn color="primary" width="241" height="101" class="br-20 ml-5">
@@ -186,10 +167,10 @@
               <img width="41" height="41" src="~/assets/img/UserCircleProfile.svg" alt="">
             </div>
             <span class="mr-8 t18400 primary--text" > فروشنده:</span>
-            <span class="mr-5 t18600 primary--text" >عباس قادری</span>
+            <span class="mr-5 t18600 primary--text" >{{ product?.seller?.user?.firstName }}</span>
           </div>
           <div class="d-flex align-center px-5">
-            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >09223732465</span>
+            <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >{{ product?.seller?.mobile }}</span>
           </div>
           <v-divider class="my-4"></v-divider>
           <div class="d-flex justify-center align-center">
@@ -237,8 +218,10 @@ import StoreBanner from '~/components/Store/StoreBanner'
 import ProductCard from '~/components/Store/ProductCard.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
 import ModalReport from "~/components/Store/ModalReport.vue";
+import {splitChar} from "../../../assets/js/public";
 
 export default {
+  methods: {splitChar},
   layout:'WithOutContact',
   data(){
     return{
@@ -249,6 +232,16 @@ export default {
   components:{
     StoreBanner,
     ProductCard,DriverCardMobile,ModalReport
+  },
+
+  computed:{
+    product(){
+      return this.$store.getters['get_clientProduct']
+    }
+  },
+
+  beforeMount() {
+    this.$store.dispatch('set_clientProduct' , this.$route.params.id)
   }
 }
 </script>

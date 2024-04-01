@@ -3,51 +3,90 @@
 
     <div >
       <div class="main-container">
-        <v-row>
-          <v-col cols="3">
+        <v-row justify="center">
+          <v-col cols="3" class="d-none d-md-block">
             <UserProfileNavigationMenu/>
           </v-col>
-          <v-col cols="9">
-            <div class="user-profile__detail-card mt-user-profile mb-15" id="create-form">
+          <v-col cols="11" md="9">
+            <div class="user-profile__detail-card mt-user-profile mb-15 d-none d-md-block" id="create-form">
               <div class="contractor-card-detail ma-7 pt-3">
                 <div class="d-flex justify-start position__relative mr-3">
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div style="position: absolute; top: 20px ;left: 20px">
-                      <img src="~/assets/img/arrow-up-left.svg" alt="">
-                    </div>
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                  <div style="position: absolute; top: 20px ;left: 20px" @click="$router.go(-1)">
+                    <img src="~/assets/img/arrow-up-left.svg" alt="">
                   </div>
+                </div>
                 <div class="d-flex justify-start mr-7 my-3">
                    <span class="primary--text t24600">
-                    پروژه حدادیان
+                    {{ project?.name }}
                   </span>
                   <span class="primary--text t18400 mr-8 mt-1">
-                    کارفرما: گلزار حیدری
+                    کارفرما: {{ project?.employer?.user?.firstName }}
                   </span>
                 </div>
                 <div class="d-flex justify-start align-start mt-5 mr-5">
                   <div class="contractor-chip d-flex justify-start align-center px-5 ">
-                    <span class="primary--text t18400">تهران، سعادت آباد</span>
+                    <span class="primary--text t18400">{{ project?.city?.name }}، {{ project?.neighborhood?.name }}</span>
                   </div>
-                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3">
-                    <span class="primary--text t18400">خاک برداری</span>
+                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3" v-for="(service , index) in project?.projectServices">
+                    <span class="primary--text t18400">{{ service?.service?.name }}</span>
                   </div>
-                  <div class="contractor-chip d-flex justify-start align-center px-5 mr-3">
-                    <span class="primary--text t18400">خاک برداری</span>
-                  </div>
-
                 </div>
                 <v-divider class="my-5"></v-divider>
+                <div v-for="(service , index) in project?.projectServices" :key="`service${service.id}`">
+                  <ContractorDetailCard :service="service"/>
+                  <v-divider class="my-5"/>
+                </div>
 
-
-<!--                -->
-
-              <ContractorDetailCard/>
-                <v-divider class="my-5"/>
-                <ContractorDetailCard/>
               </div>
 
+            </div>
+            <div class="user-profile__detail-card mt-15 mb-15 d-block d-md-none" id="create-form">
+              <div class="contractor-card-detail ma-7 py-3">
+
+                <div class="d-flex justify-start scroller position__relative mr-3">
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                  <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+
+                </div>
+                <div class="text-center my-3">
+                   <span class="primary--text t24600">
+                    {{ project?.name }}
+                  </span>
+
+                </div>
+                <div class="text-center  my-3">
+                   <span class="primary--text t18400  mt-1">
+                    کارفرما: {{ project?.employer?.user?.firstName }}
+                  </span>
+
+                </div>
+                <div class=" mt-5 mr-5">
+                  <div class="d-flex justify-center pl-3 my-3">
+                    <div class="contractor-chip d-flex justify-start align-center px-5 ">
+                      <span class="primary--text t16400">{{ project?.city?.name }}، {{ project?.neighborhood?.name }}</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-center pl-3 my-4">
+                    <div class="contractor-chip d-flex justify-start align-center px-5 ">
+                      <span class="primary--text t16400">تاریخ شروع: ۱ بهمن ماه ۱۴۰۲</span>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-center pl-3 my-4">
+                    <div class="contractor-chip d-flex justify-start align-center px-5 ">
+                      <span class="primary--text t16400">تاریخ پایان: ۱ بهمن ماه ۱۴۰۲</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <v-divider class="mt-10 mb-3"></v-divider>
+              <div v-for="(service , index) in project?.projectServices" :key="`service${service.id}`">
+                <ContractorDetailCard :service="service"/>
+                <v-divider class="my-5"/>
+              </div>
             </div>
           </v-col>
         </v-row>
@@ -67,6 +106,14 @@ export  default {
   components:{
     UserProfileNavigationMenu,
     ContractorDetailCard
+  },
+  computed:{
+    project(){
+      return this.$store.getters['get_myProject']
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_myProject' , this.$route.params.id)
   }
 }
 </script>

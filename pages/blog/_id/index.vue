@@ -14,26 +14,26 @@
      </div>
      <div class="main-container margin-lg">
        <div class="pr-10 d-none d-md-block">
-         <h1 class="primaryYellow--text t30600 ">ایجاد پروژه برای نیروی متخصص</h1>
+         <h1 class="primaryYellow--text t30600 ">{{post?.mainTitle}}</h1>
 
        </div>
        <div class="d-block d-md-none text-center">
-         <h1 class="primaryYellow--text t18600 ">ایجاد پروژه برای نیروی متخصص</h1>
+         <h1 class="primaryYellow--text t18600 ">{{post?.mainTitle}}</h1>
 
        </div>
 
        <div class="pr-10 mt-5 d-none d-md-block">
-         <span class="white--text t24600">ایجاد پروژه برای نیروی متخصص</span>
+         <span class="white--text t24600">{{post?.mainTitle}}</span>
        </div>
        <div class=" mt-5 d-block d-md-none text-center">
-         <span class="white--text t16600">ایجاد پروژه برای نیروی متخصص</span>
+         <span class="white--text t16600">{{post?.mainTitle}}</span>
        </div>
        <div class="d-none d-md-flex justify-start pr-10 my-5">
         <span class="primaryYellow--text t18400">
-          نویسنده: بهار قاسمی
+          نویسنده: {{ post?.createdBy?.user?.lastName }} {{ post?.createdBy?.user?.fristName }}
         </span>
-         <span class="primaryYellow--text t18400 mr-8">
-          تاریخ: ۱۴۰۲/۱۲/۲۴
+         <span class="primaryYellow--text t18400 mr-8" v-if="post">
+          تاریخ: {{convertDateToJalai(post?.CreatedAt , '-' , true)}}
         </span>
        </div>
        <div class="d-block d-md-none my-5">
@@ -55,23 +55,20 @@
 
        <div class="mt-10 px-15 d-none d-md-block">
         <span class="primary--text t30600 ">
-          ایجاد پروژه برای نیروی متخصص
+          {{post?.mainTitle}}
         </span>
 
-
-         <p class="mt-10 lh-40 text-justify t18400">
-           لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
-         </p>
+         <div class="mt-10 lh-40 text-justify t18400"  v-html="post?.description">
+         </div>
        </div>
        <div class="mt-10  d-block d-md-none">
         <span class="primary--text t18600 ">
-          ایجاد پروژه برای نیروی متخصص
+          {{post?.mainTitle}}
         </span>
 
 
-         <p class="mt-10 lh-40 px-5 text-justify t18400">
-           لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
-         </p>
+         <div class="mt-10 lh-40 px-5 text-justify t18400"  v-html="post?.description">
+         </div>
        </div>
        <div class="pdp-blog-status-box mt-15 px-5 d-md-flex d-none justify-space-between align-center">
          <div class="d-flex justify-start align-center">
@@ -87,7 +84,7 @@
            </div>
          </div>
          <div>
-           <div class="chip mx-2">
+           <div class="chip mx-2 pointer" @click="copyLink()">
 
             <span class="primary--text t18400">
               Copy Link
@@ -111,7 +108,7 @@
          </div>
 
        </div>
-        <div class="d-md-none d-flex justify-center">
+        <div @click="copyLink()" class="d-md-none d-flex justify-center">
           <div class="d-md-none d-block text-center pa-15">
             <div class="chip-mobile  mx-2 px-5">
 
@@ -131,8 +128,26 @@
 </template>
 
 <script>
+import {convertDateToJalai} from "../../../assets/js/public";
+
 export default {
-  layout:'userProfile'
+  layout:'userProfile',
+  methods: {
+    convertDateToJalai,
+    copyLink(){
+      console.log(this.$route)
+      navigator.clipboard.writeText(`https://masir-web.roshak.dev${this.$route.fullPath}`);
+    }
+  },
+
+  computed:{
+    post(){
+      return this.$store.getters['get_clientBlogPost']
+    }
+  },
+  beforeMount() {
+    this.$store.dispatch('set_clientBlogPost' , this.$route.params.id)
+  }
 }
 </script>
 <style>

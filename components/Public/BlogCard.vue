@@ -1,15 +1,15 @@
 <template>
-  <div class="mt-15 mb-15" @click="$router.push('/blog/1')">
+  <div class="mt-15 mb-15" @click="$router.push(`/blog/${blog?.id}`)">
     <v-card height="431" width="360" class="br-50 mx-3 d-none d-md-block">
-      <img width="360" src="~/assets/img/MagImage.png" alt="" class="br-unset">
+      <img width="360" :src=" baseUrl + blog?.image" alt="" class="br-unset">
       <div class="text-center mt-8">
             <span class="t22600">
-                ایجاد پروژه برای نیروی متخصص
+               {{blog?.mainTitle }}
             </span>
       </div>
       <div class="text-center mt-5">
             <span class="t14600">
-                بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
+                {{ blog?.metaDescription.substring(0 , 20) }}
             </span>
       </div>
 
@@ -18,12 +18,12 @@
       <img width="313" src="~/assets/img/MagImage.png" alt="" class="br-unset">
       <div class="text-center mt-8">
             <span class="t20600">
-                ایجاد پروژه برای نیروی متخصص
+                  {{blog?.mainTitle }}
             </span>
       </div>
       <div class="text-center mt-5 px-12">
             <span class="t18400">
-                بیش از ۱۰۰ راننده فعال و ۱۰۰ ها پروژه پایان یافته
+                 {{ blog?.metaDescription.substring(0 , 20) }}
             </span>
       </div>
 
@@ -33,7 +33,14 @@
 </template>
 <script>
 export default {
-
+  props:{
+    blog: null
+  },
+  computed:{
+    baseUrl(){
+      return process.env.baseUrl
+    }
+  }
 }
 </script>
 <style lang="">

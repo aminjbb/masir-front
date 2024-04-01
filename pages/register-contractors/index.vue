@@ -46,6 +46,7 @@
               <v-text-field
                 placeholder="نام و نام خانوادگی"
                 outlined
+                v-model="form.name"
               ></v-text-field>
             </div>
           </v-col>
@@ -57,6 +58,7 @@
               <v-text-field
                 placeholder="شماره تماس"
                 outlined
+                v-model="form.mobile"
               ></v-text-field>
             </div>
           </v-col>
@@ -68,6 +70,7 @@
               <v-text-field
                 placeholder="ایمیل"
                 outlined
+                v-model="form.email"
               ></v-text-field>
             </div>
           </v-col>
@@ -79,6 +82,7 @@
               <v-text-field
                 placeholder="کد ملی"
                 outlined
+                v-model="form.nationalId"
               ></v-text-field>
             </div>
           </v-col>
@@ -90,7 +94,10 @@
               <v-select
                 placeholder="انتخاب مهارت ها "
                 outlined
+                multiple
                 append-icon="mdi-chevron-down-circle-outline"
+                :items="skillItems"
+                v-model="form.skill"
               >
                 <template #no-data>
                   <span class="white--text">
@@ -108,6 +115,8 @@
               <v-select
                 placeholder="انتخاب محدوده"
                 outlined
+                :items="neighborhoodItems"
+                v-model="form.neighborhood"
                 append-icon="mdi-chevron-down-circle-outline"
               >
                 <template #no-data>
@@ -123,7 +132,8 @@
               <span class="t18400 primary--text">تاریخ تولد</span>
             </div>
             <div class="mt-5 px-4">
-              <date-picker class="pb-8" mode="single" :column="1" color="primary"></date-picker>
+              <date-picker v-model="form.birthdate" class="pb-8" mode="single" :column="1"
+                           color="primary"></date-picker>
             </div>
           </v-col>
           <v-col md="6" cols="12">
@@ -134,6 +144,7 @@
               <v-text-field
                 placeholder="کد پیمانکاری "
                 outlined
+                v-model="form.code"
               ></v-text-field>
             </div>
           </v-col>
@@ -144,10 +155,11 @@
             </div>
             <div class="mt-10">
               <v-textarea
-                placeholder="کد پیمانکاری "
+                placeholder="تجربیات "
                 outlined
                 rows="9"
                 row-height="30"
+                v-model="form.description"
               ></v-textarea>
             </div>
           </v-col>
@@ -157,11 +169,15 @@
             </div>
             <div class="mt-5">
 
-              <v-card v-if="profile.base64 == null" @click="selectProfileImage" color="cultured" outlined height="251  " width="251" class="br-15 mx-1 d-flex align-center justify-center">
+              <v-card v-if="profile.base64 == null" @click="selectProfileImage" color="cultured" outlined height="251  "
+                      width="251" class="br-15 mx-1 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack2.svg" alt="">
               </v-card>
-              <v-img height="251" v-else :src="profile.base64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                <div class="ma-1 position__absolute z-index-10" @click="deleteProfilePhoto()"><v-icon color="error">mdi-delete</v-icon></div>
+              <v-img height="251" v-else :src="profile.base64" alt=""
+                     class="br-15 mx-4  align-center justify-center d-none d-md-flex">
+                <div class="ma-1 position__absolute z-index-10" @click="deleteProfilePhoto()">
+                  <v-icon color="error">mdi-delete</v-icon>
+                </div>
               </v-img>
             </div>
           </v-col>
@@ -177,7 +193,7 @@
         </span>
       </div>
     </div>
-    <DeviceInformation  v-for="(project , index) in projects" :key="`project${index}`"/>
+    <DeviceInformation :vehicleItems="vehicleItems" v-for="(device , index) in devices" :ref="`devices${index}`" :key="`devices${index}`"/>
     <v-row justify="space-between" class="px-15 py-10 d-none d-md-flex">
       <v-btn @click="addProject()" outlined color="primary" width="301" height="87" class="br-20">
               <span class="ml-5">
@@ -188,7 +204,7 @@
               </span>
 
       </v-btn>
-      <v-btn color="primaryYellow" width="251" height="101" class="br-20">
+      <v-btn @click="SubmitData()" color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
                 ثبت‌نام
               </span>
@@ -201,11 +217,12 @@
               <span class="ml-5">
                 <v-icon>mdi-plus-circle-outline</v-icon>
               </span>
-          <span class="t18400 primary--text">
+            <span class="t18400 primary--text">
                   افزودن وسیله اضافه
               </span>
 
-        </v-btn></div>
+          </v-btn>
+        </div>
         <div class="d-flex justify-center ">
           <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
                 <span class="t30600 primary--text">
@@ -220,25 +237,125 @@
 
 <script>
 import DeviceInformation from '~/components/Service/DeviceInformation.vue'
+import {gql} from "nuxt-graphql-request";
+import axios from "axios";
+import {convertDateToGregorian} from "~/assets/js/public";
+
 export default {
-  components:{
+  components: {
 
     DeviceInformation
   },
-  data(){return{
-    profile:{base64:null , image:''},
-    items:['test' , 'tesst'],
-    projects:[
-      {name:''}
-    ]
-  }},
-  methods:{
-    addProject(){
-      const form = {name:''}
+  data() {
+    return {
+      hiii:``,
+      loading: false,
+      clientDetail: null,
+      neighborhoods: [],
+      vehicles: [],
+      skills: [],
+      profile: {base64: null, image: ''},
+      items: ['test', 'tesst'],
+      devices: [
+        {name: ''}
+      ],
+      form: {
+        name: '',
+        mobile: null,
+        email: null,
+        nationalId: null,
+        birthdate: null,
+        neighborhood: null,
+        code: null,
+        description: null,
+        skill: []
+      }
+    }
+  },
+  methods: {
+    async SubmitData() {
+      this.loading = true
+      this.devices.forEach((element, index) => {
+        this.addVehicle(this.$refs[`devices${index}`][0].form)
+      })
+      // axios
+      //   .post(process.env.apiUrl + `employee/v1/client/`, {
+      //       skills: this.form.skill,
+      //       neighborhood: this.form.neighborhood.id,
+      //       code: this.form.code,
+      //       description: this.form.description,
+      //     },
+      //     {
+      //       headers: {
+      //         Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+      //       },
+      //     })
+      //   .then((response) => {
+      //     this.devices.forEach((element, index) => {
+      //       this.addVehicle(this.$refs[`devices${index}`][0].form)
+      //     })
+      //   })
+      //   .catch((err) => {
+      //   }).finally(() => {
+      //   this.loading = false
+      // });
+    },
+    async addVehicle(vehicle) {
+      console.log(vehicle)
+      this.loading = true
+      axios
+        .post(process.env.apiUrl + `vehicle/v1/client/`, {
+            vehicle: vehicle.vehicle,
+            does_have_technical_examination: vehicle.does_have_technical_examination,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+            },
+          })
+        .then((response) => {
+          this.devices.forEach((element , index) =>{
+            if (this.$refs[`devices${index}`][0].images?.length){
+              this.$refs[`devices${index}`][0].images.forEach(image=>{
+                  this.assingImageVehicle(image , response.data.id)
+              })
+
+            }
+          })
+        })
+        .catch((err) => {
+        }).finally(() => {
+        this.loading = false
+      });
+    },
+
+    assingImageVehicle(image , id){
+      const formData = new FormData()
+      formData.append('image' , image)
+      formData.append('employee_vehicle' , id)
+      axios
+        .post(process.env.apiUrl + `vehicle/v1/client/image/`, formData,
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+              'accept': 'application/json',
+              'Content-Type': `multipart/form-data`,
+            },
+          })
+        .then((response) => {
+
+        })
+        .catch((err) => {
+        }).finally(() => {
+        this.loading = false
+      });
+    },
+    addProject() {
+      const form = {name: ''}
       this.projects.push(form)
     },
 
-    deleteProfilePhoto(){
+    deleteProfilePhoto() {
       this.profile.base64 = null
       this.profile.image = null
     },
@@ -254,7 +371,7 @@ export default {
     getBase64(file) {
       var reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload =  () => {
+      reader.onload = () => {
 
         this.profile.image = file
         this.profile.base64 = reader.result
@@ -262,7 +379,121 @@ export default {
       };
 
     },
+    async getClientDetail() {
+
+      const requestHeaders = {
+        Authorization: "Bearer " + this.$cookies.get("userToken"),
+      };
+      const query = gql`
+        query{
+            clientMe{
+                id,
+                    firstName,
+                    lastName,
+                    nationalId,
+                    mobile
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+      this.clientDetail = obj.clientMe
+    },
+    async getClientVehicles() {
+      const query = gql`
+        query{
+            clientVehicles{
+            results{
+
+              id,
+              name,
+              }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query, {});
+      this.vehicles = obj.clientVehicles.results
+    },
+    async getClientNeighborhood() {
+      const query = gql`
+        query{
+            clientNeighborhoods{
+             id,
+              name,
+              city{
+                id,
+                name,
+              }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query, {});
+      this.neighborhoods = obj.clientNeighborhoods
+    },
+    async getClientSkills() {
+      const query = gql`
+        query{
+            clientSkills{
+              results{
+              id,
+              name,
+              }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query, {});
+      this.skills = obj.clientSkills.results
+    },
+    setForm() {
+      this.form.name = this.clientDetail.firstName
+      this.form.nationalId = this.clientDetail.nationalId
+      this.form.mobile = this.clientDetail.mobile
+    },
   },
-  layout:'WithOutContact'
+  watch: {
+    clientDetail() {
+      this.setForm()
+    }
+  },
+  computed: {
+    neighborhoodItems() {
+      let neighborhoods = []
+      this.neighborhoods.forEach(element => {
+        const form = {
+          text: element.name,
+          value: element
+        }
+        neighborhoods.push(form)
+
+      })
+      return neighborhoods
+    },
+    skillItems() {
+      let skills = []
+      this.skills.forEach(element => {
+        const form = {
+          text: element.name,
+          value: element.id
+        }
+        skills.push(form)
+
+      })
+      return skills
+    },
+    vehicleItems() {
+      let vehicles = []
+      this.vehicles.forEach(element => {
+        const form = {
+          text: element.name,
+          value: element.id
+        }
+        vehicles.push(form)
+
+      })
+      return vehicles
+    },
+  },
+  mounted() {
+    this.getClientDetail()
+    this.getClientNeighborhood()
+    this.getClientSkills()
+    this.getClientVehicles()
+  },
+  layout: 'WithOutContact'
 }
 </script>
