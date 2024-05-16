@@ -53,7 +53,7 @@
                   </span>
         </div>
       </v-row>
-      <v-list-item class="my-4 pa-2 mx-2" to="/user-profile/user-detail" router exact
+      <v-list-item class="my-4 pa-2 mx-2" to="/" router exact
                    style="height: 60px; border-radius: 10px; background: #fff"  v-model="page">
         <v-list-item-action class="z-index-10">
           <img width="24" height="24" src="~/assets/img/info.svg" :class="$route.fullPath == '/user-profile/user-detail' ? 'filter-green' :''" >

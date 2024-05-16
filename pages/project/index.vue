@@ -19,22 +19,16 @@
               </v-btn>
             </template>
             <v-list class="px-15">
-              <v-list-item
-              >
+              <v-list-item v-for="(neighborhoods , index) in neighborhoods">
                 <v-list-item-title  >
                   <div class="text-center">
-                    <span class="white--text">سعادت آباد</span>
+                    <span class="white--text">{{ neighborhoods.name }}</span>
                   </div>
                 </v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
-
         </div>
-        <Overlap />
-        <Overlap />
-        <Overlap />
-        <Overlap />
         <Overlap />
       </div>
     </div>
@@ -81,6 +75,17 @@ export default {
     OverlapWrapper,
     SectionComponentNode,
   },
+
+
+  computed:{
+    neighborhoods(){
+      return this.$store.getters['get_neighborhoods']
+    }
+  },
+  mounted() {
+    this.$store.dispatch('set_clientProject')
+    this.$store.dispatch('set_neighborhoods')
+  }
 };
 </script>
 

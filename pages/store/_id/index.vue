@@ -142,7 +142,7 @@
             <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >{{ product?.seller?.mobile }}</span>
           </div>
           <div class="d-flex align-center">
-            <v-btn color="primary" width="241" height="101" class="br-20 ml-5">
+            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="241" height="101" class="br-20 ml-5">
               <span class="t24600 white--text">
                  ارسال پیام
               </span>
@@ -174,7 +174,7 @@
           </div>
           <v-divider class="my-4"></v-divider>
           <div class="d-flex justify-center align-center">
-            <v-btn color="primary" width="129" height="50" class="br-10 ml-5">
+            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="129" height="50" class="br-10 ml-5">
               <span class="t16400 white--text">
                  ارسال پیام
               </span>
@@ -237,6 +237,10 @@ export default {
   computed:{
     product(){
       return this.$store.getters['get_clientProduct']
+    },
+
+    clientId(){
+      return this.$cookies.get('user_id')
     }
   },
 

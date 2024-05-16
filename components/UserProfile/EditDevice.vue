@@ -58,17 +58,16 @@
               <v-card @click="selectFile()" outlined width="141" height="141" class="br-15 mx-2 d-flex align-center justify-center">
                 <img src="~/assets/img/PlusCircleBlack.svg" alt="">
               </v-card>
-
-              <div class="mx-1 " v-for="(image , index) in base64Images">
+              <div class="mx-1 " v-for="(image , index) in vehicleImages">
                 <template v-if="index == 1">
-                  <v-img class="br-15" width="141" height="141" :src="image" alt="" :key="index" >
-                    <div class="d-flex justify-center align-center" v-if="base64.length > 2" style="height: 100% ; width: 100% ;background: rgba(0, 0, 0, 0.50);backdrop-filter: blur(4px);">
-                      <span class="white--text dana-fa">{{base64.length -2}}</span>
+                  <v-img class="br-15" width="141" height="141" :src="baseUrl +image?.image" alt="" :key="index" >
+                    <div class="d-flex justify-center align-center" v-if="vehicleImages> 2" style="height: 100% ; width: 100% ;background: rgba(0, 0, 0, 0.50);backdrop-filter: blur(4px);">
+                      <span class="white--text dana-fa">{{vehicleImages.length -2}}</span>
                     </div>
                   </v-img>
                 </template>
                 <template v-if="index == 0">
-                  <v-img class="br-15" width="141" height="141" :src="image" alt="" :key="index" >
+                  <v-img class="br-15" width="141" height="141" :src="baseUrl +image?.image" alt="" :key="index" >
                   </v-img>
                 </template>
 
@@ -100,12 +99,12 @@
 
 
               </div>
-<!--              <div class="mx-1">-->
-<!--                <img  width="87" height="87" src="~/assets/img/addService.png" alt="">-->
-<!--              </div>-->
-<!--              <div class="mx-1">-->
-<!--                <img  width="87" height="87" src="~/assets/img/addService.png" alt="">-->
-<!--              </div>-->
+              <!--              <div class="mx-1">-->
+              <!--                <img  width="87" height="87" src="~/assets/img/addService.png" alt="">-->
+              <!--              </div>-->
+              <!--              <div class="mx-1">-->
+              <!--                <img  width="87" height="87" src="~/assets/img/addService.png" alt="">-->
+              <!--              </div>-->
             </div>
           </div>
           <div class="text-right pr-4 mt-5 d-none d-md-flex">
@@ -118,19 +117,11 @@
             <v-row justify="center" class="pl-2 pt-2">
 
               <v-col cols="6" md="5" class="px-0">
-                <v-card v-if="certificateBase64 == null" @click="selectFileCertificate()" outlined width="141" height="141" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                  <img src="~/assets/img/PlusCircleBlack.svg" alt="">
-                </v-card>
-                <v-img width="141" height="141" v-else :src="certificateBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                  <div class="ma-1 position__absolute z-index-10" @click="deleteCertificatePhoto()"><v-icon color="error">mdi-delete</v-icon></div>
+
+                <v-img width="141" height="141" :src="baseUrl + vehicleDrivingLicense?.image" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
                 </v-img>
 
-                <v-card  v-if="certificateBase64 == null" @click="selectFileCertificate" outlined width="133" height="133" class="br-15  align-center justify-center d-flex d-md-none">
-                  <img src="~/assets/img/PlusCircleBlack.svg" alt="">
-                </v-card>
-
-                <v-img   width="133" height="133" v-else :src="certificateBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
-                  <div class="ma-1 position__absolute z-index-10" @click="deleteCertificatePhoto()" style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+                <v-img   width="133" height="133"  :src="baseUrl + vehicleDrivingLicense?.image" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
                 </v-img>
                 <div class="text-right pr-4 mt-5">
                   <span class="t18400 primary--text d-none d-md-block">تصاویر گواهینامه</span>
@@ -138,17 +129,11 @@
                 </div>
               </v-col>
               <v-col cols="6" md="5" class="px-0">
-                <v-card  v-if="technicalDiagnosisBase64 == null" @click="selectFileTechnicalDiagnosis()" outlined width="141" height="141" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                  <img src="~/assets/img/PlusCircleBlack.svg" alt="">
-                </v-card>
-                <v-img  width="141" height="141" v-else :src="technicalDiagnosisBase64" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
-                  <div class="ma-1 position__absolute z-index-10"  @click="deleteTechnicalDiagnosisPhoto()"  style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+
+                <v-img  width="141" height="141" :src="baseUrl +vehicleTechnical?.image" alt="" class="br-15 mx-4  align-center justify-center d-none d-md-flex">
                 </v-img>
-                <v-card  v-if="technicalDiagnosisBase64 == null" @click="selectFileTechnicalDiagnosis()" outlined width="133" height="133" class="br-15  align-center justify-center d-flex d-md-none">
-                  <img src="~/assets/img/PlusCircleBlack.svg" alt="">
-                </v-card>
-                <v-img  width="133" height="133" v-else :src="technicalDiagnosisBase64" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
-                  <div class="ma-1 position__absolute z-index-10" @click="deleteTechnicalDiagnosisPhoto()" style="top:0 ; right: 0"><v-icon color="error">mdi-delete</v-icon></div>
+
+                <v-img  width="133" height="133" :src="baseUrl +vehicleTechnical?.image" alt=""  class="br-15  align-center justify-center d-flex d-md-none">
                 </v-img>
                 <div class="text-right  mt-5">
                   <span class="t18400 primary--text d-none d-md-block">تصاویر برگه معاینه فنی</span>
@@ -167,6 +152,7 @@
 
   </v-row>
 </template>
+
 <script>
 export default {
   props:{
@@ -187,16 +173,16 @@ export default {
       technicalDiagnosis:null,
       technicalDiagnosisBase64:null,
       serviceType:['خاک ریزی','خاک برداری', 'مقاوم سازی گود' , 'محوطه سازی' , 'زیر سازی' , 'آسفالت' , 'حمل مصالح' , 'درخواست ماشین آلات سنگین' , 'درخواست راننده  (برای صاحبان دستگاه)' , 'حمل نخاله' , 'تخریب']
-  }},
+    }},
 
   methods:{
     deleteTechnicalDiagnosisPhoto(){
       this.technicalDiagnosis =null
-        this. technicalDiagnosisBase64 =null
+      this. technicalDiagnosisBase64 =null
     },
     deleteCertificatePhoto(){
       this.certificate =null
-        this. certificateBase64 =null
+      this. certificateBase64 =null
     },
     deletePhoto(index){
       this.images.splice(index , 1)
@@ -267,12 +253,50 @@ export default {
       catch (e) {
         return  []
       }
-    }
-  },
+    },
 
-  mounted() {
-    this.form.vehicle = this.vehicle?.id
-    this.form.does_have_technical_examination = this.vehicle?.doesHaveTechnicalExamination
+
+    baseUrl(){
+      return process.env.baseUrl
+    },
+
+    vehicleImages(){
+      try {
+        const findVehicleImages = this.vehicle?.images.filter((element)=>element.type === 'VEHICLE')
+        return findVehicleImages
+      }
+      catch (e) {
+        console.log(e)
+        return []
+      }
+    },
+    vehicleDrivingLicense(){
+      try {
+        const findVehicleImages = this.vehicle?.images.find((element)=>element.type === 'DRIVING_LICENSE')
+        return findVehicleImages
+      }
+      catch (e) {
+        console.log(e)
+        return []
+      }
+  },
+  vehicleTechnical(){
+  try {
+    const findVehicleImages = this.vehicle?.images.find((element)=>element.type === 'TECHNICAL_EXAMINATION')
+    return findVehicleImages
   }
+  catch (e) {
+    console.log(e)
+    return []
+  }
+},
+
+
+},
+
+mounted() {
+  this.form.vehicle = this.vehicle?.id
+  // this.form.does_have_technical_examination = this.vehicle?.doesHaveTechnicalExamination
+}
 }
 </script>

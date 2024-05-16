@@ -9,18 +9,18 @@
           <v-col cols="6" class="pl-15">
             <div class="pt-4">
                 <span class="white--text t30600">
-                  عباس قادری
+                  {{clientDetail?.firstName}}
                 </span>
             </div>
             <div class="d-flex justify-start mt-10">
               <div class="chip px-5 d-flex justify-center align-center ml-2">
-                <span class="primary--text t18400">خاک برداری، تخریب </span>
+                <span class="primary--text t18400" v-for="(skill , index) in clientDetail?.employee?.skills">{{skill?.name}}</span>
               </div>
               <div class="chip px-5 d-flex justify-center align-center mx-2">
-                <span class="primary--text t18400">سعادت آباد</span>
+                <span class="primary--text t18400" >{{ clientDetail?.employee?.neighborhood?.name }}</span>
               </div>
               <div class="chip px-10 d-flex justify-center align-center mx-2">
-                <span class="primary--text t18400">لودر</span>
+                <span class="primary--text t18400" v-if="clientDetail">{{ clientDetail?.employee?.vehicles[0]?.vehicle?.name }}</span>
               </div>
             </div>
             <div class="mt-8 text-right pl-15 ">
@@ -77,18 +77,18 @@
             </div>
             <div class="pt-2 text-center mt-8">
               <span class="white--text t18600">
-                عباس قادری
+                  {{clientDetail?.firstName}}
               </span>
             </div>
             <div class="d-flex justify-start mt-15 position__relative scroller px-10" style="max-width: 359px;">
               <div class="chip  d-flex justify-center align-center ml-2"  style="min-width: 150px;">
-                <span class="primary--text t14400">خاک برداری، تخریب </span>
+                <span class="primary--text t14400"v-for="(skill , index) in clientDetail?.employee?.skills">{{skill?.name}}</span>
               </div>
               <div class="chip px-5 d-flex justify-center align-center mx-2" style="min-width: 120px;">
-                <span class="primary--text t14400">سعادت آباد</span>
+                <span class="primary--text t14400">{{ clientDetail?.employee?.neighborhood?.name }}</span>
               </div>
               <div class="chip px-10 d-flex justify-center align-center mx-2">
-                <span class="primary--text t14400">لودر</span>
+                <span class="primary--text t14400">{{ clientDetail?.employee?.vehicles[0]?.vehicle?.name }}</span>
               </div>
             </div>
             <div class="text-justify px-13 mt-8">
@@ -137,23 +137,23 @@
               <v-col cols="4" class="pr-15 pt-15">
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">نام و نام خانوادگی</span>
-                  <span class="primary--text t18400">گلزار حیدری</span>
+                  <span class="primary--text t18400"> {{clientDetail?.firstName}}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">شماره تماس</span>
-                  <span class="primary--text t18400">۰۹۳۰۰۱۷۹۶۴۸</span>
+                  <span class="primary--text t18400">{{clientDetail?.mobile}}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">مهارت ها</span>
-                  <span class="primary--text t18400">خاک برداری، تخریب</span>
+                  <span class="primary--text t18400" v-for="(skill , index) in clientDetail?.employee?.skills">{{ skill?.name }}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">محدوده</span>
-                  <span class="primary--text t18400">سعادت آباد</span>
+                  <span class="primary--text t18400">{{ clientDetail?.employee?.neighborhood?.name }}</span>
                 </v-row>
                 <v-row justify="space-between" class="pt-15 pr-8">
                   <span class="primary--text t18600">کد پیمانکاری</span>
-                  <span class="primary--text t18400 dana-fa ">۱۲۵۴۴۷۸۷۲۴۱۱</span>
+                  <span class="primary--text t18400 dana-fa ">{{ clientDetail?.employee?.code}}</span>
                 </v-row>
               </v-col>
               <v-col cols="7" class=" pt-15 pl-15">
@@ -161,8 +161,7 @@
                   از تجربیات پیمانکار
                 </span>
                 <div class="user-profile__experience-box mt-10 pa-10">
-                  <p class="t18400 primary--text lh-40 text-justify">
-                    لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
+                  <p class="t18400 primary--text lh-40 text-justify" v-html="clientDetail?.employee?.description">
                   </p>
                 </div>
               </v-col>
@@ -176,35 +175,32 @@
                     <span class="primary--text t18600">
                       تصاویر وسیله
                     </span>
-                  <span class="primary--text t18600">
+                  <span v-if="employeeVehicles?.doesHaveTechnicalExamination" class="primary--text t18600">
                      دارای معاینه فنی سلامت
                     </span>
                 </div>
 
                 <div class="d-flex justify-start mt-10">
-                  <img class="br-15 ml-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                  <img class="br-15 mx-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                  <img class="br-15 mr-4" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-
+                  <img v-for="(image , index) in employeeVehicles?.images" class="br-15 ml-4" width="140" height="140" :src="baseUrl +image.image" alt=""  >
                 </div>
               </v-col>
               <v-col cols="6">
                 <v-row justify="start">
                   <v-col cols="6">
                     <div class="user-profile__status-card mt-10 d-flex justify-space-between align-center px-10">
-                      <span class="primaryYellow--text t30600 dena-fa">۳</span>
+                      <span class="primaryYellow--text t30600 dana-fa">{{ clientDetail?.employee?.projectApplies.length }}</span>
                       <span class="primary--text t18400 dena-fa">پروژه در دست اقدام</span>
 
                     </div>
                     <div class="user-profile__status-card mt-3 d-flex justify-space-between align-center px-10">
-                      <span class="primaryYellow--text t30600 dena-fa">۳۰</span>
+                      <span class="primaryYellow--text t30600 dana-fa">{{ myProductsLength }}</span>
                       <span class="primary--text t18400 dena-fa">محصول در فروشگاه</span>
 
                     </div>
                   </v-col>
                   <v-col cols="6" class="pt-13 pl-8 ">
                     <div class="user-profile__status-card-full px-10 position__relative">
-                      <p class="primaryYellow--text t100800 dena-fa">۱۰</p>
+                      <p class="primaryYellow--text t100800 dana-fa">{{ clientDetail?.employee?.skills.length }}</p>
                       <div>
                         <span class="primary--text t18400  " style="position: absolute; top: 120px">مهارت انتخاب شده</span>
                       </div>
@@ -231,7 +227,7 @@
                 نام و نام خانوادگی
               </p>
               <p class="t18400 mt-5">
-                گلزار حیدری
+                {{ clientDetail?.firstName }}
               </p>
             </div>
             <div class="text-center primary--text mt-15">
@@ -239,15 +235,15 @@
                 شماره تماس
               </p>
               <p class="t18400 mt-5">
-                ۰۹۳۰۰۱۷۹۶۴۸
+                {{ clientDetail?.mobile }}
               </p>
             </div>
             <div class="text-center primary--text mt-15">
               <p class="t18600">
                 مهارت ها
               </p>
-              <p class="t18400 mt-5">
-                خاک برداری، تخریب
+              <p class="t18400 mt-5"  v-for="(skill , index) in clientDetail?.employee?.skills">
+                {{ skill?.name }}
               </p>
             </div>
             <div class="text-center primary--text mt-15">
@@ -255,7 +251,7 @@
                 محدوده
               </p>
               <p class="t18400 mt-5">
-                سعادت آباد
+                {{ clientDetail?.employee?.neighborhood?.name }}
               </p>
             </div>
             <div class="text-center primary--text mt-15">
@@ -263,7 +259,7 @@
                 کد پیمانکاری
               </p>
               <p class="t18400 mt-5">
-                ۱۲۵۴۴۷۸۷۲۴۱۱
+                {{ clientDetail?.employee?.code }}
               </p>
             </div>
             <v-divider class="mt-10"></v-divider>
@@ -272,7 +268,7 @@
                 از تجربیات پیمانکار
               </p>
               <p class="t18400 mt-5 lh-40 text-justify px-10">
-                لودر یکی از کاربردی‌ترین ماشین‌آلات ساختمانی و عمرانی است. این ماشین که در اندازه‌های مختلف ساخته می‌شود به دلیل عملکرد و انعطاف‌پذیری زیادی که دارد و نیز با کمک تغییر جام می‌تواند بسیاری از کارها را انجام دهد. لودر موارد استفاده بسیاری دارد که برخی از آن‌ها عبارتند از: ایجاد خاکریزها، حفاری زیرزمین بناها، پرکردن خندقها، خاکریزی اطراف لوله‌های کارگذاشته شده در کانال‌ها، بارکردن کامیون‌ها، حمل بتن به محل قالب‌ها و بلند کردن و حمل مصالح ساختمانی. به ماشین لودر می‌توان انواع ملحقات نظیر برف‌روب، کانال‌کن، لوله‌بر، لوله‌گذار و جرثقیل و لیفتراک را نصب کرد و کاربردهای دیگری از آن گرفت.
+              {{clientDetail?.employee?.description}}
               </p>
             </div>
             <v-divider class="mt-10"></v-divider>
@@ -281,34 +277,27 @@
                 تصاویر وسیله
               </p>
               <div>
-                <div class="d-flex justify-center mt-5">
-                  <img class="br-15 " width="140" height="140" src="~/assets/img/addService.png" alt=""  >
+                <div class="d-flex justify-center mt-5" v-for="(image , index) in employeeVehicles?.images">
+                  <img class="br-15 " width="140" height="140" :src="baseUrl +image.image" alt=""  >
                 </div>
-                <div class="d-flex justify-center mt-5">
-                  <img class="br-15" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                </div>
-                <div class="d-flex justify-center mt-5">
-                  <img class="br-15" width="140" height="140" src="~/assets/img/addService.png" alt=""  >
-                </div>
-
               </div>
             </div>
             <div class="text-center primary--text mt-15">
-              <p class="t18600">
+              <p class="t18600"  v-if="employeeVehicles?.doesHaveTechnicalExamination" >
                 دارای معاینه فنی سلامت
               </p>
               <div class="user-profile__status-card mt-10 mx-5 d-flex justify-space-between align-center px-10">
-                <span class="primaryYellow--text t30600 dena-fa">۳</span>
+                <span class="primaryYellow--text t30600 dena-fa">{{clientDetail?.employee?.projectApplies.length }}</span>
                 <span class="primary--text t18400 dena-fa">پروژه در دست اقدام</span>
 
               </div>
               <div class="user-profile__status-card mt-5 mx-5 d-flex justify-space-between align-center px-10">
-                <span class="primaryYellow--text t30600 dena-fa">۳۰</span>
+                <span class="primaryYellow--text t30600 dena-fa">{{ myProductsLength }}</span>
                 <span class="primary--text t18400 dena-fa">محصول در فروشگاه</span>
 
               </div>
               <div class="user-profile__status-card mt-5 mx-5 d-flex justify-space-between align-center px-10">
-                <span class="primaryYellow--text t30600 dena-fa">۱۰</span>
+                <span class="primaryYellow--text t30600 dena-fa">{{ clientDetail?.employee?.skills.length }}</span>
                 <span class="primary--text t18400 dena-fa">مهارت انتخاب شده</span>
 
               </div>
@@ -317,8 +306,6 @@
           </div>
 
         </div>
-
-
       </div>
     </div>
 
@@ -327,7 +314,99 @@
 </template>
 
 <script>
+import {gql} from "nuxt-graphql-request";
+
 export  default {
   layout:'Peymankar',
+  data(){
+    return{
+      clientDetail:null
+    }
+  },
+  methods:{
+    async  getClientDetail(){
+      try {
+        const requestHeaders = {
+          Authorization: "Bearer " + this.$cookies.get("userToken"),
+        };
+        const query = gql`
+        query{
+            clientMe{
+                    id,
+                    firstName,
+                    lastName,
+                    nationalId,
+                    mobile,
+                    birthdate,
+                    thumbnail
+                    employee{
+                      id
+                      CreatedAt
+                      UpdatedAt
+                      projectApplies{
+                        id
+                      }
+                      neighborhood{
+                        id
+                        name
+                      }
+                      skills{
+                        id
+                        name
+                      }
+                      code
+                      description
+                      drivingLicence
+                      roadworthinessInspection
+                      vehicles{
+                        id
+                        doesHaveTechnicalExamination
+                        vehicle{
+                          name
+                        }
+                        images{
+                          id,
+                          image,
+                          type
+                        }
+                      }
+                      rating
+                    }
+            }
+          } `;
+        const obj = await this.$graphql.default.request(query , {} , requestHeaders);
+        this.clientDetail =  obj.clientMe
+      }
+      catch (e) {
+        console.log(e)
+      }
+    },
+  },
+  computed:{
+    myProductsLength(){
+     try {
+       return this.$store.getters['get_myProduct'].length
+     }
+     catch (e) {
+       return 0
+     }
+    },
+    baseUrl() {
+      return process.env.baseUrl
+    },
+    employeeVehicles(){
+      try {
+        const vehiclesLength = this.clientDetail?.employee?.vehicles.length
+        return this.clientDetail?.employee?.vehicles[vehiclesLength-1]
+      }
+      catch (e) {
+        return null
+      }
+    }
+  },
+  beforeMount() {
+    this.getClientDetail()
+    this.$store.dispatch('set_myProduct')
+  }
 }
 </script>

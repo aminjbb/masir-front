@@ -41,6 +41,7 @@
 <script>
 import Step1Login from "~/components/Login/Step1Login.vue";
 import Step2Login from "~/components/Login/Step2Login.vue";
+import {gql} from "nuxt-graphql-request";
 
 export default {
   components: {Step2Login, Step1Login},
@@ -56,7 +57,9 @@ export default {
     },
     editNumber(){
       this.step =1
-    }
+    },
+
+
   }
 }
 </script>

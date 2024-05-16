@@ -121,7 +121,7 @@
             <span class="primary--text t24600 mr-10">
               اطلاعات تکمیلی
             </span>
-            <v-btn width="163" height="70" color="primaryYellow" class="br-15">
+            <v-btn @click="$router.push(`/user-profile/chat/${employee?.user?.id}/${userId}`)" width="163" height="70" color="primaryYellow" class="br-15">
               <span class="primary--text t18400"> پیام به پیمانکار</span>
             </v-btn>
           </div>
@@ -415,6 +415,7 @@ export  default {
                   }
                 }
                 user{
+                  id
                   firstName
                   mobile
                 },
@@ -428,14 +429,19 @@ export  default {
           } `;
       const obj = await this.$graphql.default.request(query, {});
       this.employee = obj.clientEmployee
-    }
+    },
+
   },
 
   computed:{
     baseUrl(){
       return process.env.baseUrl
+    },
+    userId(){
+      return this.$cookies.get('user_id')
     }
   },
+
   mounted() {
     this.getClientEmployees()
   }

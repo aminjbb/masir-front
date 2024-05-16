@@ -8,7 +8,7 @@
      </div>
      <div class="mt-4">
                     <span class="primary--text t18400">
-                     کد تایید برای شماره موبایل ۰۹۳۰۰۱۷۹۶۴۸ ارسال گردید.
+                     کد تایید برای شماره موبایل <span class="number-fa">{{mobileNumber}}</span> ارسال گردید.
                     </span>
      </div>
      <div class="mt-1">
@@ -90,6 +90,7 @@
 </template>
 <script >
 import axios from "axios";
+import {gql} from "nuxt-graphql-request";
 
 export default {
   props:{
@@ -143,6 +144,33 @@ export default {
       }, 200)
     },
 
+    async  getClientDetail(){
+      const requestHeaders = {
+        Authorization: "Bearer " + this.$cookies.get("userToken"),
+      };
+      const query = gql`
+        query{
+            clientMe{
+                    id,
+                    firstName,
+                    lastName,
+                    nationalId,
+                    mobile,
+                    employer{
+                      id
+                    }
+                    employee{
+                      id
+                    }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query , {} , requestHeaders);
+      this.$cookies.set('user_id' , obj?.clientMe?.id)
+      if (obj?.clientMe?.employee?.id) this.$cookies.set('employ' , true)
+      else this.$cookies.set('employ' , false)
+
+    },
+
     setToken(){
       axios({
         method: "post",
@@ -155,6 +183,7 @@ export default {
         .then((response) => {
           this.resendLoading = false;
           this.$cookies.set('userToken' , response.data.access)
+          this.getClientDetail()
           this.$router.push('/')
           this.code = "";
         })
@@ -163,6 +192,12 @@ export default {
         });
     },
 
+  },
+
+  computed:{
+    mobileNumber(){
+      return localStorage.getItem('mobile')
+    }
   }
 }
 </script>

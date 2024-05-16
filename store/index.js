@@ -14,11 +14,26 @@ export const state = () => ({
   myProject: null,
   clientProduct: null,
   clientBlogPosts: [],
-  clientBlogPost: null
-
+  clientBlogPost: null,
+  clientSingleMessage:null,
+  clientMe:null,
+  clientProject:[],
+  neighborhoods:[]
 })
 
 export const mutations = {
+  set_neighborhoods(state , obj){
+    state.neighborhoods = obj
+  },
+  set_clientProject(state , obj){
+    state.clientProject = obj
+  },
+  set_clientMe(state , obj){
+    state.clientMe = obj
+  },
+  set_clientSingleMessage(state , obj){
+    state.clientSingleMessage = obj
+  },
   set_clientBlogPost(state, obj) {
     state.clientBlogPost = obj
   },
@@ -56,6 +71,67 @@ export const mutations = {
 
 }
 export const actions = {
+  async set_neighborhoods({commit}) {
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+            clientNeighborhoods{
+             id,
+              name,
+            }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_neighborhoods', obj?.clientNeighborhoods);
+  },
+  async set_clientProject({commit} , id) {
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+             publishedProjects(limit:2000){
+                 results{
+                    id
+                    employer{
+                      id
+                      user{
+                        firstName
+                        lastName
+                      }
+                    }
+                    projectApplies{
+                     project{
+                        id
+                        name
+                        description
+                        city{
+                          name
+                        }
+                        neighborhood{
+                          name
+                        }
+                        predictedStartDate
+                        predictedCompletionDate
+                      }
+                      confirmedAt
+                      rating
+                    }
+
+
+                 }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    if (obj.clientEmployees?.results?.length){
+      let clientProjectForm= []
+      obj.clientEmployees?.results.forEach(element=>{
+        clientProjectForm.push( element.projectApplies)
+      })
+    }
+    commit('set_clientProject', clientProjectForm);
+  },
   async set_clientBlogPost({commit} , id) {
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
@@ -320,6 +396,26 @@ export const actions = {
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
     commit('set_clientMessages', obj.clientMessages.results);
   },
+  async set_clientSingleMessage({commit} ,form) {
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+             clientMessages(limit:1000,room_Users_In:[${form.id},${form.clientId}]){
+                  results{
+                    sender{
+                      id
+                      firstName
+                      lastName
+                    }
+                    message
+                }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_clientSingleMessage', obj.clientMessage?.results);
+  },
   async set_clientMessages({commit}) {
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
@@ -338,7 +434,7 @@ export const actions = {
               }
             } `;
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
-    commit('set_clientOrders', obj.clientOrders.results);
+    commit('set_clientOrders', obj.clientMessages.results);
   },
   async set_myProduct({commit}) {
     const requestHeaders = {
@@ -417,6 +513,20 @@ export const actions = {
   }
 }
 export const getters = {
+  get_neighborhoods(state){
+   return  state.neighborhoods
+  },
+  get_clientProject(state){
+    return  state.clientProject
+  },
+
+  get_clientMe(state ){
+    return  state.clientMe
+  },
+
+  set_clientSingleMessage(state){
+    return state.clientSingleMessage
+  },
   get_clientBlogPost(state) {
     return state.clientBlogPost
   },

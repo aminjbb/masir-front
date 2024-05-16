@@ -97,8 +97,7 @@
                 multiple
                 append-icon="mdi-chevron-down-circle-outline"
                 :items="skillItems"
-                v-model="form.skill"
-              >
+                v-model="form.skill">
                 <template #no-data>
                   <span class="white--text">
                     گزینه ای وجود ندارد
@@ -204,7 +203,7 @@
               </span>
 
       </v-btn>
-      <v-btn @click="SubmitData()" color="primaryYellow" width="251" height="101" class="br-20">
+      <v-btn @click="EditUser()" color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
                 ثبت‌نام
               </span>
@@ -259,7 +258,8 @@ export default {
       devices: [
         {name: ''}
       ],
-      form: {
+        thumbnail:null,
+        form: {
         name: '',
         mobile: null,
         email: null,
@@ -273,37 +273,52 @@ export default {
     }
   },
   methods: {
+    async EditUser(){
+      await axios
+        .post(process.env.apiUrl + `user/v1/client/me/`, {
+            first_name: this.form.name,
+            thumbnail: this.profile.image,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+              'accept': 'application/json',
+              'Content-Type': `multipart/form-data`,
+            },
+          })
+        .then((response) => {
+          this.SubmitData()
+        })
+        .catch((err) => {
+        })
+    },
     async SubmitData() {
       this.loading = true
-      this.devices.forEach((element, index) => {
-        this.addVehicle(this.$refs[`devices${index}`][0].form)
-      })
-      // axios
-      //   .post(process.env.apiUrl + `employee/v1/client/`, {
-      //       skills: this.form.skill,
-      //       neighborhood: this.form.neighborhood.id,
-      //       code: this.form.code,
-      //       description: this.form.description,
-      //     },
-      //     {
-      //       headers: {
-      //         Authorization: `Bearer ${this.$cookies.get('userToken')}`,
-      //       },
-      //     })
-      //   .then((response) => {
-      //     this.devices.forEach((element, index) => {
-      //       this.addVehicle(this.$refs[`devices${index}`][0].form)
-      //     })
-      //   })
-      //   .catch((err) => {
-      //   }).finally(() => {
-      //   this.loading = false
-      // });
+      await axios
+        .post(process.env.apiUrl + `employee/v1/client/`, {
+            skills: this.form.skill,
+            neighborhood: this.form.neighborhood.id,
+            code: this.form.code,
+            description: this.form.description,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+            },
+          })
+        .then((response) => {
+          this.devices.forEach((element, index) => {
+            this.addVehicle(this.$refs[`devices${index}`][0].form)
+          })
+        })
+        .catch((err) => {
+        }).finally(() => {
+        this.loading = false
+      });
     },
     async addVehicle(vehicle) {
-      console.log(vehicle)
       this.loading = true
-      axios
+       axios
         .post(process.env.apiUrl + `vehicle/v1/client/`, {
             vehicle: vehicle.vehicle,
             does_have_technical_examination: vehicle.does_have_technical_examination,
@@ -316,10 +331,11 @@ export default {
         .then((response) => {
           this.devices.forEach((element , index) =>{
             if (this.$refs[`devices${index}`][0].images?.length){
-              this.$refs[`devices${index}`][0].images.forEach(image=>{
+               this.$refs[`devices${index}`][0].images.forEach(image=>{
                   this.assingImageVehicle(image , response.data.id)
               })
-
+              this.assingCertificateImageVehicle(this.$refs[`devices${index}`][0].certificate ,  response.data.id)
+              this.assingTechnicalDiagnosisImageVehicle(this.$refs[`devices${index}`][0].technicalDiagnosis ,  response.data.id)
             }
           })
         })
@@ -328,11 +344,55 @@ export default {
         this.loading = false
       });
     },
+    assingTechnicalDiagnosisImageVehicle(image , id){
+      const formData = new FormData()
+      formData.append('image' , image)
+      formData.append('employee_vehicle' , id)
+      formData.append('type' , 'technical_examination')
+      axios
+        .post(process.env.apiUrl + `vehicle/v1/client/image/`, formData,
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+              'accept': 'application/json',
+              'Content-Type': `multipart/form-data`,
+            },
+          })
+        .then((response) => {
 
+        })
+        .catch((err) => {
+        }).finally(() => {
+        this.loading = false
+      });
+    },
+    assingCertificateImageVehicle(image , id){
+      const formData = new FormData()
+      formData.append('image' , image)
+      formData.append('employee_vehicle' , id)
+      formData.append('type' , 'driving_license')
+      axios
+        .post(process.env.apiUrl + `vehicle/v1/client/image/`, formData,
+          {
+            headers: {
+              Authorization: `Bearer ${this.$cookies.get('userToken')}`,
+              'accept': 'application/json',
+              'Content-Type': `multipart/form-data`,
+            },
+          })
+        .then((response) => {
+
+        })
+        .catch((err) => {
+        }).finally(() => {
+        this.loading = false
+      });
+    },
     assingImageVehicle(image , id){
       const formData = new FormData()
       formData.append('image' , image)
       formData.append('employee_vehicle' , id)
+      formData.append('type' , 'vehicle')
       axios
         .post(process.env.apiUrl + `vehicle/v1/client/image/`, formData,
           {
@@ -360,6 +420,7 @@ export default {
       this.profile.image = null
     },
     selectProfileImage() {
+
       var input = document.createElement('input');
       input.type = 'file';
       input.onchange = e => {
@@ -367,7 +428,6 @@ export default {
       }
       input.click();
     },
-
     getBase64(file) {
       var reader = new FileReader();
       reader.readAsDataURL(file);
@@ -442,6 +502,8 @@ export default {
     setForm() {
       this.form.name = this.clientDetail.firstName
       this.form.nationalId = this.clientDetail.nationalId
+      this.thumbnail= this.clientDetail.thumbnail
+
       this.form.mobile = this.clientDetail.mobile
     },
   },
@@ -497,3 +559,9 @@ export default {
   layout: 'WithOutContact'
 }
 </script>
+<style>
+
+.theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled){
+  color: white !important;
+}
+</style>

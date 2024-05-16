@@ -2492,6 +2492,14 @@ header {
   background: rgba(0, 26, 86, 0.50);
 }
 .user-profile__head .avatar-box{
+
+  width: 250px;
+  height: 251px;border-radius: 35px;
+  border :1px solid #FFF
+
+}
+.user-profile__head .avatar-box img{
+
   width: 250px;
   height: 251px;border-radius: 35px;
   border :1px solid #FFF
@@ -2573,7 +2581,7 @@ header {
 .user-profile__chat-user-chat{
   position: absolute;
   left: 0;
-  width: calc(100% - 373px) ;
+  width: 100%;
   height: 100%;
 }
 
@@ -2840,4 +2848,8 @@ background: #FFC51E;
 .v-slider__track-container {
   height: 6px !important;
 }
-
+.v-list-item .v-list-item__subtitle, .v-list-item .v-list-item__title {
+  color: white !important;
+  line-height: 1.2;
+  margin-right: 10px !important ;
+}

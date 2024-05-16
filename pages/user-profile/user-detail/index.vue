@@ -52,7 +52,7 @@
                   </div>
                   <div class="mt-5">
                     <v-text-field
-                      placeholder="ایمیل"
+                      placeholder="کد ملی"
                       outlined
                       v-model="form.nationalId"
                     ></v-text-field>
@@ -62,12 +62,10 @@
                   <div class="text-right pr-4">
                     <span class="t18400 primary--text">تاریخ تولد</span>
                   </div>
-                  <div class="mt-5">
+                  <div class="mt-5" id="birthdateInput">
                     <client-only>
-                      <date-picker mode="single" v-model="form.birthdate" format="jYYYY-jMM-jDD"
-                                    custom-input=".birthdate" />
+                      <date-picker  display-format="jD jMMMM" mode="single" v-model="form.birthdate" format="jYYYY/jMM/jDD" type="date"/>
                     </client-only>
-
                   </div>
                 </v-col>
                 <v-col md="6" cols="12" class="py-0">
@@ -75,10 +73,12 @@
                     <span class="t18400 primary--text">جنسیت</span>
                   </div>
                   <div class="mt-5">
-                    <v-text-field
+                    <v-select
                       placeholder="جنسیت"
+                      :items="sexItems"
+                      v-model="form.sex"
                       outlined
-                    ></v-text-field>
+                    ></v-select>
                   </div>
                 </v-col>
                 <v-col cols="12" >
@@ -88,7 +88,7 @@
                     </v-btn>
                   </div>
                   <div class="d-flex justify-center d-md-none mb-3">
-                    <v-btn  color="primaryYellow" height="55" width="149" class="br-15">
+                    <v-btn :loading="loading" @click="userUpdate()"  color="primaryYellow" height="55" width="149" class="br-15">
                       <span class="primary--text t18600">ویرایش</span>
                     </v-btn>
                   </div>
@@ -117,19 +117,30 @@
 import UserProfileNavigationMenu from "~/components/Public/UserProfileNavigationMenu.vue";
 import {gql} from "nuxt-graphql-request";
 import axios from 'axios'
-import {convertDateToGregorian} from "~/assets/js/public";
+import {convertDateToGregorian, convertDateToJalai} from "~/assets/js/public";
 export  default {
   components: {UserProfileNavigationMenu},
   data(){
     return{
       clientDetail:null,
       loading:false,
+      sexItems:[
+        {
+          text:'مرد',
+          value:'male'
+        },
+        {
+          text:'زن',
+          value:'female'
+        }
+      ],
       form:{
         name:'',
         mobile:null,
         email:null,
         nationalId:null,
-        birthdate:null
+        birthdate:null,
+        sex:null
       }
     }
   },
@@ -146,7 +157,10 @@ export  default {
                     firstName,
                     lastName,
                     nationalId,
-                    mobile
+                    mobile,
+                    email,
+                    birthdate,
+                    sex
             }
           } `;
       const obj = await this.$graphql.default.request(query , {} , requestHeaders);
@@ -156,6 +170,10 @@ export  default {
       this.form.name= this.clientDetail.firstName
       this.form.nationalId= this.clientDetail.nationalId
       this.form.mobile= this.clientDetail.mobile
+      this.form.email= this.clientDetail.email
+      this.form.sex = this.clientDetail.sex.toLocaleLowerCase()
+      if (this.clientDetail.birthdate) this.form.birthdate =convertDateToJalai(this.clientDetail.birthdate , '-' , false)
+      console.log(this.form)
     },
     userUpdate(){
       this.loading = true
@@ -168,7 +186,9 @@ export  default {
         data: {
           first_name: this.form.name,
           national_id: this.form.nationalId,
-          birthdate:convertDateToGregorian(this.form.birthdate , '-' , false)
+          email: this.form.email,
+          birthdate:convertDateToGregorian(this.form.birthdate , '-' , false),
+          sex:this.form.sex
         },
       })
         .then((response) => {
@@ -190,4 +210,16 @@ export  default {
   }
 }
 </script>
+
+<style scoped>
+#birthdateInput input{
+  height: 87px !important;
+}
+
+.user-profile__detail-card .v-text-field--filled>.v-input__control>.v-input__slot, .v-text-field--full-width>.v-input__control>.v-input__slot, .v-text-field--outlined>.v-input__control>.v-input__slot{
+  height: 87px !important;
+  min-height: 87px !important;
+
+}
+</style>
 
