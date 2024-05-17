@@ -15,7 +15,7 @@ export const state = () => ({
   clientProduct: null,
   clientBlogPosts: [],
   clientBlogPost: null,
-  clientSingleMessage:null,
+  clientSingleMessage:[],
   clientMe:null,
   clientProject:[],
   neighborhoods:[]
@@ -402,7 +402,7 @@ export const actions = {
     };
     const query = gql`
           query{
-             clientMessages(limit:1000,room_Users_In:[${form.id},${form.clientId}]){
+             clientMessages(limit:1000,room_Users_In:[${form.id}]){
                   results{
                     sender{
                       id
@@ -414,7 +414,7 @@ export const actions = {
               }
             } `;
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
-    commit('set_clientSingleMessage', obj.clientMessage?.results);
+    commit('set_clientSingleMessage', obj.clientMessages?.results);
   },
   async set_clientMessages({commit}) {
     const requestHeaders = {
@@ -513,6 +513,7 @@ export const actions = {
   }
 }
 export const getters = {
+
   get_neighborhoods(state){
    return  state.neighborhoods
   },
@@ -524,7 +525,7 @@ export const getters = {
     return  state.clientMe
   },
 
-  set_clientSingleMessage(state){
+  get_clientSingleMessage(state){
     return state.clientSingleMessage
   },
   get_clientBlogPost(state) {

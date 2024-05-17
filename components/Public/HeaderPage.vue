@@ -45,11 +45,11 @@
                 </v-col>
                  <v-col cols="4">
                     <img @click="$router.push('/user-profile/order')" src="~/assets/img/ShoppingCart.svg" alt="">
-                   <v-menu >
+                   <v-menu  >
                      <template v-slot:activator="{ on, attrs }">
                        <img  v-bind="attrs" v-on="on" src="~/assets/img/UserCircle.svg" alt="">
                      </template>
-                     <v-list style=" width: 108px;">
+                     <v-list v-if="checkLogin" style=" width: 108px;">
                        <v-list-item
                          to="/user-profile/user-detail"
                        >
@@ -70,6 +70,17 @@
                          </v-list-item-title>
                        </v-list-item>
                      </v-list>
+                     <v-list v-else style=" width: 108px;">
+                       <v-list-item
+                         to="/login"
+                       >
+                         <v-list-item-title>
+                           <div class="text-center">
+                             <span class="white--text">ورود</span>
+                           </div>
+                         </v-list-item-title>
+                       </v-list-item>
+                     </v-list>
                    </v-menu>
                  </v-col>
 
@@ -84,9 +95,16 @@ export default {
   computed:{
     userIsEmployee(){
       return this.$cookies.get('employ')
-    }
+    },
 
+    checkLogin(){
+      if (this.$cookies.get('userToken')) return true
+    }
   },
+
+  methods:{
+
+  }
 
 }
 </script>

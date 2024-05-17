@@ -70,7 +70,7 @@
                         آزاد
                       </span>
                     </v-btn>
-                    <v-btn class="br-10" text>
+                    <v-btn  @click="deActive()" class="br-10" text>
                      <span class="primary--text t16400">
                         مشغول
                       </span>
@@ -80,7 +80,7 @@
                 </span>
               </div>
               <div class="mt-5">
-                <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">۱۷</span>
+                <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">{{ projects }}</span>
               </div>
 
               <div class="mt-16 pt-5">
@@ -132,12 +132,12 @@
                      color="primaryYellow"
                      class="br-10"
                    >
-                    <v-btn class="br-10" text>
+                    <v-btn  class="br-10" text>
                       <span class="primary--text t16400">
                         آزاد
                       </span>
                     </v-btn>
-                    <v-btn class="br-10" text>
+                    <v-btn @click="deActive()" class="br-10" text>
                      <span class="primary--text t16400">
                         مشغول
                       </span>
@@ -147,7 +147,7 @@
               </span>
                 </div>
                 <div class="d-flex justify-center align-center mt-5">
-                  <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">۱۷</span>
+                  <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">{{ projects }}</span>
                 </div>
               </div>
 
@@ -373,7 +373,7 @@ export  default {
   layout:'Peymankar',
   data(){
     return{
-      toggle_exclusive:null,
+      toggle_exclusive:'true',
       profile:{base64:null , image:''},
       clientDetail:null,
       vehicles:[],
@@ -396,6 +396,22 @@ export  default {
     }
   },
   methods:{
+    deActive(){
+      axios({
+        method: "PATCH",
+        url: process.env.apiUrl + "employee/v1/client/deactivate/",
+        headers: {
+          Authorization: "Bearer " + this.$cookies.get("userToken"),
+        },
+      })
+        .then((response) => {
+
+        })
+        .catch((err) => {
+          this.loading = false;
+        });
+
+    },
     async  getClientDetail(){
     try {
       const requestHeaders = {
@@ -413,6 +429,9 @@ export  default {
                     birthdate,
                     thumbnail
                     employee{
+                      projectApplies{
+                        id
+                      }
                       id
                       CreatedAt
                       UpdatedAt
@@ -587,6 +606,14 @@ export  default {
       },
   },
   computed: {
+    projects(){
+      try {
+        return this.clientDetail.employee?.projectApplies.length
+      }
+      catch (e) {
+        return  0
+      }
+    },
     baseUrl(){
       return process.env.baseUrl
     },
@@ -632,6 +659,8 @@ export  default {
     this.getClientNeighborhood()
     this.getClientSkills()
     this.getClientVehicles()
-  }
+  },
+
+
 }
 </script>

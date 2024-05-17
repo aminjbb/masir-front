@@ -17,8 +17,8 @@
           </v-text-field>
         </v-form>
       </div>
-      <div class="d-flex mt-5 pl-5">
-        <v-btn @click="validate()" color="primaryYellow" width="223" height="60" class="br-10 mx-2">
+      <div class="d-flex mt-5 pl-5 pl-15 ml-5">
+        <v-btn @click="validate()" color="primaryYellow" block height="60" class="br-10 mx-2">
                       <span class="primary--text t18400">
                          ورود
                       </span>
@@ -50,7 +50,7 @@
         </v-form>
       </div>
       <div class="d-flex pl-5">
-        <v-btn :loading="loading" @click="validate()" color="primaryYellow" width="121" height="60" class="br-10 mx-1">
+        <v-btn :loading="loading" @click="validate()" color="primaryYellow" height="60" class="br-10 mx-1">
                       <span class="primary--text t18400">
                          ورود
                       </span>

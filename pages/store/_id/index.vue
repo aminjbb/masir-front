@@ -221,7 +221,9 @@ import ModalReport from "~/components/Store/ModalReport.vue";
 import {splitChar} from "../../../assets/js/public";
 
 export default {
-  methods: {splitChar},
+  methods: {splitChar,
+
+  },
   layout:'WithOutContact',
   data(){
     return{
@@ -246,6 +248,7 @@ export default {
 
   beforeMount() {
     this.$store.dispatch('set_clientProduct' , this.$route.params.id)
-  }
+  },
+
 }
 </script>

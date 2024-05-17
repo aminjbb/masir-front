@@ -57,7 +57,7 @@
                 <span class="primaryYellow--text t18400">وضعیت فعلی:</span> <span  class="primaryYellow--text t18400 mr-4">آزاد</span>
               </div>
               <div class="mt-5">
-                <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">۱۷</span>
+                <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">{{ projects }}</span>
               </div>
 
               <div class="mt-16 pt-5">
@@ -103,7 +103,7 @@
                   <span class="primaryYellow--text t18400">وضعیت فعلی:</span> <span  class="primaryYellow--text t18400 mr-4">آزاد</span>
                 </div>
                 <div class="d-flex justify-start align-center mt-5 pr-13">
-                  <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">۱۷</span>
+                  <span class="primaryYellow--text t18400">پروژه‌های انجام شده:</span> <span  class="primaryYellow--text t18400 mr-4 dana-fa">{{ projects }}</span>
                 </div>
               </div>
 
@@ -340,6 +340,9 @@ export  default {
                     birthdate,
                     thumbnail
                     employee{
+                      projectApplies{
+                        id
+                      }
                       id
                       CreatedAt
                       UpdatedAt
@@ -383,6 +386,14 @@ export  default {
     },
   },
   computed:{
+    projects(){
+      try {
+        return this.clientDetail.employee?.projectApplies.length
+      }
+      catch (e) {
+        return  0
+      }
+    },
     myProductsLength(){
      try {
        return this.$store.getters['get_myProduct'].length

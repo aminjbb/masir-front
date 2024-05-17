@@ -2,20 +2,21 @@
   <div>
      <div class="main-container pt-10">
         <div class="user-profile__chat-card mt-15 position__relative">
-
-
           <div class="user-profile__chat-user-chat  position__relative">
             <div class=" header-chat d-flex align-center px-10">
               <span><img src="../../../../../assets/img/UserCircle.svg" alt=""></span>
               <span class="t16400 primary--text mr-5">میترا حجار</span>
             </div>
             <v-divider></v-divider>
-            <MyMessage/>
-            <UserMessage/>
+            <div v-for="massage in massages">
+              <MyMessage :message="massage.message" v-if="massage?.sender?.id == $route.params.senderId"/>
+              <UserMessage v-else :message="massage.message" />
+            </div>
+
             <div style="    position: absolute;left: 0;right: 0;margin: 0 15px;bottom: 0">
               <div class="messageSend pt-5 position__relative">
                 <v-text-field v-model="message" outlined @keyup.enter="sendMassage()"></v-text-field>
-                <div style="   position: absolute;left: 17px;top: 29px;">
+                <div style="   position: absolute;left: 17px;top: 29px;" @click="sendMassage()">
                   <img src="~/assets/img/send.svg"/>
                 </div>
               </div>
@@ -60,7 +61,10 @@ export default {
         })
           .then(response => {
             this.message = null;
-            this.$store.dispatch('set_clientSingleMessage' , this.$route.params.id)
+            const form = {
+              id: this.$route.params.id,
+            }
+            this.$store.dispatch('set_clientSingleMessage' , form)
           })
           .catch(err => {
             this.loading = false
@@ -70,10 +74,16 @@ export default {
     }
   },
 
+  computed:{
+    massages(){
+      return this.$store.getters['get_clientSingleMessage']
+    }
+  },
+
   mounted() {
     const form = {
       id: this.$route.params.id,
-      clientId: this.$route.params.senderId,
+      // clientId: this.$route.params.senderId,
     }
     this.$store.dispatch('set_clientSingleMessage' , form)
   }

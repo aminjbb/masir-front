@@ -203,7 +203,7 @@
               </span>
 
       </v-btn>
-      <v-btn @click="EditUser()" color="primaryYellow" width="251" height="101" class="br-20">
+      <v-btn :loading="loading" @click="EditUser()" color="primaryYellow" width="251" height="101" class="br-20">
               <span class="t30600 primary--text">
                 ثبت‌نام
               </span>
@@ -223,7 +223,7 @@
           </v-btn>
         </div>
         <div class="d-flex justify-center ">
-          <v-btn color="primaryYellow" width="251" height="101" class="br-20 mt-10">
+          <v-btn :loading="loading" color="primaryYellow" width="251" height="101" class="br-20 mt-10">
                 <span class="t30600 primary--text">
                   ثبت‌نام
                 </span>
@@ -247,7 +247,6 @@ export default {
   },
   data() {
     return {
-      hiii:``,
       loading: false,
       clientDetail: null,
       neighborhoods: [],

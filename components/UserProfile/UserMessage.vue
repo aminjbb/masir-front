@@ -4,12 +4,22 @@
 
     <div class="user-message d-flex justify-center align-center ">
       <span class="primary--text t16400 ma-3">
-        من در سفارشم برای پرداخت به مشکل خوردم.
+
+        {{message}}
       </span>
     </div>
 
   </div>
 </template>
 <script>
+export default {
+  props:{
+    message:null
+  },
+  data(){
+    return{
 
+    }
+  }
+}
 </script>
