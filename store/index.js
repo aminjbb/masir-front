@@ -18,10 +18,22 @@ export const state = () => ({
   clientSingleMessage:[],
   clientMe:null,
   clientProject:[],
-  neighborhoods:[]
+  neighborhoods:[],
+  employeeMyApplies:[],
+  userAddress:[],
+  addressForEdit:null
 })
 
 export const mutations = {
+  set_addressForEdit(state , obj){
+    state.addressForEdit = obj
+  },
+  set_userAddress( state  , obj){
+    state.userAddress= obj
+  },
+  set_employeeMyApplies(state , obj){
+    state.employeeMyApplies = obj
+  },
   set_neighborhoods(state , obj){
     state.neighborhoods = obj
   },
@@ -71,6 +83,90 @@ export const mutations = {
 
 }
 export const actions = {
+  async set_userAddress({commit}){
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+            clientAddresses{
+                results{
+                id,
+                city{name , id , province{ id , name ,cities{id , name}}},
+                addressDetail,
+                postalCode,
+                no, unit
+                }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_userAddress', obj?.clientAddresses?.results);
+  },
+  async set_employeeMyApplies({commit}){
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+            employeeMyApplies{
+                results{
+                  CreatedAt,
+                  UpdatedAt,
+                  confirmedAt,
+                  finishedAt,
+                  rejectedAt,
+                  rating,
+                  project{
+                    id,
+                    employer{
+                      id,
+                      user{
+                        id,
+                        firsName,
+                        lastName,
+                        thumbnail,
+                        sex
+                      }
+                    }
+                    name,
+                    description,
+                    city{
+                      id,name,
+                      province{id,name}
+                    }
+                    neighborhood{
+                      id,name,
+                      city{
+                        id, name
+                      }
+                    }
+                    predictedStartDate,
+                    predictedCompletionDate,
+                    isPublished,
+                    projectServices{
+                      service{
+                        id, name ,
+                      }
+                    }
+                    images{
+                      id,
+                      image
+                    }
+                    projectServiceRequirements{
+                      serviceRequirement{
+                        id,
+                        requirement
+                      }
+                      value,
+
+                    }
+                  }
+                }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_neighborhoods', obj?.clientNeighborhoods);
+  },
   async set_neighborhoods({commit}) {
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
@@ -513,7 +609,12 @@ export const actions = {
   }
 }
 export const getters = {
-
+  get_addressForEdit(state ){
+    return  state.addressForEdit
+  },
+  get_userAddress( state){
+    return   state.userAddress
+  },
   get_neighborhoods(state){
    return  state.neighborhoods
   },

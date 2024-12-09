@@ -9,8 +9,7 @@
           </v-col>
           <v-col cols="11" md="9">
             <div class="user-profile__detail-card mt-user-profile mb-15" id="create-form">
-              <AddressCard/>
-              <AddressCard/>
+              <AddressCard  :address="address" v-for="(address , index) in userAddress " :key="address?.id"/>
               <div class="d-flex justify-end px-8 mb-8">
 <!--                <ModalAddress/>-->
                 <v-btn @click="openAddress()" height="62" outlined color="primary" class="br-10">
@@ -25,8 +24,8 @@
       </div>
     </div>
 
-  <ModalMapuserAddress/>
-    <ModalAddress/>
+    <ModalMapuserAddress/>
+    <ModalAddress />
   </div>
 </template>
 
@@ -42,10 +41,22 @@ export  default {
     UserProfileNavigationMenu,
     AddressCard ,ModalAddress
   },
+
   methods:{
     openAddress(){
-      this.$store.commit('set_addressMapModal' , true)
+      this.$store.commit('set_addressModal' , true)
     }
+  },
+  mounted() {
+    this.$store.dispatch('set_userAddress')
+    this.$store.dispatch('set_province')
+  },
+  computed:{
+    userAddress(){
+      return this.$store.getters['get_userAddress']
+    },
+
+
   }
 }
 </script>

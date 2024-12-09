@@ -65,7 +65,7 @@
                       color="primaryYellow"
                       class="br-10"
                     >
-                    <v-btn class="br-10" text>
+                    <v-btn @click="activeEmployee()" class="br-10" text>
                       <span class="primary--text t16400">
                         آزاد
                       </span>
@@ -132,7 +132,7 @@
                      color="primaryYellow"
                      class="br-10"
                    >
-                    <v-btn  class="br-10" text>
+                    <v-btn @click="activeEmployee()" class="br-10" text>
                       <span class="primary--text t16400">
                         آزاد
                       </span>
@@ -412,6 +412,23 @@ export  default {
         });
 
     },
+    activeEmployee(){
+      axios({
+        method: "PATCH",
+        url: process.env.apiUrl + `employee/v1/client/is_active/`,
+        headers: {
+          Authorization: "Bearer " + this.$cookies.get("userToken"),
+        },
+
+      })
+        .then((response) => {
+
+        })
+        .catch((err) => {
+          this.loading = false;
+        });
+
+    },
     async  getClientDetail(){
     try {
       const requestHeaders = {
@@ -427,8 +444,12 @@ export  default {
                     mobile,
                     email,
                     birthdate,
-                    thumbnail
+                    thumbnail,
+
                     employee{
+                    user{
+                      isActive
+                    }
                       projectApplies{
                         id
                       }

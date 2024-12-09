@@ -69,13 +69,23 @@
                            </div>
                          </v-list-item-title>
                        </v-list-item>
+                       <v-list-item
+
+                       >
+                         <v-list-item-title  @click="logOut()">
+                           <div class="text-center">
+                             <span class="white--text">خروج</span>
+                           </div>
+                         </v-list-item-title>
+                       </v-list-item>
+
                      </v-list>
                      <v-list v-else style=" width: 108px;">
                        <v-list-item
                          to="/login"
                        >
                          <v-list-item-title>
-                           <div class="text-center">
+                           <div class="text-center pointer">
                              <span class="white--text">ورود</span>
                            </div>
                          </v-list-item-title>
@@ -103,7 +113,11 @@ export default {
   },
 
   methods:{
+    logOut(){
+      this.$cookies.remove('userToken' )
+      window.location.reload()
 
+    }
   }
 
 }

@@ -5,7 +5,8 @@
         <div class="d-flex justify-start align-center  pa-6">
           <img src="~/assets/img/map-pin.svg">
           <div class="mr-5">
-            <p class="primary--text t18400 mb-0 text-justify">سعادت آباد، خیابان علامه جنوبی، کوچه ۳۴ شرقی، پلاک ۲۷، واحد ۱۶</p>
+            <p class="primary--text t18400 mb-0 text-justify dana-fa">{{ address?.addressDetail }}، پلاک {{ address?.no }}، واحد
+              {{ address?.unit }}</p>
           </div>
         </div>
         <div class="pa-6">
@@ -19,7 +20,8 @@
         <div class="d-flex justify-start align-center  pa-6">
           <img src="~/assets/img/map-pin.svg">
           <div class="mr-5">
-            <p class="primary--text t18400 mb-0 text-right">سعادت آباد، خیابان علامه جنوبی، کوچه ۳۴ شرقی، پلاک ۲۷، واحد ۱۶</p>
+            <p class="primary--text t18400 mb-0 text-right">{{ address?.addressDetail }}، پلاک {{ address?.no }}، واحد
+              {{ address?.unit }}</p>
           </div>
         </div>
 
@@ -32,9 +34,13 @@
 </template>
 <script >
 export default {
+  props:{
+    address: null,
+  },
   methods:{
     openAddress(){
-      this.$store.commit('set_addressMapModal' , true)
+      this.$store.commit('set_addressModal' , true)
+      this.$store.commit('set_addressForEdit' , this.address)
     }
   }
 }

@@ -72,6 +72,15 @@
                           </div>
                         </v-list-item-title>
                       </v-list-item>
+                      <v-list-item
+
+                      >
+                        <v-list-item-title  @click="logOut()">
+                          <div class="text-center">
+                            <span class="white--text">خروج</span>
+                          </div>
+                        </v-list-item-title>
+                      </v-list-item>
                     </v-list>
                   </v-menu>
                 </v-col>
