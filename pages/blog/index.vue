@@ -201,7 +201,7 @@
         </div>
         <v-row justify="center" class="mt-15">
           <BlogCard :blog="blog" v-for="(blog , index) in bannerBlogs"/>
- ]
+
         </v-row>
 
         <div class="text-center mt-15 pt-15">

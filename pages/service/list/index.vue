@@ -135,7 +135,7 @@ export default {
                   }
                 }
                 user{
-                  firstName
+                  firstName,thumbnail
                 },
                 neighborhood{
                   name

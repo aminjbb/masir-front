@@ -1,7 +1,7 @@
 <template>
   <div class="mt-15 mb-15" @click="$router.push(`/blog/${blog?.id}`)">
     <v-card height="431" width="360" class="br-50 mx-3 d-none d-md-block">
-      <img width="360" :src=" baseUrl + blog?.image" alt="" class="br-unset">
+      <img width="360" :src=" baseUrl + blog?.image" alt="" class="br-unset" style="border-radius: 50px 50px 0px 0px !important;">
       <div class="text-center mt-8">
             <span class="t22600">
                {{blog?.mainTitle }}

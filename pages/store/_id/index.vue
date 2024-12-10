@@ -142,11 +142,11 @@
             <span v-if="showNumber" class="mr-15 mt-2 t24600 primary--text dana-fa" >{{ product?.seller?.mobile }}</span>
           </div>
           <div class="d-flex align-center">
-            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="241" height="101" class="br-20 ml-5">
-              <span class="t24600 white--text">
-                 ارسال پیام
-              </span>
-            </v-btn>
+<!--            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="241" height="101" class="br-20 ml-5">-->
+<!--              <span class="t24600 white&#45;&#45;text">-->
+<!--                 ارسال پیام-->
+<!--              </span>-->
+<!--            </v-btn>-->
             <v-btn @click="showNumber =!showNumber" color="primary" width="241" height="101" class="br-20">
               <span class="t24600 white--text">
                  تماس با فروشنده
@@ -154,13 +154,13 @@
             </v-btn>
           </div>
         </div>
-        <div class="d-md-flex d-none justify-center mt-15">
-          <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">
-              <span class="t18600 primary--text">
-                ارسال درخواست ثبت سفارش
-              </span>
-          </v-btn>
-        </div>
+<!--        <div class="d-md-flex d-none justify-center mt-15">-->
+<!--          <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">-->
+<!--              <span class="t18600 primary&#45;&#45;text">-->
+<!--                ارسال درخواست ثبت سفارش-->
+<!--              </span>-->
+<!--          </v-btn>-->
+<!--        </div>-->
         <div class="pdp__order-card py-5  d-block d-md-none mx-3">
           <div class="d-flex align-center px-5">
             <div class="avatar-box">
@@ -174,11 +174,11 @@
           </div>
           <v-divider class="my-4"></v-divider>
           <div class="d-flex justify-center align-center">
-            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="129" height="50" class="br-10 ml-5">
-              <span class="t16400 white--text">
-                 ارسال پیام
-              </span>
-            </v-btn>
+<!--            <v-btn @click="$router.push(`/user-profile/chat/${ product?.seller?.id}/${clientId}`)" color="primary" width="129" height="50" class="br-10 ml-5">-->
+<!--              <span class="t16400 white&#45;&#45;text">-->
+<!--                 ارسال پیام-->
+<!--              </span>-->
+<!--            </v-btn>-->
             <v-btn @click="showNumber =!showNumber" color="primary" width="129" height="50" class="br-10">
               <span class="t16400 white--text">
                  تماس با فروشنده
@@ -194,16 +194,12 @@
 <!--            </v-btn>-->
 <!--          </div>-->
         </div>
-<!--        <v-row justify="center" class="mt-1  ">-->
-<!--          <v-col cols="12" md="4" class="mt-5 pt-10">-->
-<!--            <ProductCard />-->
-<!--          </v-col><v-col cols="12" md="4" class="mt-5 pt-10">-->
-<!--          <ProductCard />-->
-<!--        </v-col><v-col cols="12" md="4" class="mt-5 pt-10">-->
-<!--          <ProductCard />-->
-<!--        </v-col>-->
+        <v-row justify="center" class="mt-1  ">
+          <v-col cols="12" md="4" class="mt-5 pt-10" v-for="product in products.slice(0,3) ">
+            <ProductCard :product="product"/>
 
-<!--        </v-row>-->
+          </v-col>
+        </v-row>
 
       </div>
 
@@ -219,16 +215,44 @@ import ProductCard from '~/components/Store/ProductCard.vue'
 import DriverCardMobile from '~/components/Service/DriverCardMobile.vue'
 import ModalReport from "~/components/Store/ModalReport.vue";
 import {splitChar} from "../../../assets/js/public";
+import {gql} from "nuxt-graphql-request";
 
 export default {
   methods: {splitChar,
-
+    async  getProducts(form){
+      const query = gql`
+        query{
+            clientProducts(limit:10  ` + form + `){
+                totalCount,
+                results{
+                    id,
+                    englishName,
+                    persianName,
+                    metaDescription,
+                    metaTitle,
+                    canonical,
+                    schema,
+                    price,
+                    nofollow,
+                    noindex,
+                    description,
+                    images{
+                      image
+                    }
+                }
+            }
+          } `;
+      const obj = await this.$graphql.default.request(query , {});
+      this.pageLength = Math.ceil(obj.clientProducts.totalCount /10)
+      this.products =  obj.clientProducts.results
+    }
   },
   layout:'WithOutContact',
   data(){
     return{
       text:'',
-      showNumber:false
+      showNumber:false,
+      products:[]
     }
   },
   components:{
@@ -248,6 +272,8 @@ export default {
 
   beforeMount() {
     this.$store.dispatch('set_clientProduct' , this.$route.params.id)
+    this.getProducts('')
+
   },
 
 }

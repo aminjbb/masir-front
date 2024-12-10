@@ -23,7 +23,7 @@
           رانندگان برتر ماه
         </span>
       </div>
-      <TopDiriver :employees="employees"/>
+      <TopDiriver :employees="employees.slice(0,2)"/>
     </v-col>
     <v-col cols="10" class="d-none d-md-block" >
       <div class="text-center my-15 ">
@@ -98,7 +98,7 @@ export default {
                   }
                 }
                 user{
-                  firstName
+                  firstName,thumbnail
                 },
                 neighborhood{
                   name

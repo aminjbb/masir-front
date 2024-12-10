@@ -30,7 +30,7 @@
        </div>
        <div class="d-none d-md-flex justify-start pr-10 my-5">
         <span class="primaryYellow--text t18400">
-          نویسنده: {{ post?.createdBy?.user?.lastName }} {{ post?.createdBy?.user?.fristName }}
+          نویسنده: {{ post?.createdBy?.user?.firstName }} {{ post?.createdBy?.user?.lastName }}
         </span>
          <span class="primaryYellow--text t18400 mr-8" v-if="post">
           تاریخ: {{convertDateToJalai(post?.CreatedAt , '-' , true)}}
@@ -39,7 +39,7 @@
        <div class="d-block d-md-none my-5">
          <div class="text-center">
             <span class="white--text t16400">
-            نویسنده: بهار قاسمی
+            نویسنده:  {{ post?.createdBy?.user?.firstName }} {{ post?.createdBy?.user?.lastName }}
           </span>
          </div>
          <div class="text-center mt-3">
@@ -50,7 +50,7 @@
        </div>
        <div class="d-flex justify-center ">
 
-         <img class="blog-banner-img" src="~/assets/img/blogBanner.png" >
+         <img class="blog-banner-img" width="1148" height="771" :src="`${baseUrl}${post?.image}`" style="border-radius: 50px">
        </div>
 
        <div class="mt-10 px-15 d-none d-md-block">
@@ -143,6 +143,9 @@ export default {
   computed:{
     post(){
       return this.$store.getters['get_clientBlogPost']
+    },
+    baseUrl() {
+      return process.env.baseUrl
     }
   },
   beforeMount() {

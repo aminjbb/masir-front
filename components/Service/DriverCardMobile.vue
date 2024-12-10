@@ -1,13 +1,16 @@
 <template>
-  <v-col cols="12" @click="$router.push('/peymankar/1')"npm run>
+  <v-col cols="12" @click="$router.push('/peymankar/1')">
     <div class="service__top-diver-box mx-0 pb-10 px-5 mt-15 mb-15 position__relative">
 
       <div class="d-flex justify-center">
-        <img class="avatar-img" src="~/assets/img/untitled-design-98-2.png" alt="">
+        <img class="avatar-img" :src="baseUrl + employee?.user?.thumbnail " alt="" width="199" height="199" style="border-radius: 50%">
       </div>
       <div class="text-right pr-5 mt-5">
-         <span class="t24600 primary--text">
+         <span class="t24600 primary--text" v-if="employee?.user?.firstName ">
             {{employee?.user?.firstName }}
+         </span>
+         <span class="t24600 primary--text" v-else>
+           بدون نام
          </span>
       </div>
       <div>
@@ -83,6 +86,9 @@ export default {
 
   },
   computed:{
+    baseUrl(){
+      return process.env.baseUrl
+    },
     rateColor(){
       if (this.rate >= 4) return 'green--text'
       else if (this.rate <= 4 && this.rate > 2) return 'primaryYellow--text'
