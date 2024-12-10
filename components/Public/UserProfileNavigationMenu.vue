@@ -19,7 +19,7 @@
       <div class="d-flex justify-center">
 
         <div class="primary--text t30600" >
-          عباس قادری
+          {{clientDetail?.firstName}}
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         </div>
         <div>
           <div class="primary--text t30600" style="  margin-top: -139px">
-            عباس قادری
+            {{clientDetail?.firstName}}
           </div>
         </div>
         <v-col cols="8" class="d-block d-md-none">
