@@ -1,6 +1,6 @@
 
 <template>
-  <div class="component-container px-14">
+  <div class="component-container px-14 pointer" @click="$router.push(`/project/${project?.id}`)">
     <div class="title t24600 text--primary">{{ project?.name }}</div>
 
     <div class="details">

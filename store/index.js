@@ -21,10 +21,14 @@ export const state = () => ({
   neighborhoods:[],
   employeeMyApplies:[],
   userAddress:[],
-  addressForEdit:null
+  addressForEdit:null,
+  productCategories:[]
 })
 
 export const mutations = {
+  set_productCategories(state , obj){
+    state.productCategories = obj
+  },
   set_addressForEdit(state , obj){
     state.addressForEdit = obj
   },
@@ -83,6 +87,22 @@ export const mutations = {
 
 }
 export const actions = {
+  async set_productCategories({commit}){
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+            clientProductCategories{
+                results{
+                    id,
+                 name
+                }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_productCategories', obj?.clientProductCategories?.results);
+  },
   async set_userAddress({commit}){
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
@@ -117,12 +137,16 @@ export const actions = {
                   rejectedAt,
                   rating,
                   project{
+                    name,
                     id,
+                    predictedStartDate,
+                    city{id,name}
+                    neighborhood{id , name}
                     employer{
                       id,
                       user{
                         id,
-                        firsName,
+                        firstName,
                         lastName,
                         thumbnail,
                         sex
@@ -165,7 +189,7 @@ export const actions = {
               }
             } `;
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
-    commit('set_neighborhoods', obj?.clientNeighborhoods);
+    commit('set_employeeMyApplies', obj?.employeeMyApplies);
   },
   async set_neighborhoods({commit}) {
     const requestHeaders = {
@@ -181,13 +205,13 @@ export const actions = {
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
     commit('set_neighborhoods', obj?.clientNeighborhoods);
   },
-  async set_clientProject({commit} , id) {
+  async set_clientProject({commit} , filter) {
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
     };
     const query = gql`
           query{
-             publishedProjects(limit:2000){
+             publishedProjects(limit:20${filter}){
                  results{
                     name,
                     id,
@@ -606,6 +630,12 @@ export const actions = {
   }
 }
 export const getters = {
+  get_productCategories(state ){
+   return  state.productCategories
+  },
+  get_employeeMyApplies(state){
+   return  state.employeeMyApplies
+  },
   get_addressForEdit(state ){
     return  state.addressForEdit
   },

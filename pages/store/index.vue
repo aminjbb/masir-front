@@ -21,21 +21,27 @@
                   </v-row>
                 </div>
               </template>
-              <v-list class="mt-5 pt-6 store">
-                <v-list-item
-                  v-for="(item, index) in filters"
-                  :key="`index${index}`"
-                  :value="index"
-
-                >
-                  <v-list-item-title class="my-3">
-                    <span class="white--text t18400 mr-5">
-                    {{ item.title }}
+              <div class="category-menu pointer" >
+                <div v-for="(item, index) in categories" @click="categoryFilter(item?.id)">
+                   <span class="white--text t18400 mr-5">
+                    {{ item.name }}
                     </span>
-                    <v-divider v-if="index+1 < items.length" class="mt-5" dark></v-divider>
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
+                  <v-divider v-if="index+1 < categories.length" class="mt-5" dark></v-divider>
+                </div>
+
+              </div>
+<!--              <v-list class="mt-5 pt-6 store">-->
+<!--                <v-list-item-->
+<!--                  -->
+<!--                  :key="`index${index}`"-->
+<!--                  :value="index"-->
+
+<!--                >-->
+<!--                  <v-list-item-title class="my-3">-->
+<!--                  -->
+<!--                  </v-list-item-title>-->
+<!--                </v-list-item>-->
+<!--              </v-list>-->
             </v-menu>
 
           </v-col>
@@ -70,7 +76,7 @@
                   :value="index"
 
                 >
-                  <v-list-item-title class="my-3">
+                  <v-list-item-title class="my-3" >
                     <span class="white--text t18400 mr-5">
                     {{ item.title }}
                     </span>
@@ -85,7 +91,7 @@
 
         <v-row justify="center" align="center" class="d-flex d-md-none px-2">
           <v-col cols="6" >
-            <MobileFilterSheet/>
+            <MobileFilterSheet @categoryFilter="categoryFilter" :categories="categories"/>
           </v-col>
 
           <v-col cols="6">
@@ -151,6 +157,10 @@ export default {
     ProductCard,DriverCardMobile,MobileSortSheet,MobileFilterSheet,
   },
   methods:{
+    categoryFilter(id){
+      this.getProducts(`,category_Id:${id}`)
+
+    },
   async  getProducts(form){
       const query = gql`
         query{
@@ -179,9 +189,27 @@ export default {
       this.products =  obj.clientProducts.results
     }
   },
-
+  computed:{
+    categories(){
+      return this.$store.getters['get_productCategories']
+    }
+  },
   beforeMount() {
     this.getProducts('')
+    this.$store.dispatch('set_productCategories')
   }
 }
 </script>
+<style>
+
+
+.category-menu{
+  border-radius: 15px;
+  padding-top: 50px;
+  width: 384px;
+  max-height: 374px;
+  height: auto;
+  background: #0C385F;
+
+}
+</style>

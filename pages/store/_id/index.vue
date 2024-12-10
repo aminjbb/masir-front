@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" >
-      <StoreBanner/>
+      <StoreBanner :images="product?.images"/>
     </v-col>
     <v-col cols="12" class="my-5">
       <div class="main-container">
@@ -186,24 +186,24 @@
             </v-btn>
           </div>
 
-          <div class="d-flex d-md-none justify-center mt-5">
-            <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">
-              <span class="t18600 primary--text">
-                ارسال درخواست ثبت سفارش
-              </span>
-            </v-btn>
-          </div>
+<!--          <div class="d-flex d-md-none justify-center mt-5">-->
+<!--            <v-btn  color="primaryYellow"  height="101" class="br-20 px-10">-->
+<!--              <span class="t18600 primary&#45;&#45;text">-->
+<!--                ارسال درخواست ثبت سفارش-->
+<!--              </span>-->
+<!--            </v-btn>-->
+<!--          </div>-->
         </div>
-        <v-row justify="center" class="mt-1  ">
-          <v-col cols="12" md="4" class="mt-5 pt-10">
-            <ProductCard />
-          </v-col><v-col cols="12" md="4" class="mt-5 pt-10">
-          <ProductCard />
-        </v-col><v-col cols="12" md="4" class="mt-5 pt-10">
-          <ProductCard />
-        </v-col>
+<!--        <v-row justify="center" class="mt-1  ">-->
+<!--          <v-col cols="12" md="4" class="mt-5 pt-10">-->
+<!--            <ProductCard />-->
+<!--          </v-col><v-col cols="12" md="4" class="mt-5 pt-10">-->
+<!--          <ProductCard />-->
+<!--        </v-col><v-col cols="12" md="4" class="mt-5 pt-10">-->
+<!--          <ProductCard />-->
+<!--        </v-col>-->
 
-        </v-row>
+<!--        </v-row>-->
 
       </div>
 
