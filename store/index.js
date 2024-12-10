@@ -191,6 +191,75 @@ export const actions = {
     const obj = await this.$graphql.default.request(query, {}, requestHeaders);
     commit('set_employeeMyApplies', obj?.employeeMyApplies);
   },
+  async set_employeeMyAppliesProject({commit} , id){
+    const requestHeaders = {
+      Authorization: "Bearer " + VueCookies.get("userToken"),
+    };
+    const query = gql`
+          query{
+            employeeMyApplies(project_Id:${id}){
+                results{
+                  CreatedAt,
+                  UpdatedAt,
+                  confirmedAt,
+                  finishedAt,
+                  rejectedAt,
+                  rating,
+                  project{
+                    name,
+                    id,
+                    predictedStartDate,
+                    city{id,name}
+                    neighborhood{id , name}
+                    employer{
+                      id,
+                      user{
+                        id,
+                        firstName,
+                        lastName,
+                        thumbnail,
+                        sex
+                      }
+                    }
+                    name,
+                    description,
+                    city{
+                      id,name,
+                      province{id,name}
+                    }
+                    neighborhood{
+                      id,name,
+                      city{
+                        id, name
+                      }
+                    }
+                    predictedStartDate,
+                    predictedCompletionDate,
+                    isPublished,
+                    projectServices{
+                      service{
+                        id, name ,
+                      }
+                    }
+                    images{
+                      id,
+                      image
+                    }
+                    projectServiceRequirements{
+                      serviceRequirement{
+                        id,
+                        requirement
+                      }
+                      value,
+
+                    }
+                  }
+                }
+              }
+            } `;
+    const obj = await this.$graphql.default.request(query, {}, requestHeaders);
+    commit('set_employeeMyApplies', obj?.employeeMyApplies);
+  },
   async set_neighborhoods({commit}) {
     const requestHeaders = {
       Authorization: "Bearer " + VueCookies.get("userToken"),
@@ -373,6 +442,7 @@ export const actions = {
           query{
              myProject(projectId:${id}){
                    id
+                   images{id, image}
                     employer{
                       id
                       user{
@@ -426,6 +496,7 @@ export const actions = {
           query{
              myProjects(limit:1000){
                   results{
+                  images{id , image}
                     id
                     employer{
                       id

@@ -2,7 +2,7 @@
   <div>
     <div  class="contractor-card ma-7  justify-space-between position__relative d-md-flex d-none pl-10">
       <div class="d-flex justify-center align-center pr-5">
-        <img width="148" height="148" src="~/assets/img/addService.png" alt="">
+        <img width="148" height="148" :src="baseUrl + project?.images[0]?.image" alt="">
       </div>
       <div>
         <div class="d-flex align-start justify-start mt-10 mr-5">
@@ -77,6 +77,11 @@
 export default {
   props:{
     project:null
+  },
+  computed:{
+    baseUrl(){
+      return process.env.baseUrl
+    },
   }
 }
 </script>

@@ -278,15 +278,15 @@ export default {
           addServiceRequirements.push(requirements)
         })
       })
-
+      console.log(this.form.startDate)
       axios
-        .post(process.env.baseUrl + `project/v1/client/`, {
+        .post(process.env.apiUrl + `project/v1/client/`, {
           name:this.form.projectName,
           description:this.form.projectName,
           city :this.form.city,
           neighborhood: this.form.neighborhood.id,
-            predicted_start_date: convertDateToGregorian(this.form.startDate, '-', false),
-          predicted_completion_date: convertDateToGregorian(this.form.endDate , '-' , false),
+            predicted_start_date: this.form.startDate,
+          predicted_completion_date: this.form.endDate,
           services:addServices,
           service_requirements:addServiceRequirements
         },
@@ -296,6 +296,7 @@ export default {
             },
           })
         .then((response) => {
+          this.$router.go(-1)
         })
         .catch((err) => {
         }).finally(() => {

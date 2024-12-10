@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" class="px-0 mx-0" >
-      <ServicebannerPlp/>
+      <ServicebannerPlp :employees="employees.slice(0, 3)"/>
     </v-col>
     <v-col cols="12" class="my-10">
       <div class="main-container">

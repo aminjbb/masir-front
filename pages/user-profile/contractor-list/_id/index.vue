@@ -11,9 +11,8 @@
             <div class="user-profile__detail-card mt-user-profile mb-15 d-none d-md-block" id="create-form">
               <div class="contractor-card-detail ma-7 pt-3">
                 <div class="d-flex justify-start position__relative mr-3">
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
-                    <div class="mx-2"><img src="~/assets/img/addService.png" alt="" width="148" height="148"></div>
+                    <div v-for="image in project?.images" class="mx-2"><img :src="baseUrl + image?.image" alt="" width="148" height="148"></div>
+
                     <div style="position: absolute; top: 20px ;left: 20px" @click="$router.go(-1)">
                       <img src="~/assets/img/arrow-up-left.svg" alt="">
                     </div>
@@ -34,6 +33,15 @@
                     <span class="primary--text t18400">{{ service?.service?.name }}</span>
                   </div>
                 </div>
+                <v-divider class="my-5"></v-divider>
+                  <div class="justify-center align-center d-flex px-5" >
+                    <v-btn block color="primaryYellow" class="br-15" height="55">
+                      <span class="t18400 primary--text">
+                        دیدن درخواست‌ها
+                      </span>
+
+                    </v-btn>
+                  </div>
                 <v-divider class="my-5"></v-divider>
                 <div v-for="(service , index) in project?.projectServices" :key="`service${service.id}`">
                   <ContractorDetailCard :service="service"/>
@@ -110,10 +118,14 @@ export  default {
   computed:{
     project(){
       return this.$store.getters['get_myProject']
-    }
+    },
+    baseUrl(){
+      return process.env.baseUrl
+    },
   },
   beforeMount() {
     this.$store.dispatch('set_myProject' , this.$route.params.id)
+    this.$store.dispatch('set_employeeMyAppliesProject' , this.$route.params.id)
   }
 }
 </script>
