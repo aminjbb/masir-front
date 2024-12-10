@@ -1,9 +1,9 @@
 <template>
   <div class="main-container mt-15 pt-10 mt-md-0 pt-md-0">
-    <div class="services-peymankar">
-      <div class="div-2">
-        <Navbar />
-        <div class="d-flex justify-end mt-5">
+    <div class="services-peymankar  w-100">
+      <div class="div-2 w-100 px-15">
+<!--        <Navbar />-->
+        <div class="d-flex justify-end my-5">
           <v-menu class="mx-5" >
             <template v-slot:activator="{ on, attrs }">
 
@@ -29,57 +29,32 @@
             </v-list>
           </v-menu>
         </div>
-        <Overlap />
+        <Overlap :project="project" v-for="(project , index) in clientProject" :key="project?.id"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import FeatherIconsChevronLeft from "~/assets/icons/FeatherIconsChevronLeft.vue";
-import FeatherIconsChevronRight from "~/assets/icons/FeatherIconsChevronRight.vue";
-import PhosphorIconsShoppingcart1 from "~/assets/icons/PhosphorIconsShoppingcart1.vue";
-import PhosphorIconsUsercircle1 from "~/assets/icons/PhosphorIconsUsercircle1.vue";
-import Div from "~/components/ServicesPeymankar/sections/Div.vue";
-import DivWrapper from "~/components/ServicesPeymankar/sections/DivWrapper.vue";
-import NamecandidateNameOverlapGroupScore10001 from "~/components/ServicesPeymankar/sections/NamecandidateNameOverlapGroupScore10001.vue";
-import NamecandidateNameOverlapScore10001 from "~/components/ServicesPeymankar/sections/NamecandidateNameOverlapScore10001.vue";
-import NamecandidateNameOverlapScore10002 from "~/components/ServicesPeymankar/sections/NamecandidateNameOverlapScore10002.vue";
-import NamecandidateNameOverlapScore10003 from "~/components/ServicesPeymankar/sections/NamecandidateNameOverlapScore10003.vue";
-import NamecandidateNameOverlapScore10004 from "~/components/ServicesPeymankar/sections/NamecandidateNameOverlapScore10004.vue";
+
 import Navbar from "~/components/ServicesPeymankar/sections/Navbar.vue";
 import Overlap from "~/components/ServicesPeymankar/sections/Overlap.vue";
-import OverlapGroup from "~/components/ServicesPeymankar/sections/OverlapGroup.vue";
-import OverlapGroupWrapper from "~/components/ServicesPeymankar/sections/OverlapGroupWrapper.vue";
-import OverlapWrapper from "~/components/ServicesPeymankar/sections/OverlapWrapper.vue";
-import SectionComponentNode from "~/components/ServicesPeymankar/sections/SectionComponentNode.vue";
+
 
 export default {
   layout: "WithOutContact",
   components: {
-    FeatherIconsChevronLeft,
-    FeatherIconsChevronRight,
-    PhosphorIconsShoppingcart1,
-    PhosphorIconsUsercircle1,
-    Div,
-    DivWrapper,
-    NamecandidateNameOverlapGroupScore10001,
-    NamecandidateNameOverlapScore10001,
-    NamecandidateNameOverlapScore10002,
-    NamecandidateNameOverlapScore10003,
-    NamecandidateNameOverlapScore10004,
     Navbar,
     Overlap,
-    OverlapGroup,
-    OverlapGroupWrapper,
-    OverlapWrapper,
-    SectionComponentNode,
-  },
 
+  },
 
   computed:{
     neighborhoods(){
       return this.$store.getters['get_neighborhoods']
+    },
+    clientProject(){
+      return this.$store.getters['get_clientProject']
     }
   },
   mounted() {

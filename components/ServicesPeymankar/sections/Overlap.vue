@@ -1,170 +1,68 @@
+
 <template>
-  <div @click="$router.push('/project/1')">
-    <div class="overlap d-md-flex justify-space-between align-center my-10 d-none">
-      <div class="d-flex justify-start align-center">
-        <div class="text-wrapper-5 ml-15 mr-10">پروژه حدادیان</div>
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper px-5">خاک برداری</div>
-        </div>
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-2 px-5">تهران</div>
-        </div>
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-3 px-5">سعادت آباد</div>
-        </div>
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper-4 px-5">۱ بهمن ماه ۱۴۰۲</div>
-        </div>
-      </div>
+  <div class="component-container px-14">
+    <div class="title t24600 text--primary">{{ project?.name }}</div>
 
-      <div class="text-wrapper-6 ml-15 dana-fa"> ۱۲۵,۰۰۰,۰۰۰ تومان</div>
-    </div>
-    <div class="overlap d-md-none  my-10 d-block py-8 px-3 mx-5">
-      <div class="d-flex justify-space-between align-center px-5 w-100">
-          <span class="primary--text t24600">
-            پروژه حدادیان
-          </span>
-        <span  class="primary--text t14400">
-            ۱ بهمن ماه ۱۴۰۲
-          </span>
-      </div>
-      <div class="px-5 mt-3">
-        <span class="primary--text t18400 ">
-          خاک برداری
-        </span>
-      </div>
-      <div class="d-flex mt-3">
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper  px-5">تهران</div>
-        </div>
-        <div class="overlap-group-2 d-flex justify-center align-center mx-3">
-          <div class="text-wrapper  px-5">سعادت آباد</div>
-        </div>
-      </div>
-      <div class="text-wrapper-6 ml-15 mt-7 dana-fa">
-      <span class="t24600">
-        ۱۲۵,۰۰۰,۰۰۰ تومان
-      </span>
-      </div>
+    <div class="details">
+      <span>{{ project?.predictedStartDate }}</span>
+      <span>{{project?.neighborhood?.name}}</span>
+      <span>{{ project?.city?.name }}</span>
+      <span>خاک‌برداری</span>
 
     </div>
+    <div class="price dana-fa">125,000,000 تومان</div>
+
   </div>
 </template>
-
 <script>
 export default {
   name: "Overlap",
+  props:{
+    project:null
+  }
 };
 </script>
-
-<style>
-.overlap {
-  background-color: var(--monocolorwhite);
-  border: 1px solid;
-  border-color: var(--monocolorchinese-white);
+<style scoped>
+.component-container {
+  border: 1px solid #e0e0e0;
+  padding: 16px 49px;
+  font-family: "IRANSans", Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.10);
   border-radius: 40px;
-  box-shadow: 0px 4px 8px #0000001a;
-  min-height: 137px;
+  align-items: center;
 }
 
-.overlap .overlap-group-2 {
-  background-color: var(--monocolorcultured);
-  border-radius: 10px;
-  height: 50px;
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0C385F;
+  margin-bottom: 8px;
 }
 
-
-.overlap .text-wrapper {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: 18px;
+.details {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
   font-weight: 400;
-
-  letter-spacing: 0;
-  line-height: 40px;
-  text-align: justify;
-
-  white-space: nowrap;
+  color: #0C385F;
+  margin-bottom: 8px;
 }
 
-.overlap .overlap-group-3 {
-  background-color: var(--monocolorcultured);
-  border-radius: 10px;
-  height: 50px;
-  width: 74px;
+.details span {
+  background-color: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
-.overlap .text-wrapper-2 {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: var(--body-desktop-t-18-400-font-size);
-  font-style: var(--body-desktop-t-18-400-font-style);
-  font-weight: var(--body-desktop-t-18-400-font-weight);
-  letter-spacing: var(--body-desktop-t-18-400-letter-spacing);
-  line-height: var(--body-desktop-t-18-400-line-height);
-  text-align: left;
-  white-space: nowrap;
-}
-
-.overlap .overlap-group-4 {
-  background-color: var(--monocolorcultured);
-  border-radius: 10px;
-  height: 50px;
-  width: 113px;
-}
-
-.overlap .text-wrapper-3 {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: var(--body-desktop-t-18-400-font-size);
-  font-style: var(--body-desktop-t-18-400-font-style);
-  font-weight: var(--body-desktop-t-18-400-font-weight);
-  letter-spacing: var(--body-desktop-t-18-400-letter-spacing);
-  line-height: var(--body-desktop-t-18-400-line-height);
-  text-align: left;
-  white-space: nowrap;
-}
-
-.overlap .overlap-group-5 {
-  background-color: var(--monocolorcultured);
-  border-radius: 10px;
-  height: 50px;
-  width: 145px;
-}
-
-.overlap .text-wrapper-4 {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: var(--body-desktop-t-18-400-font-size);
-  font-style: var(--body-desktop-t-18-400-font-style);
-  font-weight: var(--body-desktop-t-18-400-font-weight);
-  letter-spacing: var(--body-desktop-t-18-400-letter-spacing);
-  line-height: var(--body-desktop-t-18-400-line-height);
-  text-align: left;
-  white-space: nowrap;
-}
-
-.overlap .text-wrapper-5 {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: var(--headline-desktop-t-24-600-font-size);
-  font-style: var(--headline-desktop-t-24-600-font-style);
-  font-weight: var(--headline-desktop-t-24-600-font-weight);
-  letter-spacing: var(--headline-desktop-t-24-600-letter-spacing);
-  line-height: var(--headline-desktop-t-24-600-line-height);
-  text-align: left;
-  white-space: nowrap;
-}
-
-.overlap .text-wrapper-6 {
-  color: var(--primary-and-secondarysecondari);
-  direction: rtl;
-  font-size: var(--headline-desktop-t-24-600-font-size);
-  font-style: var(--headline-desktop-t-24-600-font-style);
-  font-weight: var(--headline-desktop-t-24-600-font-weight);
-  letter-spacing: var(--headline-desktop-t-24-600-letter-spacing);
-  line-height: var(--headline-desktop-t-24-600-line-height);
-  text-align: left;
-  white-space: nowrap;
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0C385F;
 }
 </style>

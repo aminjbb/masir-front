@@ -189,14 +189,11 @@ export const actions = {
           query{
              publishedProjects(limit:2000){
                  results{
-                    id
-                    employer{
-                      id
-                      user{
-                        firstName
-                        lastName
-                      }
-                    }
+                    name,
+                    id,
+                    predictedStartDate,
+                    city{id,name}
+                    neighborhood{id , name}
                     projectApplies{
                      project{
                         id
